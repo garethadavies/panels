@@ -402,7 +402,7 @@ $(function() {
                   targetPanel.css('right', -e.gesture.distance);
 
                   //
-                  that.css('right', 280 + e.gesture.distance);
+                  that.css('left', -280 + e.gesture.distance);
             
                 }
 
@@ -497,7 +497,7 @@ $(function() {
                 // Open the panel
                 that.animate({
 
-                  right: 280
+                  left: -280
 
                 }, { duration: 200, queue: false }, function() {
 

@@ -41,6 +41,8 @@ $desktopBreakPointIE: 767px;
 $defaultMenuWidth: 32rem;
 $defaultMenuWidthIE: 320px;
 
+$horizontalPanelWidth: 280px;
+
 
 
 
@@ -78,10 +80,15 @@ i {
   @include scroll-y();
 }
 
+/* Page wrapper animation */
+
+// left
 .page-wrapper-left-in {
   @include animation(slidePageLeftIn, 0.5s, 0, ease);
   left: 280px;
   position: fixed;
+  // Stop the content scrolling when open
+  overflow: hidden;
   // z-index: 3;
 }
 
@@ -98,6 +105,32 @@ i {
 
 @include keyframes(slidePageLeftOut) {
   from { left: 280px; }
+  to { left: 0; }
+}
+
+// Right
+.page-wrapper-right-in {
+  @include animation(slidePageRightIn, 0.5s, 0, ease);
+  left: -$horizontalPanelWidth;
+  position: fixed;
+  // Stop the content scrolling when open
+  overflow: hidden;
+  // z-index: 3;
+}
+
+.page-wrapper-right-out {
+  @include animation(slidePageRightOut, 0.4s, 0, ease);
+  left: 0;
+  position: fixed;
+}
+
+@include keyframes(slidePageRightIn) {
+  from { left: 0; }
+  to { left: -$horizontalPanelWidth; }
+}
+
+@include keyframes(slidePageRightOut) {
+  from { left: -$horizontalPanelWidth; }
   to { left: 0; }
 }
 
@@ -136,8 +169,8 @@ i {
 .panel-horizontal {
   width: 280px;
   height: 100%;
-  // z-index: 3;
-  @include box-shadow(inset -4px 0 8px -4px $gray);
+  background-color: lighten($grayDarker, 6%);
+  color: $white;
 }
 
 /* Vertical Panel */
@@ -271,8 +304,9 @@ i {
 /* Right Panel */
 
 .panel-right {
-  right: -110%;
+  right: -$horizontalPanelWidth;
   top: 0;
+  @include box-shadow(inset 4px 0 20px -4px $black);
 }
 
 /* This will target anything bigger than an ipad portrait */
@@ -310,13 +344,13 @@ i {
 // Keyframes
 
 @include keyframes(slidePanelRightIn) {
-  from { right: -100%; }
+  from { right: -$horizontalPanelWidth; }
   to { right: 0; }
 }
 
 @include keyframes(slidePanelRightOut) {
   from { right: 0; }
-  to { right: -100%; }
+  to { right: -$horizontalPanelWidth; }
 }
 
 /*
@@ -325,8 +359,9 @@ This is the main menu panel
 */
 
 .panel-left {
-  left: -300px; 
+  left: -$horizontalPanelWidth; 
   top: 0;
+  @include box-shadow(inset -4px 0 20px -4px $black);
 }
 
 /* This will target anything bigger than an ipad portrait */
@@ -364,19 +399,19 @@ This is the main menu panel
 
 .panel-left-out {
   @include animation(slidePanelLeftOut, 0.4s, 0, ease);
-  left: -280px;
+  left: -$horizontalPanelWidth;
 }
 
 // Keyframes
 
 @include keyframes(slidePanelLeftIn) {
-  from { left: -280px; }
+  from { left: -$horizontalPanelWidth; }
   to { left: 0; }
 }
 
 @include keyframes(slidePanelLeftOut) {
   from { left: 0; }
-  to { left: -280px; }
+  to { left: -$horizontalPanelWidth; }
 }
 
 

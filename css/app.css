@@ -1,0 +1,763 @@
+/*------------------------------------*\
+	$$ Just Checking - Layout
+\*------------------------------------*/
+/**
+ * CONTENTS
+ * Variables
+ * Scaffolding
+ * Panels
+ * Media Queries
+ * IE Fixes
+ */
+/*------------------------------------*\
+  $ Imports
+\*------------------------------------*/
+/*------------------------------------*\
+  $$ Just Checking - Global Mixins
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+  * Compass
+  * Global Variables
+Contents:
+  * Imports
+  * Utility
+    * Clearfix
+    * Reset Margin & Padding
+  * Borders
+  * Backgrounds
+  * Menus
+  * Buttons
+    * Default button
+    * Submit button
+  * Overlay
+  * Text Trim
+  * Scroll
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\ 
+  $ Imports
+\*------------------------------------*/
+/*------------------------------------*\
+  $$ Just Checking - Global Variables
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+Contents:
+  * Colours
+    * Brand colours
+    * Button & alert colours
+    * Background colours
+  * Scaffolding
+    * Default Breakpoints
+  * Buttons
+    * Colours
+    * Sizes
+  * Margin & Padding
+  * Typography
+    * Font Family
+    * Text Colour
+  * Borders
+  * Dimensions
+  * Shadows
+  * Tables
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\
+  $ Colours
+\*------------------------------------*/
+/* Brand colours */
+/* Button & alert colours */
+/* Background colours */
+/*------------------------------------*\
+  $ Scaffolding
+\*------------------------------------*/
+/* Default Breakpoints */
+/*------------------------------------*\
+  $ Buttons
+\*------------------------------------*/
+/* Colours */
+/* Sizes */
+/*------------------------------------*\
+  $ Margin & Padding
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Typography
+\*------------------------------------*/
+/* Font Family */
+/* Text Colour */
+/*------------------------------------*\
+  $ Borders
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Dimensions
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Shadows
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Tables
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Utility
+\*------------------------------------*/
+/* Clearfix */
+/* Reset Margin & Padding */
+/*------------------------------------*\
+  $ Borders
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Backgrounds
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Menus
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Buttons
+\*------------------------------------*/
+/* Default button */
+/* Submit button */
+/*------------------------------------*\
+  $ Overlay
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Text Trim
+\*------------------------------------*/
+/*
+Requires:
+  * This requires a container with a set width
+*/
+/*------------------------------------*\
+  $ Scroll
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Animations
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Variables
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Scaffolding
+\*------------------------------------*/
+/* line 43, ../scss/app.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 47, ../scss/app.scss */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 52, ../scss/app.scss */
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 13px;
+  font-size: 1.3rem;
+  /* =13px */
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* line 60, ../scss/app.scss */
+i {
+  font-size: 19px;
+  font-size: 1.9rem;
+  line-height: 1em;
+  position: relative;
+  top: 1px;
+}
+
+/* line 68, ../scss/app.scss */
+.page-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: 76.7rem) {
+  /* line 76, ../scss/app.scss */
+  .page-wrapper {
+    float: right;
+    width: 70%;
+  }
+}
+/* line 84, ../scss/app.scss */
+.lt-ie9 .page-wrapper {
+  float: right;
+  width: 70%;
+}
+
+/*------------------------------------*\
+  $ Panels
+\*------------------------------------*/
+/* line 96, ../scss/app.scss */
+.panel {
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+  -webkit-box-shadow: 0 0 6px #999999;
+  -moz-box-shadow: 0 0 6px #999999;
+  box-shadow: 0 0 6px #999999;
+}
+
+/* line 104, ../scss/app.scss */
+.panel-horizontal {
+  width: 90%;
+  height: 100%;
+  z-index: 3;
+}
+
+/* line 111, ../scss/app.scss */
+.panel-vertical {
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  z-index: 4;
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: 76.7rem) {
+  /* line 122, ../scss/app.scss */
+  .panel-vertical .panel-inner {
+    width: 76.7rem;
+    margin: 0 auto;
+  }
+}
+/* line 132, ../scss/app.scss */
+.lt-ie9 .panel-vertical .panel-inner {
+  width: 767px;
+  margin: 0 auto;
+}
+
+/* line 138, ../scss/app.scss */
+.panel-inner {
+  padding: 2em;
+}
+
+/* Top Panel */
+/* line 144, ../scss/app.scss */
+.panel-top {
+  left: 0;
+  top: -100%;
+}
+
+/* line 149, ../scss/app.scss */
+.panel-top-in {
+  -webkit-animation-name: slidePanelTopIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelTopIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelTopIn;
+  animation-delay: 0;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  top: 0;
+}
+
+/* line 154, ../scss/app.scss */
+.panel-top-out {
+  -webkit-animation-name: slidePanelTopOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelTopOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelTopOut;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  top: 100%;
+}
+
+@-webkit-keyframes slidePanelTopIn {
+  /* line 162, ../scss/app.scss */
+  from {
+    top: -100%;
+  }
+
+  /* line 163, ../scss/app.scss */
+  to {
+    top: 0;
+  }
+}
+
+@-moz-keyframes slidePanelTopIn {
+  /* line 162, ../scss/app.scss */
+  from {
+    top: -100%;
+  }
+
+  /* line 163, ../scss/app.scss */
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slidePanelTopIn {
+  /* line 162, ../scss/app.scss */
+  from {
+    top: -100%;
+  }
+
+  /* line 163, ../scss/app.scss */
+  to {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelTopOut {
+  /* line 167, ../scss/app.scss */
+  from {
+    top: 0;
+  }
+
+  /* line 168, ../scss/app.scss */
+  to {
+    top: -100%;
+  }
+}
+
+@-moz-keyframes slidePanelTopOut {
+  /* line 167, ../scss/app.scss */
+  from {
+    top: 0;
+  }
+
+  /* line 168, ../scss/app.scss */
+  to {
+    top: -100%;
+  }
+}
+
+@keyframes slidePanelTopOut {
+  /* line 167, ../scss/app.scss */
+  from {
+    top: 0;
+  }
+
+  /* line 168, ../scss/app.scss */
+  to {
+    top: -100%;
+  }
+}
+
+/* Bottom Panel */
+/* line 173, ../scss/app.scss */
+.panel-bottom {
+  left: 0;
+  bottom: -90%;
+}
+
+/* line 178, ../scss/app.scss */
+.panel-bottom-in {
+  -webkit-animation-name: slidePanelBottomIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelBottomIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelBottomIn;
+  animation-delay: 0;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  bottom: 0;
+}
+
+/* line 183, ../scss/app.scss */
+.panel-bottom-out {
+  -webkit-animation-name: slidePanelBottomOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelBottomOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelBottomOut;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  bottom: -90%;
+}
+
+@-webkit-keyframes slidePanelBottomIn {
+  /* line 191, ../scss/app.scss */
+  from {
+    bottom: -90%;
+  }
+
+  /* line 192, ../scss/app.scss */
+  to {
+    bottom: 0;
+  }
+}
+
+@-moz-keyframes slidePanelBottomIn {
+  /* line 191, ../scss/app.scss */
+  from {
+    bottom: -90%;
+  }
+
+  /* line 192, ../scss/app.scss */
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes slidePanelBottomIn {
+  /* line 191, ../scss/app.scss */
+  from {
+    bottom: -90%;
+  }
+
+  /* line 192, ../scss/app.scss */
+  to {
+    bottom: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelBottomOut {
+  /* line 196, ../scss/app.scss */
+  from {
+    bottom: 0;
+  }
+
+  /* line 197, ../scss/app.scss */
+  to {
+    bottom: -90%;
+  }
+}
+
+@-moz-keyframes slidePanelBottomOut {
+  /* line 196, ../scss/app.scss */
+  from {
+    bottom: 0;
+  }
+
+  /* line 197, ../scss/app.scss */
+  to {
+    bottom: -90%;
+  }
+}
+
+@keyframes slidePanelBottomOut {
+  /* line 196, ../scss/app.scss */
+  from {
+    bottom: 0;
+  }
+
+  /* line 197, ../scss/app.scss */
+  to {
+    bottom: -90%;
+  }
+}
+
+/* Right Panel */
+/* line 202, ../scss/app.scss */
+.panel-right {
+  right: -100%;
+  top: 0;
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: 76.7rem) {
+  /* line 210, ../scss/app.scss */
+  .panel-right {
+    width: auto;
+  }
+  /* line 213, ../scss/app.scss */
+  .panel-right .panel-inner {
+    width: 32rem;
+  }
+}
+/* line 221, ../scss/app.scss */
+.lt-ie9 .panel-right {
+  width: auto;
+}
+/* line 224, ../scss/app.scss */
+.lt-ie9 .panel-right .panel-inner {
+  width: 320px;
+}
+
+/* line 229, ../scss/app.scss */
+.panel-right-in {
+  -webkit-animation-name: slidePanelRightIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelRightIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelRightIn;
+  animation-delay: 0;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  right: 0;
+}
+
+/* line 234, ../scss/app.scss */
+.panel-right-out {
+  -webkit-animation-name: slidePanelRightOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelRightOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelRightOut;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  right: -100%;
+}
+
+@-webkit-keyframes slidePanelRightIn {
+  /* line 242, ../scss/app.scss */
+  from {
+    right: -100%;
+  }
+
+  /* line 243, ../scss/app.scss */
+  to {
+    right: 0;
+  }
+}
+
+@-moz-keyframes slidePanelRightIn {
+  /* line 242, ../scss/app.scss */
+  from {
+    right: -100%;
+  }
+
+  /* line 243, ../scss/app.scss */
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slidePanelRightIn {
+  /* line 242, ../scss/app.scss */
+  from {
+    right: -100%;
+  }
+
+  /* line 243, ../scss/app.scss */
+  to {
+    right: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelRightOut {
+  /* line 247, ../scss/app.scss */
+  from {
+    right: 0;
+  }
+
+  /* line 248, ../scss/app.scss */
+  to {
+    right: -100%;
+  }
+}
+
+@-moz-keyframes slidePanelRightOut {
+  /* line 247, ../scss/app.scss */
+  from {
+    right: 0;
+  }
+
+  /* line 248, ../scss/app.scss */
+  to {
+    right: -100%;
+  }
+}
+
+@keyframes slidePanelRightOut {
+  /* line 247, ../scss/app.scss */
+  from {
+    right: 0;
+  }
+
+  /* line 248, ../scss/app.scss */
+  to {
+    right: -100%;
+  }
+}
+
+/*
+Left Panel 
+This is the main menu panel
+*/
+/* line 256, ../scss/app.scss */
+.panel-left {
+  left: -90%;
+  top: 0;
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: 76.7rem) {
+  /* line 264, ../scss/app.scss */
+  .panel-left {
+    left: 0;
+    width: 30%;
+    float: left;
+  }
+  /* line 270, ../scss/app.scss */
+  .panel-left .panel-close {
+    display: none;
+  }
+}
+/* line 278, ../scss/app.scss */
+.lt-ie9 .panel-left {
+  left: 0;
+  width: 30%;
+  float: left;
+}
+/* line 284, ../scss/app.scss */
+.lt-ie9 .panel-left .panel-close {
+  display: none;
+}
+
+/* line 289, ../scss/app.scss */
+.panel-left-in {
+  -webkit-animation-name: slidePanelLeftIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelLeftIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelLeftIn;
+  animation-delay: 0;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  left: 0;
+}
+
+/* line 294, ../scss/app.scss */
+.panel-left-out {
+  -webkit-animation-name: slidePanelLeftOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelLeftOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelLeftOut;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  left: -90%;
+}
+
+@-webkit-keyframes slidePanelLeftIn {
+  /* line 302, ../scss/app.scss */
+  from {
+    left: -90%;
+  }
+
+  /* line 303, ../scss/app.scss */
+  to {
+    left: 0;
+  }
+}
+
+@-moz-keyframes slidePanelLeftIn {
+  /* line 302, ../scss/app.scss */
+  from {
+    left: -90%;
+  }
+
+  /* line 303, ../scss/app.scss */
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slidePanelLeftIn {
+  /* line 302, ../scss/app.scss */
+  from {
+    left: -90%;
+  }
+
+  /* line 303, ../scss/app.scss */
+  to {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelLeftOut {
+  /* line 307, ../scss/app.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 308, ../scss/app.scss */
+  to {
+    left: -90%;
+  }
+}
+
+@-moz-keyframes slidePanelLeftOut {
+  /* line 307, ../scss/app.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 308, ../scss/app.scss */
+  to {
+    left: -90%;
+  }
+}
+
+@keyframes slidePanelLeftOut {
+  /* line 307, ../scss/app.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 308, ../scss/app.scss */
+  to {
+    left: -90%;
+  }
+}
+
+/*------------------------------------*\
+  $ Media Queries
+\*------------------------------------*/
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: 76.7rem) {
+  /* line 322, ../scss/app.scss */
+  a[data-target="left"] {
+    display: none;
+  }
+}
+/*------------------------------------*\
+  $ IE Fixes
+\*------------------------------------*/
+/* line 336, ../scss/app.scss */
+.lt-ie9 a[data-target="left"] {
+  display: none;
+}

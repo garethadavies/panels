@@ -1,0 +1,36 @@
+/* Base */
+@import '../../assets/css/partials/box-sizing.css';
+@import '../../assets/css/vendor/pure/base-min.css';
+@import '../../assets/css/vendor/pure/forms-min.css';
+@import '../../assets/css/vendor/pure/buttons-min.css';
+
+/* Extend */
+@import '../../assets/css/extend/pure/extend.pure.buttons.css';
+@import '../../assets/css/extend/pure/extend.pure.forms.css';
+@import '../../assets/css/extend/extend.typography.css';
+
+/* Partials */
+@import '../../assets/css/partials/grid.css';
+@import '../../assets/css/partials/top-bar.css';
+@import '../../assets/css/partials/sub-menu.css';
+@import '../../assets/css/partials/nav-bar.css';
+@import '../../assets/css/partials/links.css';
+@import '../../assets/css/partials/icons.css';
+@import '../../assets/css/partials/lists.css';
+@import '../../assets/css/partials/colours.css';
+@import '../../assets/css/partials/reveal.css';
+@import '../../assets/css/partials/switch.css';
+@import '../../assets/css/partials/flags.css';
+@import '../../assets/css/partials/symbol.css';
+@import '../../assets/css/partials/utilities.css';
+
+/* Third-party */
+@import '../../assets/css/vendor/fontello/fontello.css';
+@import '../../assets/css/vendor/mobiscroll/mobiscroll-2.4.custom.min.css';
+@import '../../assets/css/vendor/foundation/visibility-classes.css';
+@import '../../assets/css/vendor/foundation/alerts.css';
+@import '../../assets/css/plugins/alertify.core.css';
+@import '../../assets/css/plugins/alertify.default.css';
+
+/* App Specific */
+@import 'app.css';

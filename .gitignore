@@ -1,0 +1,11 @@
+# Add files/folders to be ignored by Git
+
+# Files
+*.sublime-project
+*.sublime-workspace
+
+# SASS Cache
+*.sass-cache*
+
+# Legacy LESS files
+/less

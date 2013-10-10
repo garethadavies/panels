@@ -1,0 +1,338 @@
+/*------------------------------------*\
+	$$ Just Checking - Layout
+\*------------------------------------*/
+
+/**
+ * CONTENTS
+ * Variables
+ * Scaffolding
+ * Panels
+ * Media Queries
+ * IE Fixes
+ */
+
+
+
+
+/*------------------------------------*\
+  $ Imports
+\*------------------------------------*/
+
+@import '../../assets/scss/modules/_mixins';
+@import "compass/css3/box-shadow";
+
+
+
+
+/*------------------------------------*\
+  $ Variables
+\*------------------------------------*/
+
+$desktopBreakPoint: 76.7rem;
+$desktopBreakPointIE: 767px;
+$defaultMenuWidth: 32rem;
+$defaultMenuWidthIE: 320px;
+
+
+
+
+/*------------------------------------*\
+  $ Scaffolding
+\*------------------------------------*/
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+	height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: $fontFamily;
+  font-size: 13px;
+  font-size: 1.3rem; /* =13px */
+  color: $textColor;
+  line-height: 1.6;
+}
+
+i {
+  font-size: 19px;
+  font-size: 1.9rem;
+  line-height: 1em;
+  position: relative;
+  top: 1px;
+}
+
+.page-wrapper {
+  height: 100%;
+  @include scroll-y();
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $desktopBreakPoint) {
+
+  .page-wrapper {
+    float: right;
+    width: 70%;
+  }
+
+}
+
+// IE8 Fix
+.lt-ie9 .page-wrapper {
+  float: right;
+  width: 70%;
+}
+
+
+
+
+/*------------------------------------*\
+  $ Panels
+\*------------------------------------*/
+
+.panel {
+  position: fixed;  
+  height: 100%;
+  @include scroll-y();
+  background-color: $white;
+  @include box-shadow(0 0 6px $gray);
+}
+
+.panel-horizontal {
+  width: 90%;
+  height: 100%;
+  z-index: 3;
+  // padding-right: $defaultPadding;
+}
+
+.panel-vertical {
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  z-index: 4;
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $desktopBreakPoint) {
+
+  .panel-vertical {
+    .panel-inner {
+      width: $desktopBreakPoint;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+// IE8 Fix
+.lt-ie9 .panel-vertical {
+  .panel-inner {
+    width: $desktopBreakPointIE;
+    margin: 0 auto;
+  }
+}
+
+.panel-inner {
+  padding: $defaultPadding*2;
+}
+
+/* Top Panel */
+
+.panel-top {
+  left: 0;
+  top: -100%;
+}
+
+.panel-top-in {
+  @include animation(slidePanelTopIn, 0.5s, 0, ease);
+  top: 0;
+}
+
+.panel-top-out {
+  @include animation(slidePanelTopOut, 0.4s, 0, ease);
+  top: 100%;
+}
+
+// Keyframes
+
+@include keyframes(slidePanelTopIn) {
+  from { top: -100%; }
+  to { top: 0; }
+}
+
+@include keyframes(slidePanelTopOut) {
+  from { top: 0; }
+  to { top: -100%; }
+}
+
+/* Bottom Panel */
+
+.panel-bottom {
+  left: 0;
+  bottom: -90%;
+}
+
+.panel-bottom-in {
+  @include animation(slidePanelBottomIn, 0.5s, 0, ease);
+  bottom: 0;
+}
+
+.panel-bottom-out {
+  @include animation(slidePanelBottomOut, 0.4s, 0, ease);
+  bottom: -90%;
+}
+
+// Keyframes
+
+@include keyframes(slidePanelBottomIn) {
+  from { bottom: -90%; }
+  to { bottom: 0; }
+}
+
+@include keyframes(slidePanelBottomOut) {
+  from { bottom: 0; }
+  to { bottom: -90%; }
+}
+
+/* Right Panel */
+
+.panel-right {
+  right: -100%;
+  top: 0;
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $desktopBreakPoint) {
+
+  .panel-right {
+    width: auto;
+
+    .panel-inner {
+      width: $defaultMenuWidth;
+    }
+  }
+
+}
+
+// IE8 Fix
+.lt-ie9 .panel-right {
+  width: auto;
+
+  .panel-inner {
+    width: $defaultMenuWidthIE;
+  }
+}
+
+.panel-right-in {
+  @include animation(slidePanelRightIn, 0.5s, 0, ease);
+  right: 0;
+}
+
+.panel-right-out {
+  @include animation(slidePanelRightOut, 0.4s, 0, ease);
+  right: -100%;
+}
+
+// Keyframes
+
+@include keyframes(slidePanelRightIn) {
+  from { right: -100%; }
+  to { right: 0; }
+}
+
+@include keyframes(slidePanelRightOut) {
+  from { right: 0; }
+  to { right: -100%; }
+}
+
+/*
+Left Panel 
+This is the main menu panel
+*/
+
+.panel-left {
+  left: -90%;
+  top: 0;
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $desktopBreakPoint) {
+
+  .panel-left {
+    left: 0;
+    width: 30%;
+    float: left;
+
+    // Hide the panel close link
+    .panel-close {
+      display: none;
+    }
+  }
+
+}
+
+// IE8 Fix
+.lt-ie9 .panel-left {
+  left: 0;
+  width: 30%;
+  float: left;
+
+  // Hide the panel close link
+  .panel-close {
+    display: none;
+  }
+}
+
+.panel-left-in {
+  @include animation(slidePanelLeftIn, 0.5s, 0, ease);
+  left: 0;
+}
+
+.panel-left-out {
+  @include animation(slidePanelLeftOut, 0.4s, 0, ease);
+  left: -90%;
+}
+
+// Keyframes
+
+@include keyframes(slidePanelLeftIn) {
+  from { left: -90%; }
+  to { left: 0; }
+}
+
+@include keyframes(slidePanelLeftOut) {
+  from { left: 0; }
+  to { left: -90%; }
+}
+
+
+
+
+/*------------------------------------*\
+  $ Media Queries
+\*------------------------------------*/
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $desktopBreakPoint) {
+
+  // Hide any links that open the left panel
+  a[data-target="left"] {
+    display: none;     
+  }
+
+}
+
+
+
+
+/*------------------------------------*\
+  $ IE Fixes
+\*------------------------------------*/
+
+// Hide any links that open the left panel
+.lt-ie9 a[data-target="left"] {
+  display: none;     
+}

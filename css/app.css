@@ -322,17 +322,17 @@ i {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background-color: white;
-  -webkit-box-shadow: 0 0 6px #999999;
-  -moz-box-shadow: 0 0 6px #999999;
-  box-shadow: 0 0 6px #999999;
 }
 
 /* Horizontal Panel */
-/* line 137, ../scss/app.scss */
+/* line 136, ../scss/app.scss */
 .panel-horizontal {
   width: 280px;
   height: 100%;
   z-index: 3;
+  -webkit-box-shadow: inset -4px 0 8px -4px #999999;
+  -moz-box-shadow: inset -4px 0 8px -4px #999999;
+  box-shadow: inset -4px 0 8px -4px #999999;
 }
 
 /* Vertical Panel */
@@ -343,24 +343,27 @@ i {
   max-height: 90%;
   z-index: 4;
   padding-bottom: 1em;
+  -webkit-box-shadow: 0 0 6px #999999;
+  -moz-box-shadow: 0 0 6px #999999;
+  box-shadow: 0 0 6px #999999;
 }
 
 /* This will target anything bigger than an ipad portrait */
 @media only screen and (min-width: 76.7rem) {
-  /* line 157, ../scss/app.scss */
+  /* line 158, ../scss/app.scss */
   .panel-vertical .panel-inner {
     width: 76.7rem;
     margin: 0 auto;
   }
 }
-/* line 167, ../scss/app.scss */
+/* line 168, ../scss/app.scss */
 .lt-ie9 .panel-vertical .panel-inner {
   width: 767px;
   margin: 0 auto;
 }
 
 /* Panel Header */
-/* line 175, ../scss/app.scss */
+/* line 176, ../scss/app.scss */
 .panel-header {
   position: absolute;
   top: 0;
@@ -379,13 +382,13 @@ i {
   background-image: -o-linear-gradient(#ffffff, #f9f9f6);
   background-image: linear-gradient(#ffffff, #f9f9f6);
 }
-/* line 184, ../scss/app.scss */
+/* line 185, ../scss/app.scss */
 .panel-header .panel-title {
   font-size: 1.4rem;
   color: #333333;
   line-height: 4.4rem;
 }
-/* line 191, ../scss/app.scss */
+/* line 192, ../scss/app.scss */
 .panel-header a {
   text-align: center;
   width: 44px;
@@ -394,7 +397,7 @@ i {
 }
 
 /* Panel Inner */
-/* line 201, ../scss/app.scss */
+/* line 202, ../scss/app.scss */
 .panel-inner {
   padding: 2em;
   /* 
@@ -406,14 +409,14 @@ i {
 }
 
 /* Top Panel */
-/* line 213, ../scss/app.scss */
+/* line 214, ../scss/app.scss */
 .panel-top {
   left: 0;
   top: -110%;
   background-color: white;
 }
 
-/* line 219, ../scss/app.scss */
+/* line 220, ../scss/app.scss */
 .panel-top-in {
   -webkit-animation-name: slidePanelTopIn;
   -webkit-animation-delay: 0;
@@ -430,7 +433,7 @@ i {
   top: 0;
 }
 
-/* line 224, ../scss/app.scss */
+/* line 225, ../scss/app.scss */
 .panel-top-out {
   -webkit-animation-name: slidePanelTopOut;
   -webkit-animation-delay: 0;
@@ -448,85 +451,85 @@ i {
 }
 
 @-webkit-keyframes slidePanelTopIn {
-  /* line 232, ../scss/app.scss */
+  /* line 233, ../scss/app.scss */
   from {
     top: -100%;
   }
 
-  /* line 233, ../scss/app.scss */
+  /* line 234, ../scss/app.scss */
   to {
     top: 0;
   }
 }
 
 @-moz-keyframes slidePanelTopIn {
-  /* line 232, ../scss/app.scss */
+  /* line 233, ../scss/app.scss */
   from {
     top: -100%;
   }
 
-  /* line 233, ../scss/app.scss */
+  /* line 234, ../scss/app.scss */
   to {
     top: 0;
   }
 }
 
 @keyframes slidePanelTopIn {
-  /* line 232, ../scss/app.scss */
+  /* line 233, ../scss/app.scss */
   from {
     top: -100%;
   }
 
-  /* line 233, ../scss/app.scss */
+  /* line 234, ../scss/app.scss */
   to {
     top: 0;
   }
 }
 
 @-webkit-keyframes slidePanelTopOut {
-  /* line 237, ../scss/app.scss */
+  /* line 238, ../scss/app.scss */
   from {
     top: 0;
   }
 
-  /* line 238, ../scss/app.scss */
+  /* line 239, ../scss/app.scss */
   to {
     top: -100%;
   }
 }
 
 @-moz-keyframes slidePanelTopOut {
-  /* line 237, ../scss/app.scss */
+  /* line 238, ../scss/app.scss */
   from {
     top: 0;
   }
 
-  /* line 238, ../scss/app.scss */
+  /* line 239, ../scss/app.scss */
   to {
     top: -100%;
   }
 }
 
 @keyframes slidePanelTopOut {
-  /* line 237, ../scss/app.scss */
+  /* line 238, ../scss/app.scss */
   from {
     top: 0;
   }
 
-  /* line 238, ../scss/app.scss */
+  /* line 239, ../scss/app.scss */
   to {
     top: -100%;
   }
 }
 
 /* Bottom Panel */
-/* line 243, ../scss/app.scss */
+/* line 244, ../scss/app.scss */
 .panel-bottom {
   left: 0;
   bottom: -100%;
 }
 
-/* line 248, ../scss/app.scss */
+/* line 249, ../scss/app.scss */
 .panel-bottom-in {
   -webkit-animation-name: slidePanelBottomIn;
   -webkit-animation-delay: 0;
@@ -543,7 +546,7 @@ i {
   bottom: 0;
 }
 
-/* line 253, ../scss/app.scss */
+/* line 254, ../scss/app.scss */
 .panel-bottom-out {
   -webkit-animation-name: slidePanelBottomOut;
   -webkit-animation-delay: 0;
@@ -561,79 +564,79 @@ i {
 }
 
 @-webkit-keyframes slidePanelBottomIn {
-  /* line 261, ../scss/app.scss */
+  /* line 262, ../scss/app.scss */
   from {
     bottom: -90%;
   }
 
-  /* line 262, ../scss/app.scss */
+  /* line 263, ../scss/app.scss */
   to {
     bottom: 0;
   }
 }
 
 @-moz-keyframes slidePanelBottomIn {
-  /* line 261, ../scss/app.scss */
+  /* line 262, ../scss/app.scss */
   from {
     bottom: -90%;
   }
 
-  /* line 262, ../scss/app.scss */
+  /* line 263, ../scss/app.scss */
   to {
     bottom: 0;
   }
 }
 
 @keyframes slidePanelBottomIn {
-  /* line 261, ../scss/app.scss */
+  /* line 262, ../scss/app.scss */
   from {
     bottom: -90%;
   }
 
-  /* line 262, ../scss/app.scss */
+  /* line 263, ../scss/app.scss */
   to {
     bottom: 0;
   }
 }
 
 @-webkit-keyframes slidePanelBottomOut {
-  /* line 266, ../scss/app.scss */
+  /* line 267, ../scss/app.scss */
   from {
     bottom: 0;
   }
 
-  /* line 267, ../scss/app.scss */
+  /* line 268, ../scss/app.scss */
   to {
     bottom: -90%;
   }
 }
 
 @-moz-keyframes slidePanelBottomOut {
-  /* line 266, ../scss/app.scss */
+  /* line 267, ../scss/app.scss */
   from {
     bottom: 0;
   }
 
-  /* line 267, ../scss/app.scss */
+  /* line 268, ../scss/app.scss */
   to {
     bottom: -90%;
   }
 }
 
 @keyframes slidePanelBottomOut {
-  /* line 266, ../scss/app.scss */
+  /* line 267, ../scss/app.scss */
   from {
     bottom: 0;
   }
 
-  /* line 267, ../scss/app.scss */
+  /* line 268, ../scss/app.scss */
   to {
     bottom: -90%;
   }
 }
 
 /* Right Panel */
-/* line 272, ../scss/app.scss */
+/* line 273, ../scss/app.scss */
 .panel-right {
   right: -110%;
   top: 0;
@@ -641,25 +644,25 @@ i {
 
 /* This will target anything bigger than an ipad portrait */
 @media only screen and (min-width: 76.7rem) {
-  /* line 280, ../scss/app.scss */
+  /* line 281, ../scss/app.scss */
   .panel-right {
     width: auto;
   }
-  /* line 283, ../scss/app.scss */
+  /* line 284, ../scss/app.scss */
   .panel-right .panel-inner {
     width: 32rem;
   }
 }
-/* line 291, ../scss/app.scss */
+/* line 292, ../scss/app.scss */
 .lt-ie9 .panel-right {
   width: auto;
 }
-/* line 294, ../scss/app.scss */
+/* line 295, ../scss/app.scss */
 .lt-ie9 .panel-right .panel-inner {
   width: 320px;
 }
 
-/* line 299, ../scss/app.scss */
+/* line 300, ../scss/app.scss */
 .panel-right-in {
   -webkit-animation-name: slidePanelRightIn;
   -webkit-animation-delay: 0;
@@ -676,7 +679,7 @@ i {
   right: 0;
 }
 
-/* line 304, ../scss/app.scss */
+/* line 305, ../scss/app.scss */
 .panel-right-out {
   -webkit-animation-name: slidePanelRightOut;
   -webkit-animation-delay: 0;
@@ -694,72 +697,72 @@ i {
 }
 
 @-webkit-keyframes slidePanelRightIn {
-  /* line 312, ../scss/app.scss */
+  /* line 313, ../scss/app.scss */
   from {
     right: -100%;
   }
 
-  /* line 313, ../scss/app.scss */
+  /* line 314, ../scss/app.scss */
   to {
     right: 0;
   }
 }
 
 @-moz-keyframes slidePanelRightIn {
-  /* line 312, ../scss/app.scss */
+  /* line 313, ../scss/app.scss */
   from {
     right: -100%;
   }
 
-  /* line 313, ../scss/app.scss */
+  /* line 314, ../scss/app.scss */
   to {
     right: 0;
   }
 }
 
 @keyframes slidePanelRightIn {
-  /* line 312, ../scss/app.scss */
+  /* line 313, ../scss/app.scss */
   from {
     right: -100%;
   }
 
-  /* line 313, ../scss/app.scss */
+  /* line 314, ../scss/app.scss */
   to {
     right: 0;
   }
 }
 
 @-webkit-keyframes slidePanelRightOut {
-  /* line 317, ../scss/app.scss */
+  /* line 318, ../scss/app.scss */
   from {
     right: 0;
   }
 
-  /* line 318, ../scss/app.scss */
+  /* line 319, ../scss/app.scss */
   to {
     right: -100%;
   }
 }
 
 @-moz-keyframes slidePanelRightOut {
-  /* line 317, ../scss/app.scss */
+  /* line 318, ../scss/app.scss */
   from {
     right: 0;
   }
 
-  /* line 318, ../scss/app.scss */
+  /* line 319, ../scss/app.scss */
   to {
     right: -100%;
   }
 }
 
 @keyframes slidePanelRightOut {
-  /* line 317, ../scss/app.scss */
+  /* line 318, ../scss/app.scss */
   from {
     right: 0;
   }
 
-  /* line 318, ../scss/app.scss */
+  /* line 319, ../scss/app.scss */
   to {
     right: -100%;
   }
@@ -769,7 +772,7 @@ i {
 Left Panel 
 This is the main menu panel
 */
-/* line 326, ../scss/app.scss */
+/* line 327, ../scss/app.scss */
 .panel-left {
   left: -300px;
   top: 0;
@@ -777,29 +780,29 @@ This is the main menu panel
 
 /* This will target anything bigger than an ipad portrait */
 @media only screen and (min-width: 76.7rem) {
-  /* line 334, ../scss/app.scss */
+  /* line 335, ../scss/app.scss */
   .panel-left {
     left: 0;
     width: 30%;
     float: left;
   }
-  /* line 340, ../scss/app.scss */
+  /* line 341, ../scss/app.scss */
   .panel-left .panel-close {
     display: none;
   }
 }
-/* line 348, ../scss/app.scss */
+/* line 349, ../scss/app.scss */
 .lt-ie9 .panel-left {
   left: 0;
   width: 30%;
   float: left;
 }
-/* line 354, ../scss/app.scss */
+/* line 355, ../scss/app.scss */
 .lt-ie9 .panel-left .panel-close {
   display: none;
 }
 
-/* line 359, ../scss/app.scss */
+/* line 360, ../scss/app.scss */
 .panel-left-in {
   -webkit-animation-name: slidePanelLeftIn;
   -webkit-animation-delay: 0;
@@ -816,7 +819,7 @@ This is the main menu panel
   left: 0;
 }
 
-/* line 364, ../scss/app.scss */
+/* line 365, ../scss/app.scss */
 .panel-left-out {
   -webkit-animation-name: slidePanelLeftOut;
   -webkit-animation-delay: 0;
@@ -834,72 +837,72 @@ This is the main menu panel
 }
 
 @-webkit-keyframes slidePanelLeftIn {
-  /* line 372, ../scss/app.scss */
+  /* line 373, ../scss/app.scss */
   from {
     left: -280px;
   }
 
-  /* line 373, ../scss/app.scss */
+  /* line 374, ../scss/app.scss */
   to {
     left: 0;
   }
 }
 
 @-moz-keyframes slidePanelLeftIn {
-  /* line 372, ../scss/app.scss */
+  /* line 373, ../scss/app.scss */
   from {
     left: -280px;
   }
 
-  /* line 373, ../scss/app.scss */
+  /* line 374, ../scss/app.scss */
   to {
     left: 0;
   }
 }
 
 @keyframes slidePanelLeftIn {
-  /* line 372, ../scss/app.scss */
+  /* line 373, ../scss/app.scss */
   from {
     left: -280px;
   }
 
-  /* line 373, ../scss/app.scss */
+  /* line 374, ../scss/app.scss */
   to {
     left: 0;
   }
 }
 
 @-webkit-keyframes slidePanelLeftOut {
-  /* line 377, ../scss/app.scss */
+  /* line 378, ../scss/app.scss */
   from {
     left: 0;
   }
 
-  /* line 378, ../scss/app.scss */
+  /* line 379, ../scss/app.scss */
   to {
     left: -280px;
   }
 }
 
 @-moz-keyframes slidePanelLeftOut {
-  /* line 377, ../scss/app.scss */
+  /* line 378, ../scss/app.scss */
   from {
     left: 0;
   }
 
-  /* line 378, ../scss/app.scss */
+  /* line 379, ../scss/app.scss */
   to {
     left: -280px;
   }
 }
 
 @keyframes slidePanelLeftOut {
-  /* line 377, ../scss/app.scss */
+  /* line 378, ../scss/app.scss */
   from {
     left: 0;
   }
 
-  /* line 378, ../scss/app.scss */
+  /* line 379, ../scss/app.scss */
   to {
     left: -280px;
   }
@@ -910,7 +913,7 @@ This is the main menu panel
 \*------------------------------------*/
 /* This will target anything bigger than an ipad portrait */
 @media only screen and (min-width: 76.7rem) {
-  /* line 392, ../scss/app.scss */
+  /* line 393, ../scss/app.scss */
   a[data-target="left"] {
     display: none;
   }
@@ -918,7 +921,7 @@ This is the main menu panel
 /*------------------------------------*\
   $ IE Fixes
 \*------------------------------------*/
-/* line 406, ../scss/app.scss */
+/* line 407, ../scss/app.scss */
 .lt-ie9 a[data-target="left"] {
   display: none;
 }

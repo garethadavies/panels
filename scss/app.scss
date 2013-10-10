@@ -129,7 +129,6 @@ i {
   height: 100%;
   @include scroll-y();
   background-color: $white;
-  @include box-shadow(0 0 6px $gray);
 }
 
 /* Horizontal Panel */
@@ -138,6 +137,7 @@ i {
   width: 280px;
   height: 100%;
   z-index: 3;
+  @include box-shadow(inset -4px 0 8px -4px $gray);
 }
 
 /* Vertical Panel */
@@ -148,6 +148,7 @@ i {
   max-height: 90%;
   z-index: 4;
   padding-bottom: $defaultPadding;
+  @include box-shadow(0 0 6px $gray);
 }
 
 /* This will target anything bigger than an ipad portrait */

@@ -2,14 +2,22 @@
 	$$ Just Checking - Layout
 \*------------------------------------*/
 
-/**
- * CONTENTS
- * Variables
- * Scaffolding
- * Panels
- * Media Queries
- * IE Fixes
- */
+/*
+Requires:
+  * SASS
+  * Compass
+  * Global Variables
+  * Global Mixins
+Contents:
+  * Imports
+  * Variables
+  * Scaffolding
+  * Panels
+  * Media Queries
+  * IE Fixes
+Author(s):
+  * Gareth Davies @garethadavies
+*/
 
 
 
@@ -70,6 +78,29 @@ i {
   @include scroll-y();
 }
 
+.page-wrapper-left-in {
+  @include animation(slidePageLeftIn, 0.5s, 0, ease);
+  left: 280px;
+  position: fixed;
+  // z-index: 3;
+}
+
+.page-wrapper-left-out {
+  @include animation(slidePageLeftOut, 0.4s, 0, ease);
+  left: 0;
+  position: fixed;
+}
+
+@include keyframes(slidePageLeftIn) {
+  from { left: 0; }
+  to { left: 280px; }
+}
+
+@include keyframes(slidePageLeftOut) {
+  from { left: 280px; }
+  to { left: 0; }
+}
+
 /* This will target anything bigger than an ipad portrait */
 @media only screen and (min-width: $desktopBreakPoint) {
 
@@ -101,18 +132,22 @@ i {
   @include box-shadow(0 0 6px $gray);
 }
 
+/* Horizontal Panel */
+
 .panel-horizontal {
-  width: 90%;
+  width: 280px;
   height: 100%;
   z-index: 3;
-  // padding-right: $defaultPadding;
 }
+
+/* Vertical Panel */
 
 .panel-vertical {
   width: 100%;
   height: auto;
   max-height: 90%;
   z-index: 4;
+  padding-bottom: $defaultPadding;
 }
 
 /* This will target anything bigger than an ipad portrait */
@@ -135,15 +170,50 @@ i {
   }
 }
 
+/* Panel Header */
+
+.panel-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2002;
+  padding-left: $defaultPadding;
+  @include menu-base();
+
+  // The panel header title
+  .panel-title {
+    font-size: 1.4rem;
+    color: $textColor;
+    line-height: 4.4rem;
+  }
+
+  //
+  a {
+    text-align: center;
+    width: $touchMinimum;
+    height: $touchMinimum;
+    line-height: 4.4rem;
+  }
+}
+
+/* Panel Inner */
+
 .panel-inner {
   padding: $defaultPadding*2;
+  /* 
+  height: 100%;
+  margin-top: 44px;
+  padding: $defaultPadding $defaultPadding $defaultPadding*3 $defaultPadding;
+  .scroll-y();
+  */
 }
 
 /* Top Panel */
 
 .panel-top {
   left: 0;
-  top: -100%;
+  top: -110%;
+  background-color: $white;
 }
 
 .panel-top-in {
@@ -172,7 +242,7 @@ i {
 
 .panel-bottom {
   left: 0;
-  bottom: -90%;
+  bottom: -100%;
 }
 
 .panel-bottom-in {
@@ -200,7 +270,7 @@ i {
 /* Right Panel */
 
 .panel-right {
-  right: -100%;
+  right: -110%;
   top: 0;
 }
 
@@ -254,7 +324,7 @@ This is the main menu panel
 */
 
 .panel-left {
-  left: -90%;
+  left: -300px; 
   top: 0;
 }
 
@@ -293,19 +363,19 @@ This is the main menu panel
 
 .panel-left-out {
   @include animation(slidePanelLeftOut, 0.4s, 0, ease);
-  left: -90%;
+  left: -280px;
 }
 
 // Keyframes
 
 @include keyframes(slidePanelLeftIn) {
-  from { left: -90%; }
+  from { left: -280px; }
   to { left: 0; }
 }
 
 @include keyframes(slidePanelLeftOut) {
   from { left: 0; }
-  to { left: -90%; }
+  to { left: -280px; }
 }
 
 

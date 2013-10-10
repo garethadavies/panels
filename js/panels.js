@@ -1,5 +1,9 @@
 $(function() {
 
+  var
+  pageWrapper = $('.page-wrapper'),
+  pageWrapperWidth = pageWrapper.outerWidth();
+
   // Detect a user swiping the left panel shut
   $('.panel-left').hammer().on('drag', function(e) {
     
@@ -193,6 +197,19 @@ $(function() {
             // Add the panel out class
             options.targetPanel.addClass('panel-' + options.panelReference + '-out');
 
+            // Set a timeout to match the animation duration
+            setTimeout(function() {
+
+              pageWrapper.removeAttr('style');
+
+            }, 400);
+
+            //
+            pageWrapper.removeClass('page-wrapper-left-in');
+            
+            //
+            pageWrapper.addClass('page-wrapper-left-out');
+
           }
           else {
 
@@ -266,6 +283,17 @@ $(function() {
 
           // Add the panel in class
           targetPanel.addClass('panel-' + panelReference + '-in');
+
+          console.log(pageWrapperWidth);
+
+          //
+          pageWrapper.css('width', pageWrapperWidth);
+
+          //
+          pageWrapper.removeClass('page-wrapper-left-out');
+
+          //
+          pageWrapper.addClass('page-wrapper-left-in');
           
         }
 

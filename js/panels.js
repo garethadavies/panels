@@ -1,11 +1,9 @@
 $(function() {
 
-  var
-  pageWrapper = $('.page-wrapper'),
-  pageWrapperWidth = pageWrapper.outerWidth();
+  var pageWrapper = $('#page-wrapper');
 
   // Detect a user swiping the left panel shut
-  $('.panel-left').hammer().on('drag', function(e) {
+  $('.panel-left, .page-wrapper-left-in').hammer().on('drag', function(e) {
     
     var
     that = $(this),
@@ -19,6 +17,9 @@ $(function() {
 
         // Make the panel follow the cursor/finger
         that.css('left', -e.gesture.distance);
+
+        //
+        pageWrapper.css('left', 280 - e.gesture.distance);
   
       }
 
@@ -44,16 +45,43 @@ $(function() {
 
         left: '-=' + Math.abs(distanceLeft)
 
-      }, 200, function() {
+      }, { 
 
-        // Remove the left value from the style attribute
-        that.css('left', '');
+        duration: 200,
+        queue: false,
+        complete: function() {
 
-        // Set the panel to closed
-        that.attr('data-open', 'false');
+          // Remove the left value from the style attribute
+          that.removeAttr('style');
 
-        // Remove the panel in class
-        that.removeClass('panel-left-in');
+          // Set the panel to closed
+          that.attr('data-open', 'false');
+
+          // Remove the panel in class
+          that.removeClass('panel-left-in');
+
+        }
+
+      });
+
+      //
+      pageWrapper.animate({
+
+        left: 0
+
+      }, {
+
+        duration: 200,
+        queue: false,
+        complete: function() {
+
+          // Remove the left value from the style attribute
+          pageWrapper.removeAttr('style');
+
+          // Remove the panel in class
+          pageWrapper.removeClass('page-wrapper-left-in');
+
+        }
 
       });
 
@@ -65,10 +93,22 @@ $(function() {
 
         left: '+=' + Math.abs(currentPos)
 
-      }, 200, function() {
+      }, { duration: 200, queue: false }, function() {
 
         // Remove the left value from the style attribute
         that.css('left', '');
+
+      });
+
+      // Open the panel
+      pageWrapper.animate({
+
+        left: 280
+
+      }, { duration: 200, queue: false }, function() {
+
+        // Remove the left value from the style attribute
+        pageWrapper.css('left', '');
 
       });
 
@@ -174,6 +214,7 @@ $(function() {
     e.preventDefault();
 
     var
+    pageWrapperWidth = pageWrapper.outerWidth();
     panelWrapper = $('.panel-wrapper') || $('body'),
     panelReference = $(this).attr('data-target') || ref,
     // The function that closes panels
@@ -284,8 +325,6 @@ $(function() {
           // Add the panel in class
           targetPanel.addClass('panel-' + panelReference + '-in');
 
-          console.log(pageWrapperWidth);
-
           //
           pageWrapper.css('width', pageWrapperWidth);
 
@@ -311,6 +350,23 @@ $(function() {
 
     }
 
-  });    
+  });
+
+  // $(document).bind(
+  //   'touchmove',
+  //   function(e) {
+  //     e.preventDefault();
+  //   }
+  // );
+
+  document.addEventListener('touchmove', function(e) {
+
+    e.preventDefault(); 
+
+  }, false);
+
+  preventOverScroll(document.getElementById('page-wrapper'));
+
+  preventOverScroll(document.getElementById('panel-left'));
 
 });

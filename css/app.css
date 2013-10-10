@@ -329,7 +329,6 @@ i {
 .panel-horizontal {
   width: 280px;
   height: 100%;
-  z-index: 3;
   -webkit-box-shadow: inset -4px 0 8px -4px #999999;
   -moz-box-shadow: inset -4px 0 8px -4px #999999;
   box-shadow: inset -4px 0 8px -4px #999999;

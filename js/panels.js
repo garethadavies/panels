@@ -3,118 +3,120 @@ $(function() {
   var pageWrapper = $('#page-wrapper');
 
   // Detect a user swiping the left panel shut
-  $('.panel-left, .page-wrapper-left-in').hammer().on('drag', function(e) {
+  // $('.panel-left').hammer().on('drag', function(e) {
+
+  //   console.log('page-wrapper-left-in');
     
-    var
-    that = $(this),
-    originalPos = that.css('left');
+  //   var
+  //   that = $(this),
+  //   originalPos = that.css('left');
 
-    // Has there been a valid gesture?
-    if (e.gesture) {
+  //   // Has there been a valid gesture?
+  //   if (e.gesture) {
 
-      // We require a drag left or right
-      if (e.gesture.direction === 'left') {
+  //     // We require a drag left or right
+  //     if (e.gesture.direction === 'left') {
 
-        // Make the panel follow the cursor/finger
-        that.css('left', -e.gesture.distance);
+  //       // Make the panel follow the cursor/finger
+  //       that.css('left', -e.gesture.distance);
 
-        //
-        pageWrapper.css('left', 280 - e.gesture.distance);
+  //       //
+  //       pageWrapper.css('left', 280 - e.gesture.distance);
   
-      }
+  //     }
 
-    }
+  //   }
   
-  });
+  // });
 
   // Detect a user swiping the left panel shut
-  $('.panel-left').hammer().on('dragend', function(e) {
+  // $('.panel-left').hammer().on('dragend', function(e) {
 
-    var
-    that = $(this),
-    currentPos = parseInt(that.css('left'), 10);
+  //   var
+  //   that = $(this),
+  //   currentPos = parseInt(that.css('left'), 10);
 
-    // Has the panel been moved enough to close?
-    if (currentPos < -100) {
+  //   // Has the panel been moved enough to close?
+  //   if (currentPos < -100) {
 
-      // Get the distance left for the panel to be shut
-      var distanceLeft = -280 - currentPos;
+  //     // Get the distance left for the panel to be shut
+  //     var distanceLeft = -280 - currentPos;
 
-      // Close the panel
-      that.animate({
+  //     // Close the panel
+  //     that.animate({
 
-        left: '-=' + Math.abs(distanceLeft)
+  //       left: '-=' + Math.abs(distanceLeft)
 
-      }, { 
+  //     }, { 
 
-        duration: 200,
-        queue: false,
-        complete: function() {
+  //       duration: 200,
+  //       queue: false,
+  //       complete: function() {
 
-          // Remove the left value from the style attribute
-          that.removeAttr('style');
+  //         // Remove the left value from the style attribute
+  //         that.removeAttr('style');
 
-          // Set the panel to closed
-          that.attr('data-open', 'false');
+  //         // Set the panel to closed
+  //         that.attr('data-open', 'false');
 
-          // Remove the panel in class
-          that.removeClass('panel-left-in');
+  //         // Remove the panel in class
+  //         that.removeClass('panel-left-in');
 
-        }
+  //       }
 
-      });
+  //     });
 
-      //
-      pageWrapper.animate({
+  //     //
+  //     pageWrapper.animate({
 
-        left: 0
+  //       left: 0
 
-      }, {
+  //     }, {
 
-        duration: 200,
-        queue: false,
-        complete: function() {
+  //       duration: 200,
+  //       queue: false,
+  //       complete: function() {
 
-          // Remove the left value from the style attribute
-          pageWrapper.removeAttr('style');
+  //         // Remove the left value from the style attribute
+  //         pageWrapper.removeAttr('style');
 
-          // Remove the panel in class
-          pageWrapper.removeClass('page-wrapper-left-in');
+  //         // Remove the panel in class
+  //         pageWrapper.removeClass('page-wrapper-left-in');
 
-        }
+  //       }
 
-      });
+  //     });
 
-    }
-    else {
+  //   }
+  //   else {
 
-      // Open the panel
-      that.animate({
+  //     // Open the panel
+  //     that.animate({
 
-        left: '+=' + Math.abs(currentPos)
+  //       left: '+=' + Math.abs(currentPos)
 
-      }, { duration: 200, queue: false }, function() {
+  //     }, { duration: 200, queue: false }, function() {
 
-        // Remove the left value from the style attribute
-        that.css('left', '');
+  //       // Remove the left value from the style attribute
+  //       that.css('left', '');
 
-      });
+  //     });
 
-      // Open the panel
-      pageWrapper.animate({
+  //     // Open the panel
+  //     pageWrapper.animate({
 
-        left: 280
+  //       left: 280
 
-      }, { duration: 200, queue: false }, function() {
+  //     }, { duration: 200, queue: false }, function() {
 
-        // Remove the left value from the style attribute
-        pageWrapper.css('left', '');
+  //       // Remove the left value from the style attribute
+  //       pageWrapper.css('left', '');
 
-      });
+  //     });
 
-    }
+  //   }
   
-  });
+  // });
 
   // Detect a user swiping the right panel shut
   $('.panel-right').hammer().on('drag', function(e) {
@@ -241,9 +243,15 @@ $(function() {
             // Set a timeout to match the animation duration
             setTimeout(function() {
 
+              options.targetPanel.removeAttr('style');
+
               pageWrapper.removeAttr('style');
 
             }, 400);
+
+            pageWrapper.unbind('drag');
+
+            pageWrapper.unbind('dragend');
 
             //
             pageWrapper.removeClass('page-wrapper-left-in');
@@ -333,6 +341,126 @@ $(function() {
 
           //
           pageWrapper.addClass('page-wrapper-left-in');
+
+          // Detect a user swiping the left panel shut
+          $('.page-wrapper-left-in').hammer().on('drag', function(e) {
+            
+            var
+            targetPanel = $('#panel-left'),
+            that = $(this),
+            originalPos = that.css('left');
+
+            // Has there been a valid gesture?
+            if (e.gesture) {
+
+              // We require a drag left or right
+              if (e.gesture.direction === 'left') {
+
+                // Make the panel follow the cursor/finger
+                targetPanel.css('left', -e.gesture.distance);
+
+                //
+                that.css('left', 280 - e.gesture.distance);
+          
+              }
+
+            }
+          
+          });
+
+          // Detect a user swiping the left panel shut
+          $('.page-wrapper-left-in').hammer().on('dragend', function(e) {
+
+            var
+            targetPanel = $('#panel-left'),
+            that = $(this),
+            currentPos = parseInt(targetPanel.css('left'), 10);
+
+            // Has the panel been moved enough to close?
+            if (currentPos < -60) {
+
+              // Get the distance left for the panel to be shut
+              var distanceLeft = -280 - currentPos;
+
+              pageWrapper.unbind('drag');
+
+              pageWrapper.unbind('dragend');
+
+              // Close the panel
+              targetPanel.animate({
+
+                left: '-=' + Math.abs(distanceLeft)
+
+              }, { 
+
+                duration: 200,
+                queue: false,
+                complete: function() {
+
+                  // Remove the left value from the style attribute
+                  targetPanel.removeAttr('style');
+
+                  // Set the panel to closed
+                  targetPanel.attr('data-open', 'false');
+
+                  // Remove the panel in class
+                  targetPanel.removeClass('panel-left-in');
+
+                }
+
+              });
+
+              //
+              that.animate({
+
+                left: 0
+
+              }, {
+
+                duration: 200,
+                queue: false,
+                complete: function() {
+
+                  // Remove the left value from the style attribute
+                  that.removeAttr('style');
+
+                  // Remove the panel in class
+                  that.removeClass('page-wrapper-left-in');
+
+                }
+
+              });
+
+            }
+            else {
+
+              // Open the panel
+              targetPanel.animate({
+
+                left: '+=' + Math.abs(currentPos)
+
+              }, { duration: 200, queue: false }, function() {
+
+                // Remove the left value from the style attribute
+                targetPanel.css('left', '');
+
+              });
+
+              // Open the panel
+              that.animate({
+
+                left: 280
+
+              }, { duration: 200, queue: false }, function() {
+
+                // Remove the left value from the style attribute
+                that.css('left', '');
+
+              });
+
+            }
+          
+          });
           
         }
 

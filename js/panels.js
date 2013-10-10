@@ -1,13 +1,150 @@
 $(function() {
 
   // Detect a user swiping the left panel shut
-  $('.panel-left').hammer().on('swipeleft', function(e) {
+  $('.panel-left').hammer().on('drag', function(e) {
     
-    // Mimic the panel's close link functionality
-    $(this).find('.panel-close').trigger('click', 'left');
+    var
+    that = $(this),
+    originalPos = that.css('left');
+
+    // Has there been a valid gesture?
+    if (e.gesture) {
+
+      // We require a drag left or right
+      if (e.gesture.direction === 'left') {
+
+        // Make the panel follow the cursor/finger
+        that.css('left', -e.gesture.distance);
+  
+      }
+
+    }
   
   });
 
+  // Detect a user swiping the left panel shut
+  $('.panel-left').hammer().on('dragend', function(e) {
+
+    var
+    that = $(this),
+    currentPos = parseInt(that.css('left'), 10);
+
+    // Has the panel been moved enough to close?
+    if (currentPos < -100) {
+
+      // Get the distance left for the panel to be shut
+      var distanceLeft = -280 - currentPos;
+
+      // Close the panel
+      that.animate({
+
+        left: '-=' + Math.abs(distanceLeft)
+
+      }, 200, function() {
+
+        // Remove the left value from the style attribute
+        that.css('left', '');
+
+        // Set the panel to closed
+        that.attr('data-open', 'false');
+
+        // Remove the panel in class
+        that.removeClass('panel-left-in');
+
+      });
+
+    }
+    else {
+
+      // Open the panel
+      that.animate({
+
+        left: '+=' + Math.abs(currentPos)
+
+      }, 200, function() {
+
+        // Remove the left value from the style attribute
+        that.css('left', '');
+
+      });
+
+    }
+  
+  });
+
+  // Detect a user swiping the right panel shut
+  $('.panel-right').hammer().on('drag', function(e) {
+    
+    var
+    that = $(this),
+    originalPos = that.css('right');
+
+    // Has there been a valid gesture?
+    if (e.gesture) {
+
+      // We require a drag left or right
+      if (e.gesture.direction === 'right') {
+
+        // Make the panel follow the cursor/finger
+        that.css('right', -e.gesture.distance);
+  
+      }
+
+    }
+  
+  });
+
+  // Detect a user swiping the right panel shut
+  $('.panel-right').hammer().on('dragend', function(e) {
+
+    var
+    that = $(this),
+    currentPos = parseInt(that.css('right'), 10);
+
+    // Has the panel been moved enough to close?
+    if (currentPos < -100) {
+
+      // Get the distance right for the panel to be shut
+      var distanceLeft = -280 - currentPos;
+
+      // Close the panel
+      that.animate({
+
+        right: '-=' + Math.abs(distanceLeft)
+
+      }, 200, function() {
+
+        // Remove the right value from the style attribute
+        that.css('right', '');
+
+        // Set the panel to closed
+        that.attr('data-open', 'false');
+
+        // Remove the panel in class
+        that.removeClass('panel-right-in');
+
+      });
+
+    }
+    else {
+
+      // Open the panel
+      that.animate({
+
+        left: '+=' + Math.abs(currentPos)
+
+      }, 200, function() {
+
+        // Remove the left value from the style attribute
+        that.css('left', '');
+
+      });
+
+    }
+  
+  });
+
+  /*
   // Detect a user swiping the left panel shut
   $('.panel-right').hammer().on('swiperight', function(e) {
     
@@ -15,7 +152,9 @@ $(function() {
     $(this).find('.panel-close').trigger('click', 'right');
   
   });
+  */
 
+  /*
   // Detect a user swiping the left panel shut
   $('.panel-bottom').hammer().on('doubletap', function(e) {
     
@@ -23,6 +162,7 @@ $(function() {
     $(this).find('.panel-close').trigger('click', 'bottom');
   
   });
+  */
 
   // Listen for any clicks requesting panel open or close
   $('.panel-open, .panel-close').on('click', function(e, ref) {

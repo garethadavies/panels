@@ -1,67 +1,702 @@
+/*------------------------------------*\
+	$$ Just Checking - Panels
+\*------------------------------------*/
 /*
-Syntax error: Invalid CSS after "  .scroll-y": expected "{", was "();"
-        on line 69 of C:/inetpub/wwwroot/justupandabout.com/layout/scss/panels.scss
-
-Backtrace:
-C:/inetpub/wwwroot/justupandabout.com/layout/scss/panels.scss:69
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1129:in `expected'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1066:in `expected'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1061:in `tok!'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:517:in `block'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:512:in `ruleset'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:574:in `declaration_or_ruleset'
-org/jruby/RubyProc.java:268:in `call'
-org/jruby/RubyProc.java:228:in `call'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:1104:in `rethrow'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:575:in `declaration_or_ruleset'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:537:in `block_child'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:529:in `block_contents'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:518:in `block'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:512:in `ruleset'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:536:in `block_child'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:529:in `block_contents'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:70:in `stylesheet'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/scss/parser.rb:27:in `parse'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:342:in `_to_tree'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:315:in `_render'
-C:/Program Files (x86)/Scout/vendor/gems/gems/sass-3.2.1/lib/sass/../sass/engine.rb:262:in `render'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `compile'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `compile'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `run'
-org/jruby/RubyArray.java:1603:in `each'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `run'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-org/jruby/RubyMethod.java:133:in `call'
-org/jruby/RubyProc.java:268:in `call'
-org/jruby/RubyProc.java:228:in `call'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `run_callback'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/path.rb:55:in `callback_action'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/path.rb:35:in `update'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/state/directory.rb:39:in `modified'
-org/jruby/RubyArray.java:1603:in `each'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `modified'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/state/directory.rb:18:in `refresh'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-org/jruby/RubyArray.java:1603:in `each'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `run'
-org/jruby/RubyKernel.java:1419:in `loop'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `run'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm/monitor.rb:26:in `run'
-C:/Program Files (x86)/Scout/vendor/gems/gems/fssm-0.2.9/lib/fssm.rb:70:in `monitor'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-C:/Program Files (x86)/Scout/vendor/gems/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-C:\Program Files (x86)\Scout\bin\compass:12:in `(root)'
+Requires:
+  * SASS
+  * Compass
+  * Global Variables
+  * Global Mixins
+Contents:
+  * Imports
+  * Scaffolding
+  * Panels
+Author(s):
+  * Gareth Davies @garethadavies
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"  .scroll-y\": expected \"{\", was \"();\"\A         on line 69 of C:/inetpub/wwwroot/justupandabout.com/layout/scss/panels.scss"; }
+/*------------------------------------*\
+  $ Imports
+\*------------------------------------*/
+/*------------------------------------*\
+  $$ Just Checking - Global Mixins
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+  * Compass
+  * Global Variables
+Contents:
+  * Imports
+  * Utility
+    * Clearfix
+    * Reset Margin & Padding
+  * Borders
+  * Backgrounds
+  * Menus
+  * Buttons
+    * Default button
+    * Submit button
+  * Overlay
+  * Text Trim
+  * Scroll
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\ 
+  $ Imports
+\*------------------------------------*/
+/*------------------------------------*\
+  $$ Just Checking - Global Variables
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+Contents:
+  * Colours
+    * Brand colours
+    * Button & alert colours
+    * Background colours
+  * Scaffolding
+    * Default Breakpoints
+  * Buttons
+    * Colours
+    * Sizes
+  * Margin & Padding
+  * Typography
+    * Font Family
+    * Text Colour
+  * Borders
+  * Dimensions
+  * Shadows
+  * Tables
+  * Breakpoints
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\
+  $ Colours
+\*------------------------------------*/
+/* Brand colours */
+/* Button & alert colours */
+/* Background colours */
+/*------------------------------------*\
+  $ Scaffolding
+\*------------------------------------*/
+/* Default Breakpoints */
+/*------------------------------------*\
+  $ Buttons
+\*------------------------------------*/
+/* Colours */
+/* Sizes */
+/*------------------------------------*\
+  $ Margin & Padding
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Typography
+\*------------------------------------*/
+/* Font Family */
+/* Text Colour */
+/*------------------------------------*\
+  $ Borders
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Dimensions
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Shadows
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Tables
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Breakpoints
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Utility
+\*------------------------------------*/
+/* Clearfix */
+/* Reset Margin & Padding */
+/*------------------------------------*\
+  $ Borders
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Backgrounds
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Menus
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Buttons
+\*------------------------------------*/
+/* Default button */
+/* Submit button */
+/*------------------------------------*\
+  $ Overlay
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Text Trim
+\*------------------------------------*/
+/*
+Requires:
+  * This requires a container with a set width
+*/
+/*------------------------------------*\
+  $ Scroll
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Animations
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Scaffolding
+\*------------------------------------*/
+/* line 36, ../scss/panels.scss */
+.page-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/*------------------------------------*\
+  $ Panels
+\*------------------------------------*/
+/* line 48, ../scss/panels.scss */
+.panel {
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  background-color: white;
+}
+
+/* Horizontal Panel */
+/* line 57, ../scss/panels.scss */
+.panel-horizontal {
+  width: 80%;
+  max-width: 280px;
+  height: 100%;
+  background-color: #202020;
+  color: white;
+}
+
+/* Vertical Panel */
+/* line 67, ../scss/panels.scss */
+.panel-vertical {
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  z-index: 4;
+  padding-bottom: 1em;
+  -webkit-box-shadow: 0 0 6px #999999;
+  -moz-box-shadow: 0 0 6px #999999;
+  box-shadow: 0 0 6px #999999;
+}
+
+/* Panel Header */
+/* line 78, ../scss/panels.scss */
+.panel-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2002;
+  padding-left: 1em;
+  height: 44px;
+  width: 100%;
+  background-color: white;
+  -webkit-box-shadow: 0 1px 1px #999999;
+  -moz-box-shadow: 0 1px 1px #999999;
+  box-shadow: 0 1px 1px #999999;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f9f9f6));
+  background-image: -webkit-linear-gradient(#ffffff, #f9f9f6);
+  background-image: -moz-linear-gradient(#ffffff, #f9f9f6);
+  background-image: -o-linear-gradient(#ffffff, #f9f9f6);
+  background-image: linear-gradient(#ffffff, #f9f9f6);
+}
+/* line 87, ../scss/panels.scss */
+.panel-header .panel-title {
+  font-size: 1.4rem;
+  color: #333333;
+  line-height: 4.4rem;
+}
+/* line 94, ../scss/panels.scss */
+.panel-header a {
+  text-align: center;
+  width: 44px;
+  height: 44px;
+  line-height: 4.4rem;
+}
+
+/* Panel Inner */
+/* line 104, ../scss/panels.scss */
+.panel-inner {
+  padding: 2em;
+  /* 
+  height: 100%;
+  margin-top: 44px;
+  padding: $defaultPadding $defaultPadding $defaultPadding*3 $defaultPadding;
+  .scroll-y();
+  */
+}
+
+/* Top Panel */
+/* line 116, ../scss/panels.scss */
+.panel-top {
+  left: 0;
+  top: -110%;
+  background-color: white;
+}
+
+/* line 122, ../scss/panels.scss */
+.panel-top-in {
+  -webkit-animation-name: slidePanelTopIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelTopIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelTopIn;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  top: 0;
+}
+
+/* line 127, ../scss/panels.scss */
+.panel-top-out {
+  -webkit-animation-name: slidePanelTopOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelTopOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.3s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelTopOut;
+  animation-delay: 0;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  top: 100%;
+}
+
+@-webkit-keyframes slidePanelTopIn {
+  /* line 135, ../scss/panels.scss */
+  from {
+    top: -100%;
+  }
+
+  /* line 136, ../scss/panels.scss */
+  to {
+    top: 0;
+  }
+}
+
+@-moz-keyframes slidePanelTopIn {
+  /* line 135, ../scss/panels.scss */
+  from {
+    top: -100%;
+  }
+
+  /* line 136, ../scss/panels.scss */
+  to {
+    top: 0;
+  }
+}
+
+@keyframes slidePanelTopIn {
+  /* line 135, ../scss/panels.scss */
+  from {
+    top: -100%;
+  }
+
+  /* line 136, ../scss/panels.scss */
+  to {
+    top: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelTopOut {
+  /* line 140, ../scss/panels.scss */
+  from {
+    top: 0;
+  }
+
+  /* line 141, ../scss/panels.scss */
+  to {
+    top: -100%;
+  }
+}
+
+@-moz-keyframes slidePanelTopOut {
+  /* line 140, ../scss/panels.scss */
+  from {
+    top: 0;
+  }
+
+  /* line 141, ../scss/panels.scss */
+  to {
+    top: -100%;
+  }
+}
+
+@keyframes slidePanelTopOut {
+  /* line 140, ../scss/panels.scss */
+  from {
+    top: 0;
+  }
+
+  /* line 141, ../scss/panels.scss */
+  to {
+    top: -100%;
+  }
+}
+
+/* Bottom Panel */
+/* line 146, ../scss/panels.scss */
+.panel-bottom {
+  left: 0;
+  bottom: -100%;
+}
+
+/* line 151, ../scss/panels.scss */
+.panel-bottom-in {
+  -webkit-animation-name: slidePanelBottomIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelBottomIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelBottomIn;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  bottom: 0;
+}
+
+/* line 156, ../scss/panels.scss */
+.panel-bottom-out {
+  -webkit-animation-name: slidePanelBottomOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelBottomOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.3s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelBottomOut;
+  animation-delay: 0;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  bottom: -90%;
+}
+
+@-webkit-keyframes slidePanelBottomIn {
+  /* line 164, ../scss/panels.scss */
+  from {
+    bottom: -90%;
+  }
+
+  /* line 165, ../scss/panels.scss */
+  to {
+    bottom: 0;
+  }
+}
+
+@-moz-keyframes slidePanelBottomIn {
+  /* line 164, ../scss/panels.scss */
+  from {
+    bottom: -90%;
+  }
+
+  /* line 165, ../scss/panels.scss */
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes slidePanelBottomIn {
+  /* line 164, ../scss/panels.scss */
+  from {
+    bottom: -90%;
+  }
+
+  /* line 165, ../scss/panels.scss */
+  to {
+    bottom: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelBottomOut {
+  /* line 169, ../scss/panels.scss */
+  from {
+    bottom: 0;
+  }
+
+  /* line 170, ../scss/panels.scss */
+  to {
+    bottom: -90%;
+  }
+}
+
+@-moz-keyframes slidePanelBottomOut {
+  /* line 169, ../scss/panels.scss */
+  from {
+    bottom: 0;
+  }
+
+  /* line 170, ../scss/panels.scss */
+  to {
+    bottom: -90%;
+  }
+}
+
+@keyframes slidePanelBottomOut {
+  /* line 169, ../scss/panels.scss */
+  from {
+    bottom: 0;
+  }
+
+  /* line 170, ../scss/panels.scss */
+  to {
+    bottom: -90%;
+  }
+}
+
+/* Right Panel */
+/* line 175, ../scss/panels.scss */
+.panel-right {
+  right: -280px;
+  top: 0;
+  -webkit-box-shadow: inset 4px 0 20px -4px black;
+  -moz-box-shadow: inset 4px 0 20px -4px black;
+  box-shadow: inset 4px 0 20px -4px black;
+}
+
+/* line 181, ../scss/panels.scss */
+.panel-right-in {
+  -webkit-animation-name: slidePanelRightIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelRightIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelRightIn;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  right: 0;
+}
+
+/* line 186, ../scss/panels.scss */
+.panel-right-out {
+  -webkit-animation-name: slidePanelRightOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelRightOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.3s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelRightOut;
+  animation-delay: 0;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  right: -100%;
+}
+
+@-webkit-keyframes slidePanelRightIn {
+  /* line 194, ../scss/panels.scss */
+  from {
+    right: -280px;
+  }
+
+  /* line 195, ../scss/panels.scss */
+  to {
+    right: 0;
+  }
+}
+
+@-moz-keyframes slidePanelRightIn {
+  /* line 194, ../scss/panels.scss */
+  from {
+    right: -280px;
+  }
+
+  /* line 195, ../scss/panels.scss */
+  to {
+    right: 0;
+  }
+}
+
+@keyframes slidePanelRightIn {
+  /* line 194, ../scss/panels.scss */
+  from {
+    right: -280px;
+  }
+
+  /* line 195, ../scss/panels.scss */
+  to {
+    right: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelRightOut {
+  /* line 199, ../scss/panels.scss */
+  from {
+    right: 0;
+  }
+
+  /* line 200, ../scss/panels.scss */
+  to {
+    right: -280px;
+  }
+}
+
+@-moz-keyframes slidePanelRightOut {
+  /* line 199, ../scss/panels.scss */
+  from {
+    right: 0;
+  }
+
+  /* line 200, ../scss/panels.scss */
+  to {
+    right: -280px;
+  }
+}
+
+@keyframes slidePanelRightOut {
+  /* line 199, ../scss/panels.scss */
+  from {
+    right: 0;
+  }
+
+  /* line 200, ../scss/panels.scss */
+  to {
+    right: -280px;
+  }
+}
+
+/*
+Left Panel 
+This is the main menu panel
+*/
+/* line 208, ../scss/panels.scss */
+.panel-left {
+  left: -280px;
+  top: 0;
+  -webkit-box-shadow: inset -4px 0 20px -4px black;
+  -moz-box-shadow: inset -4px 0 20px -4px black;
+  box-shadow: inset -4px 0 20px -4px black;
+}
+
+/* line 214, ../scss/panels.scss */
+.panel-left-in {
+  -webkit-animation-name: slidePanelLeftIn;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelLeftIn;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.4s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelLeftIn;
+  animation-delay: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  left: 0;
+}
+
+/* line 219, ../scss/panels.scss */
+.panel-left-out {
+  -webkit-animation-name: slidePanelLeftOut;
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-name: slidePanelLeftOut;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.3s;
+  -moz-animation-timing-function: ease;
+  animation-name: slidePanelLeftOut;
+  animation-delay: 0;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  left: -280px;
+}
+
+@-webkit-keyframes slidePanelLeftIn {
+  /* line 227, ../scss/panels.scss */
+  from {
+    left: -280px;
+  }
+
+  /* line 228, ../scss/panels.scss */
+  to {
+    left: 0;
+  }
+}
+
+@-moz-keyframes slidePanelLeftIn {
+  /* line 227, ../scss/panels.scss */
+  from {
+    left: -280px;
+  }
+
+  /* line 228, ../scss/panels.scss */
+  to {
+    left: 0;
+  }
+}
+
+@keyframes slidePanelLeftIn {
+  /* line 227, ../scss/panels.scss */
+  from {
+    left: -280px;
+  }
+
+  /* line 228, ../scss/panels.scss */
+  to {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes slidePanelLeftOut {
+  /* line 232, ../scss/panels.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 233, ../scss/panels.scss */
+  to {
+    left: -280px;
+  }
+}
+
+@-moz-keyframes slidePanelLeftOut {
+  /* line 232, ../scss/panels.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 233, ../scss/panels.scss */
+  to {
+    left: -280px;
+  }
+}
+
+@keyframes slidePanelLeftOut {
+  /* line 232, ../scss/panels.scss */
+  from {
+    left: 0;
+  }
+
+  /* line 233, ../scss/panels.scss */
+  to {
+    left: -280px;
+  }
+}

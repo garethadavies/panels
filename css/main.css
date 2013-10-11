@@ -34,3 +34,6 @@
 
 /* App Specific */
 @import 'app.css';
+@import 'panels.css';
+@import 'panels-r.css';
+@import 'panels-ie.css';

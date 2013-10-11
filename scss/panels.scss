@@ -12,7 +12,9 @@ Contents:
   * Imports
   * Panel Base
   * Horizontal Panel
+    * Panel Inner
   * Vertical Panel
+    * Panel Inner
   * Panel Header
     * Panel header title
     * Panel header links
@@ -92,49 +94,6 @@ Author(s):
 
 
 /*------------------------------------*\
-  $ Horizontal Panel
-\*------------------------------------*/
-
-.panel-horizontal {
-  width: $smallPanelWidth;
-  max-width: $smallPanelWidth;
-  height: 100%;
-  background-color: lighten($grayDarker, 6%);
-  color: $white;
-
-  .panel-inner {
-    @extend .panel-inner;
-    margin-top: 44px;
-    padding: 0 $defaultPadding $defaultPadding*3 $defaultPadding;
-  }
-}
-
-
-
-
-/*------------------------------------*\
-  $ Vertical Panel
-\*------------------------------------*/
-
-.panel-vertical {
-  width: 100%;
-  height: auto;
-  max-height: 90%;
-  z-index: 4;
-  padding-bottom: $defaultPadding;
-  @include box-shadow(0 0 6px $gray);
-
-  .panel-inner {
-    @extend .panel-inner;
-    height: 100%;
-    padding: $defaultPadding $defaultPadding*2;
-  }
-}
-
-
-
-
-/*------------------------------------*\
   $ Panel Header
 \*------------------------------------*/
 
@@ -151,8 +110,6 @@ Author(s):
   .panel-title {
     font-size: 1.4rem;
     font-weight: 800;
-    color: $white;
-    // line-height: 4.4rem;
   }
 
   /* Panel header links */
@@ -162,13 +119,64 @@ Author(s):
     text-align: center;
     width: $touchMinimum;
     height: $touchMinimum;
-    // line-height: 4.4rem;
+  }
+}
+
+
+
+
+/*------------------------------------*\
+  $ Horizontal Panel
+\*------------------------------------*/
+
+.panel-horizontal {
+  width: $smallPanelWidth;
+  max-width: $smallPanelWidth;
+  height: 100%;
+  background-color: lighten($grayDarker, 6%);
+  color: $white;
+
+  /* Panel Inner */
+
+  .panel-inner {
+    @extend .panel-inner;
+    margin-top: 44px;
+    padding: 0 $defaultPadding $defaultPadding*3 $defaultPadding;
+  }
+
+  /* Panel Header */
   
-    // Icons
+  .panel-header {
+    .panel-title,
     i {
       color: $white;
     }
   }
+}
+
+
+
+
+/*------------------------------------*\
+  $ Vertical Panel
+\*------------------------------------*/
+
+.panel-vertical {
+  width: 100%;
+  max-height: 90%;
+  z-index: 4;
+  padding-bottom: $defaultPadding;
+  @include box-shadow(0 0 6px $gray);
+
+  /* Panel Inner */
+
+  .panel-inner {
+    @extend .panel-inner;
+    // padding: $defaultPadding $defaultPadding*2;
+    margin-top: 44px;
+    padding: 0 $defaultPadding $defaultPadding*3 $defaultPadding;
+  }
+
 }
 
 

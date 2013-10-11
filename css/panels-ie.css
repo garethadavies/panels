@@ -1,0 +1,110 @@
+/*------------------------------------*\
+	$$ Just Checking - Panels IE8
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+  * Global Variables
+Contents:
+  * Imports
+  * IE8 Fixes
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\
+  $ Imports
+\*------------------------------------*/
+/*------------------------------------*\
+  $$ Just Checking - Global Variables
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+Contents:
+  * Colours
+    * Brand colours
+    * Button & alert colours
+    * Background colours
+  * Scaffolding
+    * Default Breakpoints
+  * Buttons
+    * Colours
+    * Sizes
+  * Margin & Padding
+  * Typography
+    * Font Family
+    * Text Colour
+  * Borders
+  * Dimensions
+  * Shadows
+  * Tables
+  * Breakpoints
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\
+  $ Colours
+\*------------------------------------*/
+/* Brand colours */
+/* Button & alert colours */
+/* Background colours */
+/*------------------------------------*\
+  $ Scaffolding
+\*------------------------------------*/
+/* Default Breakpoints */
+/*------------------------------------*\
+  $ Buttons
+\*------------------------------------*/
+/* Colours */
+/* Sizes */
+/*------------------------------------*\
+  $ Margin & Padding
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Typography
+\*------------------------------------*/
+/* Font Family */
+/* Text Colour */
+/*------------------------------------*\
+  $ Borders
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Dimensions
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Shadows
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Tables
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Breakpoints
+\*------------------------------------*/
+/*------------------------------------*\
+  $ IE8 Fixes
+\*------------------------------------*/
+/* line 35, ../scss/panels-ie.scss */
+.lt-ie9 a[data-target="left"] {
+  display: none;
+}
+/* line 39, ../scss/panels-ie.scss */
+.lt-ie9 .page-wrapper {
+  float: right;
+  width: 70%;
+}
+/* line 45, ../scss/panels-ie.scss */
+.lt-ie9 .panel-vertical .panel-inner {
+  width: 768px;
+  margin: 0 auto;
+}
+/* line 51, ../scss/panels-ie.scss */
+.lt-ie9 .panel-left {
+  left: 0;
+  width: 30%;
+  max-width: 30%;
+  float: left;
+}
+/* line 58, ../scss/panels-ie.scss */
+.lt-ie9 .panel-left .panel-close {
+  display: none;
+}

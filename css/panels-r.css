@@ -1,0 +1,434 @@
+/*------------------------------------*\
+	$$ Just Checking - Panels
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+  * Global Variables
+  * Global Mixins
+Contents:
+  * Imports
+  * Media Queries
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\
+  $ Imports
+\*------------------------------------*/
+/*------------------------------------*\
+  $$ Just Checking - Global Mixins
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+  * Compass
+  * Global Variables
+Contents:
+  * Imports
+  * Utility
+    * Clearfix
+    * Reset Margin & Padding
+  * Borders
+  * Backgrounds
+  * Menus
+  * Buttons
+    * Default button
+    * Submit button
+  * Overlay
+  * Text Trim
+  * Scroll
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\ 
+  $ Imports
+\*------------------------------------*/
+/*------------------------------------*\
+  $$ Just Checking - Global Variables
+\*------------------------------------*/
+/*
+Requires:
+  * SASS
+Contents:
+  * Colours
+    * Brand colours
+    * Button & alert colours
+    * Background colours
+  * Scaffolding
+    * Default Breakpoints
+  * Buttons
+    * Colours
+    * Sizes
+  * Margin & Padding
+  * Typography
+    * Font Family
+    * Text Colour
+  * Borders
+  * Dimensions
+  * Shadows
+  * Tables
+  * Breakpoints
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+/*------------------------------------*\
+  $ Colours
+\*------------------------------------*/
+/* Brand colours */
+/* Button & alert colours */
+/* Background colours */
+/*------------------------------------*\
+  $ Scaffolding
+\*------------------------------------*/
+/* Default Breakpoints */
+/*------------------------------------*\
+  $ Buttons
+\*------------------------------------*/
+/* Colours */
+/* Sizes */
+/*------------------------------------*\
+  $ Margin & Padding
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Typography
+\*------------------------------------*/
+/* Font Family */
+/* Text Colour */
+/*------------------------------------*\
+  $ Borders
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Dimensions
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Shadows
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Tables
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Breakpoints
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Utility
+\*------------------------------------*/
+/* Clearfix */
+/* Reset Margin & Padding */
+/*------------------------------------*\
+  $ Borders
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Backgrounds
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Menus
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Buttons
+\*------------------------------------*/
+/* Default button */
+/* Submit button */
+/*------------------------------------*\
+  $ Overlay
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Text Trim
+\*------------------------------------*/
+/*
+Requires:
+  * This requires a container with a set width
+*/
+/*------------------------------------*\
+  $ Scroll
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Animations
+\*------------------------------------*/
+/*------------------------------------*\
+  $ Media Queries
+\*------------------------------------*/
+/* This will target anything smaller than our medium breakpoint */
+@media only screen and (max-width: 767px) {
+  /* Page wrapper animation */
+  /* line 39, ../scss/panels-r.scss */
+  .page-wrapper-left-in {
+    -webkit-animation-name: slidePageLeftIn;
+    -webkit-animation-delay: 0;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-name: slidePageLeftIn;
+    -moz-animation-delay: 0;
+    -moz-animation-duration: 0.4s;
+    -moz-animation-timing-function: ease;
+    animation-name: slidePageLeftIn;
+    animation-delay: 0;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    left: 280px;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  /* line 48, ../scss/panels-r.scss */
+  .page-wrapper-left-out {
+    -webkit-animation-name: slidePageLeftOut;
+    -webkit-animation-delay: 0;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-name: slidePageLeftOut;
+    -moz-animation-delay: 0;
+    -moz-animation-duration: 0.3s;
+    -moz-animation-timing-function: ease;
+    animation-name: slidePageLeftOut;
+    animation-delay: 0;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    left: 0;
+    position: fixed;
+  }
+
+  @-webkit-keyframes slidePageLeftIn {
+    /* line 55, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 56, ../scss/panels-r.scss */
+    to {
+      left: 280px;
+    }
+}
+
+  @-moz-keyframes slidePageLeftIn {
+    /* line 55, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 56, ../scss/panels-r.scss */
+    to {
+      left: 280px;
+    }
+}
+
+  @keyframes slidePageLeftIn {
+    /* line 55, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 56, ../scss/panels-r.scss */
+    to {
+      left: 280px;
+    }
+}
+
+  @-webkit-keyframes slidePageLeftOut {
+    /* line 60, ../scss/panels-r.scss */
+    from {
+      left: 280px;
+    }
+
+    /* line 61, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  @-moz-keyframes slidePageLeftOut {
+    /* line 60, ../scss/panels-r.scss */
+    from {
+      left: 280px;
+    }
+
+    /* line 61, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  @keyframes slidePageLeftOut {
+    /* line 60, ../scss/panels-r.scss */
+    from {
+      left: 280px;
+    }
+
+    /* line 61, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  /* line 65, ../scss/panels-r.scss */
+  .page-wrapper-right-in {
+    -webkit-animation-name: slidePageRightIn;
+    -webkit-animation-delay: 0;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-name: slidePageRightIn;
+    -moz-animation-delay: 0;
+    -moz-animation-duration: 0.4s;
+    -moz-animation-timing-function: ease;
+    animation-name: slidePageRightIn;
+    animation-delay: 0;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    left: -280px;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  /* line 74, ../scss/panels-r.scss */
+  .page-wrapper-right-out {
+    -webkit-animation-name: slidePageRightOut;
+    -webkit-animation-delay: 0;
+    -webkit-animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-name: slidePageRightOut;
+    -moz-animation-delay: 0;
+    -moz-animation-duration: 0.3s;
+    -moz-animation-timing-function: ease;
+    animation-name: slidePageRightOut;
+    animation-delay: 0;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    left: 0;
+    position: fixed;
+  }
+
+  @-webkit-keyframes slidePageRightIn {
+    /* line 81, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 82, ../scss/panels-r.scss */
+    to {
+      left: -280px;
+    }
+}
+
+  @-moz-keyframes slidePageRightIn {
+    /* line 81, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 82, ../scss/panels-r.scss */
+    to {
+      left: -280px;
+    }
+}
+
+  @keyframes slidePageRightIn {
+    /* line 81, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 82, ../scss/panels-r.scss */
+    to {
+      left: -280px;
+    }
+}
+
+  @-webkit-keyframes slidePageRightOut {
+    /* line 86, ../scss/panels-r.scss */
+    from {
+      left: -280px;
+    }
+
+    /* line 87, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  @-moz-keyframes slidePageRightOut {
+    /* line 86, ../scss/panels-r.scss */
+    from {
+      left: -280px;
+    }
+
+    /* line 87, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  @keyframes slidePageRightOut {
+    /* line 86, ../scss/panels-r.scss */
+    from {
+      left: -280px;
+    }
+
+    /* line 87, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+}
+/* This will target anything bigger than our medium breakpoint */
+@media only screen and (min-width: 768px) {
+  /* line 96, ../scss/panels-r.scss */
+  a[data-target="left"] {
+    display: none;
+  }
+
+  /* line 100, ../scss/panels-r.scss */
+  .page-wrapper {
+    float: right;
+    width: 70%;
+  }
+
+  /* line 106, ../scss/panels-r.scss */
+  .panel-vertical .panel-inner {
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  /* line 112, ../scss/panels-r.scss */
+  .panel-left {
+    left: 0;
+    width: 30%;
+    max-width: 30%;
+    float: left;
+  }
+  /* line 119, ../scss/panels-r.scss */
+  .panel-left .panel-close {
+    display: none;
+  }
+}
+/* This will target anything bigger than our large breakpoint */
+@media only screen and (min-width: 1440px) {
+  /* line 129, ../scss/panels-r.scss */
+  .page-wrapper {
+    float: none;
+    width: 60%;
+    position: relative;
+    left: 20%;
+  }
+
+  /* line 136, ../scss/panels-r.scss */
+  .panel-left {
+    width: 20%;
+    max-width: 20%;
+  }
+
+  /* line 143, ../scss/panels-r.scss */
+  .panel-right {
+    right: 0;
+    width: 20%;
+    max-width: 20%;
+    float: right;
+  }
+  /* line 150, ../scss/panels-r.scss */
+  .panel-right .panel-close {
+    display: none;
+  }
+
+  /* line 156, ../scss/panels-r.scss */
+  a[data-target="right"] {
+    display: none;
+  }
+}

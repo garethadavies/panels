@@ -1,0 +1,160 @@
+/*------------------------------------*\
+	$$ Just Checking - Panels
+\*------------------------------------*/
+
+/*
+Requires:
+  * SASS
+  * Global Variables
+  * Global Mixins
+Contents:
+  * Imports
+  * Media Queries
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+
+
+
+
+/*------------------------------------*\
+  $ Imports
+\*------------------------------------*/
+
+@import '../../assets/scss/modules/_mixins';
+
+
+
+
+/*------------------------------------*\
+  $ Media Queries
+\*------------------------------------*/
+
+/* This will target anything smaller than our medium breakpoint */
+@media only screen and (max-width: 767px) {
+
+  /* Page wrapper animation */
+
+  // left
+  .page-wrapper-left-in {
+    @include animation(slidePageLeftIn, 0.4s, 0, ease);
+    left: $smallPanelWidth;
+    position: fixed;
+    // Stop the content scrolling when open
+    overflow: hidden;
+    // z-index: 3;
+  }
+
+  .page-wrapper-left-out {
+    @include animation(slidePageLeftOut, 0.3s, 0, ease);
+    left: 0;
+    position: fixed;
+  }
+
+  @include keyframes(slidePageLeftIn) {
+    from { left: 0; }
+    to { left: $smallPanelWidth; }
+  }
+
+  @include keyframes(slidePageLeftOut) {
+    from { left: $smallPanelWidth; }
+    to { left: 0; }
+  }
+
+  // Right
+  .page-wrapper-right-in {
+    @include animation(slidePageRightIn, 0.4s, 0, ease);
+    left: -$smallPanelWidth;
+    position: fixed;
+    // Stop the content scrolling when open
+    overflow: hidden;
+    // z-index: 3;
+  }
+
+  .page-wrapper-right-out {
+    @include animation(slidePageRightOut, 0.3s, 0, ease);
+    left: 0;
+    position: fixed;
+  }
+
+  @include keyframes(slidePageRightIn) {
+    from { left: 0; }
+    to { left: -$smallPanelWidth; }
+  }
+
+  @include keyframes(slidePageRightOut) {
+    from { left: -$smallPanelWidth; }
+    to { left: 0; }
+  }
+
+}
+
+/* This will target anything bigger than our medium breakpoint */
+@media only screen and (min-width: $mediumBreakPoint) {
+
+  // Hide any links that open the left panel
+  a[data-target="left"] {
+    display: none;     
+  }
+
+  .page-wrapper {
+    float: right;
+    width: 70%;
+  }
+
+  .panel-vertical {
+    .panel-inner {
+      width: $mediumBreakPoint;
+      margin: 0 auto;
+    }
+  }
+
+  .panel-left {
+    left: 0;
+    width: 30%;
+    max-width: 30%;
+    float: left;
+
+    // Hide the panel close link
+    .panel-close {
+      display: none;
+    }
+  }
+
+}
+
+/* This will target anything bigger than our large breakpoint */
+@media only screen and (min-width: $largeBreakPoint) {
+
+  .page-wrapper {
+    float: none;
+    width: 60%;
+    position: relative;
+    left: 20%;
+  }
+
+  .panel-left {
+    // left: 0;
+    width: 20%;
+    max-width: 20%;
+    // float: left;
+  }
+
+  .panel-right {
+    right: 0;
+    width: 20%;
+    max-width: 20%;
+    float: right;
+
+    // Hide the panel close link
+    .panel-close {
+      display: none;
+    }
+  }
+
+  // Hide any links that open the left panel
+  a[data-target="right"] {
+    display: none;     
+  }
+
+}

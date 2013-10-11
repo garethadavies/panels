@@ -1,0 +1,63 @@
+/*------------------------------------*\
+	$$ Just Checking - Panels IE8
+\*------------------------------------*/
+
+/*
+Requires:
+  * SASS
+  * Global Variables
+Contents:
+  * Imports
+  * IE8 Fixes
+Author(s):
+  * Gareth Davies @garethadavies
+*/
+
+
+
+
+/*------------------------------------*\
+  $ Imports
+\*------------------------------------*/
+
+@import '../../assets/scss/modules/_variables';
+
+
+
+
+/*------------------------------------*\
+  $ IE8 Fixes
+\*------------------------------------*/
+
+// Hide any links that open the left panel
+.lt-ie9 {
+
+  a[data-target="left"] {
+    display: none;     
+  }
+
+  .page-wrapper {
+    float: right;
+    width: 70%;
+  }
+
+  .panel-vertical {
+    .panel-inner {
+      width: $mediumBreakPoint;
+      margin: 0 auto;
+    }
+  }
+
+  .panel-left {
+    left: 0;
+    width: 30%;
+    max-width: 30%;
+    float: left;
+
+    // Hide the panel close link
+    .panel-close {
+      display: none;
+    }
+  }
+
+}

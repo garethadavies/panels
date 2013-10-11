@@ -376,31 +376,32 @@ Requires:
 }
 /* >= 768px */
 @media only screen and (min-width: 768px) {
-  /* line 112, ../scss/panels-r.scss */
-  a[data-target="left"] {
+  /* line 113, ../scss/panels-r.scss */
+  a[data-target="left"],
+  button[data-target="left"] {
     display: none;
   }
 
-  /* line 117, ../scss/panels-r.scss */
+  /* line 118, ../scss/panels-r.scss */
   .page-wrapper {
     float: right;
     width: 70%;
   }
 
-  /* line 124, ../scss/panels-r.scss */
+  /* line 125, ../scss/panels-r.scss */
   .panel-vertical .panel-inner {
     width: 768px;
     margin: 0 auto;
   }
 
-  /* line 132, ../scss/panels-r.scss */
+  /* line 133, ../scss/panels-r.scss */
   .panel-left {
     left: 0;
     width: 30%;
     max-width: 30%;
     float: left;
   }
-  /* line 139, ../scss/panels-r.scss */
+  /* line 140, ../scss/panels-r.scss */
   .panel-left .panel-close {
     display: none;
   }
@@ -408,7 +409,7 @@ Requires:
 /* >= 1440px */
 /* This will target anything bigger than our large breakpoint */
 @media only screen and (min-width: 1440px) {
-  /* line 153, ../scss/panels-r.scss */
+  /* line 154, ../scss/panels-r.scss */
   .page-wrapper {
     float: none;
     width: 60%;
@@ -416,26 +417,27 @@ Requires:
     left: 20%;
   }
 
-  /* line 161, ../scss/panels-r.scss */
+  /* line 162, ../scss/panels-r.scss */
   .panel-left {
     width: 20%;
     max-width: 20%;
   }
 
-  /* line 168, ../scss/panels-r.scss */
+  /* line 169, ../scss/panels-r.scss */
   .panel-right {
     right: 0;
     width: 20%;
     max-width: 20%;
     float: right;
   }
-  /* line 175, ../scss/panels-r.scss */
+  /* line 176, ../scss/panels-r.scss */
   .panel-right .panel-close {
     display: none;
   }
 
-  /* line 181, ../scss/panels-r.scss */
-  a[data-target="right"] {
+  /* line 183, ../scss/panels-r.scss */
+  a[data-target="right"],
+  button[data-target="right"] {
     display: none;
   }
 }

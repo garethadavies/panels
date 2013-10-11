@@ -109,7 +109,8 @@ Author(s):
 @media only screen and (min-width: $mediumBreakPoint) {
 
   // Hide any links that open the left panel
-  a[data-target="left"] {
+  a[data-target="left"],
+  button[data-target="left"] {
     display: none;     
   }
 
@@ -178,7 +179,8 @@ Author(s):
   }
 
   // Hide any links that open the right panel
-  a[data-target="right"] {
+  a[data-target="right"],
+  button[data-target="right"] {
     display: none;     
   }
 

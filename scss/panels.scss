@@ -10,7 +10,6 @@ Requires:
   * Global Mixins
 Contents:
   * Imports
-  * Scaffolding
   * Panel Base
   * Horizontal Panel
   * Vertical Panel
@@ -53,7 +52,14 @@ Author(s):
 
 .page-wrapper {
   height: 100%;
-  @include scroll-y();
+  // @include scroll-y();
+  overflow: hidden;
+}
+
+.page-inner {
+  height: 100%;
+  padding: 0 $defaultPadding $defaultPadding*4 $defaultPadding;
+  @include scroll-y(); 
 }
 
 
@@ -78,7 +84,7 @@ Author(s):
 \*------------------------------------*/
 
 .panel-horizontal {
-  width: 80%;
+  width: $smallPanelWidth;
   max-width: $smallPanelWidth;
   height: 100%;
   background-color: lighten($grayDarker, 6%);
@@ -148,7 +154,7 @@ Author(s):
   $ Panel Inner
 \*------------------------------------*/
 
-.panel-inner {
+.panel-inner { 
   height: 100%;
   margin-top: 44px;
   padding: 0 $defaultPadding $defaultPadding*3 $defaultPadding;

@@ -9,7 +9,6 @@ Requires:
   * Global Mixins
 Contents:
   * Imports
-  * Scaffolding
   * Panel Base
   * Horizontal Panel
   * Vertical Panel
@@ -167,9 +166,16 @@ Requires:
 /*------------------------------------*\
   $ Scaffolding
 \*------------------------------------*/
-/* line 54, ../scss/panels.scss */
+/* line 53, ../scss/panels.scss */
 .page-wrapper {
   height: 100%;
+  overflow: hidden;
+}
+
+/* line 59, ../scss/panels.scss */
+.page-inner {
+  height: 100%;
+  padding: 0 1em 4em 1em;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
@@ -178,7 +184,7 @@ Requires:
 /*------------------------------------*\
   $ Panel Base
 \*------------------------------------*/
-/* line 66, ../scss/panels.scss */
+/* line 72, ../scss/panels.scss */
 .panel {
   position: fixed;
   height: 100%;
@@ -188,9 +194,9 @@ Requires:
 /*------------------------------------*\
   $ Horizontal Panel
 \*------------------------------------*/
-/* line 80, ../scss/panels.scss */
+/* line 86, ../scss/panels.scss */
 .panel-horizontal {
-  width: 80%;
+  width: 280px;
   max-width: 280px;
   height: 100%;
   background-color: #202020;
@@ -200,7 +206,7 @@ Requires:
 /*------------------------------------*\
   $ Vertical Panel
 \*------------------------------------*/
-/* line 95, ../scss/panels.scss */
+/* line 101, ../scss/panels.scss */
 .panel-vertical {
   width: 100%;
   height: auto;
@@ -215,7 +221,7 @@ Requires:
 /*------------------------------------*\
   $ Panel Header
 \*------------------------------------*/
-/* line 111, ../scss/panels.scss */
+/* line 117, ../scss/panels.scss */
 .panel-header {
   position: absolute;
   top: 0;
@@ -226,20 +232,20 @@ Requires:
   /* Panel header title */
   /* Panel header links */
 }
-/* line 121, ../scss/panels.scss */
+/* line 127, ../scss/panels.scss */
 .panel-header .panel-title {
   font-size: 1.4rem;
   font-weight: 800;
   color: white;
 }
-/* line 130, ../scss/panels.scss */
+/* line 136, ../scss/panels.scss */
 .panel-header a {
   float: right;
   text-align: center;
   width: 44px;
   height: 44px;
 }
-/* line 138, ../scss/panels.scss */
+/* line 144, ../scss/panels.scss */
 .panel-header a i {
   color: white;
 }
@@ -247,7 +253,7 @@ Requires:
 /*------------------------------------*\
   $ Panel Inner
 \*------------------------------------*/
-/* line 151, ../scss/panels.scss */
+/* line 157, ../scss/panels.scss */
 .panel-inner {
   height: 100%;
   margin-top: 44px;
@@ -260,7 +266,7 @@ Requires:
 /*------------------------------------*\
   $ Top Panel
 \*------------------------------------*/
-/* line 165, ../scss/panels.scss */
+/* line 171, ../scss/panels.scss */
 .panel-top {
   left: 0;
   top: -110%;
@@ -268,7 +274,7 @@ Requires:
 }
 
 /* State classes */
-/* line 173, ../scss/panels.scss */
+/* line 179, ../scss/panels.scss */
 .panel-top-in {
   -webkit-animation-name: slidePanelTopIn;
   -webkit-animation-delay: 0;
@@ -285,7 +291,7 @@ Requires:
   top: 0;
 }
 
-/* line 178, ../scss/panels.scss */
+/* line 184, ../scss/panels.scss */
 .panel-top-out {
   -webkit-animation-name: slidePanelTopOut;
   -webkit-animation-delay: 0;
@@ -304,72 +310,72 @@ Requires:
 
 /* Keyframes */
 @-webkit-keyframes slidePanelTopIn {
-  /* line 186, ../scss/panels.scss */
+  /* line 192, ../scss/panels.scss */
   from {
     top: -100%;
   }
 
-  /* line 187, ../scss/panels.scss */
+  /* line 193, ../scss/panels.scss */
   to {
     top: 0;
   }
 }
 
 @-moz-keyframes slidePanelTopIn {
-  /* line 186, ../scss/panels.scss */
+  /* line 192, ../scss/panels.scss */
   from {
     top: -100%;
   }
 
-  /* line 187, ../scss/panels.scss */
+  /* line 193, ../scss/panels.scss */
   to {
     top: 0;
   }
 }
 
 @keyframes slidePanelTopIn {
-  /* line 186, ../scss/panels.scss */
+  /* line 192, ../scss/panels.scss */
   from {
     top: -100%;
   }
 
-  /* line 187, ../scss/panels.scss */
+  /* line 193, ../scss/panels.scss */
   to {
     top: 0;
   }
 }
 
 @-webkit-keyframes slidePanelTopOut {
-  /* line 191, ../scss/panels.scss */
+  /* line 197, ../scss/panels.scss */
   from {
     top: 0;
   }
 
-  /* line 192, ../scss/panels.scss */
+  /* line 198, ../scss/panels.scss */
   to {
     top: -100%;
   }
 }
 
 @-moz-keyframes slidePanelTopOut {
-  /* line 191, ../scss/panels.scss */
+  /* line 197, ../scss/panels.scss */
   from {
     top: 0;
   }
 
-  /* line 192, ../scss/panels.scss */
+  /* line 198, ../scss/panels.scss */
   to {
     top: -100%;
   }
 }
 
 @keyframes slidePanelTopOut {
-  /* line 191, ../scss/panels.scss */
+  /* line 197, ../scss/panels.scss */
   from {
     top: 0;
   }
 
-  /* line 192, ../scss/panels.scss */
+  /* line 198, ../scss/panels.scss */
   to {
     top: -100%;
   }
@@ -378,14 +384,14 @@ Requires:
 /*------------------------------------*\
   $ Bottom Panel
 \*------------------------------------*/
-/* line 202, ../scss/panels.scss */
+/* line 208, ../scss/panels.scss */
 .panel-bottom {
   left: 0;
   bottom: -100%;
 }
 
 /* State classes */
-/* line 209, ../scss/panels.scss */
+/* line 215, ../scss/panels.scss */
 .panel-bottom-in {
   -webkit-animation-name: slidePanelBottomIn;
   -webkit-animation-delay: 0;
@@ -402,7 +408,7 @@ Requires:
   bottom: 0;
 }
 
-/* line 214, ../scss/panels.scss */
+/* line 220, ../scss/panels.scss */
 .panel-bottom-out {
   -webkit-animation-name: slidePanelBottomOut;
   -webkit-animation-delay: 0;
@@ -421,72 +427,72 @@ Requires:
 
 /* Keyframes */
 @-webkit-keyframes slidePanelBottomIn {
-  /* line 222, ../scss/panels.scss */
+  /* line 228, ../scss/panels.scss */
   from {
     bottom: -90%;
   }
 
-  /* line 223, ../scss/panels.scss */
+  /* line 229, ../scss/panels.scss */
   to {
     bottom: 0;
   }
 }
 
 @-moz-keyframes slidePanelBottomIn {
-  /* line 222, ../scss/panels.scss */
+  /* line 228, ../scss/panels.scss */
   from {
     bottom: -90%;
   }
 
-  /* line 223, ../scss/panels.scss */
+  /* line 229, ../scss/panels.scss */
   to {
     bottom: 0;
   }
 }
 
 @keyframes slidePanelBottomIn {
-  /* line 222, ../scss/panels.scss */
+  /* line 228, ../scss/panels.scss */
   from {
     bottom: -90%;
   }
 
-  /* line 223, ../scss/panels.scss */
+  /* line 229, ../scss/panels.scss */
   to {
     bottom: 0;
   }
 }
 
 @-webkit-keyframes slidePanelBottomOut {
-  /* line 227, ../scss/panels.scss */
+  /* line 233, ../scss/panels.scss */
   from {
     bottom: 0;
   }
 
-  /* line 228, ../scss/panels.scss */
+  /* line 234, ../scss/panels.scss */
   to {
     bottom: -90%;
   }
 }
 
 @-moz-keyframes slidePanelBottomOut {
-  /* line 227, ../scss/panels.scss */
+  /* line 233, ../scss/panels.scss */
   from {
     bottom: 0;
   }
 
-  /* line 228, ../scss/panels.scss */
+  /* line 234, ../scss/panels.scss */
   to {
     bottom: -90%;
   }
 }
 
 @keyframes slidePanelBottomOut {
-  /* line 227, ../scss/panels.scss */
+  /* line 233, ../scss/panels.scss */
   from {
     bottom: 0;
   }
 
-  /* line 228, ../scss/panels.scss */
+  /* line 234, ../scss/panels.scss */
   to {
     bottom: -90%;
   }
@@ -495,7 +501,7 @@ Requires:
 /*------------------------------------*\
   $ Right Panel
 \*------------------------------------*/
-/* line 238, ../scss/panels.scss */
+/* line 244, ../scss/panels.scss */
 .panel-right {
   right: -280px;
   top: 0;
@@ -505,7 +511,7 @@ Requires:
 }
 
 /* State classes */
-/* line 246, ../scss/panels.scss */
+/* line 252, ../scss/panels.scss */
 .panel-right-in {
   -webkit-animation-name: slidePanelRightIn;
   -webkit-animation-delay: 0;
@@ -522,7 +528,7 @@ Requires:
   right: 0;
 }
 
-/* line 251, ../scss/panels.scss */
+/* line 257, ../scss/panels.scss */
 .panel-right-out {
   -webkit-animation-name: slidePanelRightOut;
   -webkit-animation-delay: 0;
@@ -541,72 +547,72 @@ Requires:
 
 /* Keyframes */
 @-webkit-keyframes slidePanelRightIn {
-  /* line 259, ../scss/panels.scss */
+  /* line 265, ../scss/panels.scss */
   from {
     right: -280px;
   }
 
-  /* line 260, ../scss/panels.scss */
+  /* line 266, ../scss/panels.scss */
   to {
     right: 0;
   }
 }
 
 @-moz-keyframes slidePanelRightIn {
-  /* line 259, ../scss/panels.scss */
+  /* line 265, ../scss/panels.scss */
   from {
     right: -280px;
   }
 
-  /* line 260, ../scss/panels.scss */
+  /* line 266, ../scss/panels.scss */
   to {
     right: 0;
   }
 }
 
 @keyframes slidePanelRightIn {
-  /* line 259, ../scss/panels.scss */
+  /* line 265, ../scss/panels.scss */
   from {
     right: -280px;
   }
 
-  /* line 260, ../scss/panels.scss */
+  /* line 266, ../scss/panels.scss */
   to {
     right: 0;
   }
 }
 
 @-webkit-keyframes slidePanelRightOut {
-  /* line 264, ../scss/panels.scss */
+  /* line 270, ../scss/panels.scss */
   from {
     right: 0;
   }
 
-  /* line 265, ../scss/panels.scss */
+  /* line 271, ../scss/panels.scss */
   to {
     right: -280px;
   }
 }
 
 @-moz-keyframes slidePanelRightOut {
-  /* line 264, ../scss/panels.scss */
+  /* line 270, ../scss/panels.scss */
   from {
     right: 0;
   }
 
-  /* line 265, ../scss/panels.scss */
+  /* line 271, ../scss/panels.scss */
   to {
     right: -280px;
   }
 }
 
 @keyframes slidePanelRightOut {
-  /* line 264, ../scss/panels.scss */
+  /* line 270, ../scss/panels.scss */
   from {
     right: 0;
   }
 
-  /* line 265, ../scss/panels.scss */
+  /* line 271, ../scss/panels.scss */
   to {
     right: -280px;
   }
@@ -615,7 +621,7 @@ Requires:
 /*------------------------------------*\
   $ Left Panel
 \*------------------------------------*/
-/* line 275, ../scss/panels.scss */
+/* line 281, ../scss/panels.scss */
 .panel-left {
   left: -280px;
   top: 0;
@@ -625,7 +631,7 @@ Requires:
 }
 
 /* State classes */
-/* line 283, ../scss/panels.scss */
+/* line 289, ../scss/panels.scss */
 .panel-left-in {
   -webkit-animation-name: slidePanelLeftIn;
   -webkit-animation-delay: 0;
@@ -642,7 +648,7 @@ Requires:
   left: 0;
 }
 
-/* line 288, ../scss/panels.scss */
+/* line 294, ../scss/panels.scss */
 .panel-left-out {
   -webkit-animation-name: slidePanelLeftOut;
   -webkit-animation-delay: 0;
@@ -661,72 +667,72 @@ Requires:
 
 /* Keyframes */
 @-webkit-keyframes slidePanelLeftIn {
-  /* line 296, ../scss/panels.scss */
+  /* line 302, ../scss/panels.scss */
   from {
     left: -280px;
   }
 
-  /* line 297, ../scss/panels.scss */
+  /* line 303, ../scss/panels.scss */
   to {
     left: 0;
   }
 }
 
 @-moz-keyframes slidePanelLeftIn {
-  /* line 296, ../scss/panels.scss */
+  /* line 302, ../scss/panels.scss */
   from {
     left: -280px;
   }
 
-  /* line 297, ../scss/panels.scss */
+  /* line 303, ../scss/panels.scss */
   to {
     left: 0;
   }
 }
 
 @keyframes slidePanelLeftIn {
-  /* line 296, ../scss/panels.scss */
+  /* line 302, ../scss/panels.scss */
   from {
     left: -280px;
   }
 
-  /* line 297, ../scss/panels.scss */
+  /* line 303, ../scss/panels.scss */
   to {
     left: 0;
   }
 }
 
 @-webkit-keyframes slidePanelLeftOut {
-  /* line 301, ../scss/panels.scss */
+  /* line 307, ../scss/panels.scss */
   from {
     left: 0;
   }
 
-  /* line 302, ../scss/panels.scss */
+  /* line 308, ../scss/panels.scss */
   to {
     left: -280px;
   }
 }
 
 @-moz-keyframes slidePanelLeftOut {
-  /* line 301, ../scss/panels.scss */
+  /* line 307, ../scss/panels.scss */
   from {
     left: 0;
   }
 
-  /* line 302, ../scss/panels.scss */
+  /* line 308, ../scss/panels.scss */
   to {
     left: -280px;
   }
 }
 
 @keyframes slidePanelLeftOut {
-  /* line 301, ../scss/panels.scss */
+  /* line 307, ../scss/panels.scss */
   from {
     left: 0;
   }
 
-  /* line 302, ../scss/panels.scss */
+  /* line 308, ../scss/panels.scss */
   to {
     left: -280px;
   }

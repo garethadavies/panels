@@ -84,7 +84,7 @@ i {
 
 // left
 .page-wrapper-left-in {
-  @include animation(slidePageLeftIn, 0.5s, 0, ease);
+  @include animation(slidePageLeftIn, 0.4s, 0, ease);
   left: 280px;
   position: fixed;
   // Stop the content scrolling when open
@@ -93,7 +93,7 @@ i {
 }
 
 .page-wrapper-left-out {
-  @include animation(slidePageLeftOut, 0.4s, 0, ease);
+  @include animation(slidePageLeftOut, 0.3s, 0, ease);
   left: 0;
   position: fixed;
 }
@@ -110,7 +110,7 @@ i {
 
 // Right
 .page-wrapper-right-in {
-  @include animation(slidePageRightIn, 0.5s, 0, ease);
+  @include animation(slidePageRightIn, 0.4s, 0, ease);
   left: -$horizontalPanelWidth;
   position: fixed;
   // Stop the content scrolling when open
@@ -119,7 +119,7 @@ i {
 }
 
 .page-wrapper-right-out {
-  @include animation(slidePageRightOut, 0.4s, 0, ease);
+  @include animation(slidePageRightOut, 0.3s, 0, ease);
   left: 0;
   position: fixed;
 }
@@ -251,12 +251,12 @@ i {
 }
 
 .panel-top-in {
-  @include animation(slidePanelTopIn, 0.5s, 0, ease);
+  @include animation(slidePanelTopIn, 0.4s, 0, ease);
   top: 0;
 }
 
 .panel-top-out {
-  @include animation(slidePanelTopOut, 0.4s, 0, ease);
+  @include animation(slidePanelTopOut, 0.3s, 0, ease);
   top: 100%;
 }
 
@@ -280,12 +280,12 @@ i {
 }
 
 .panel-bottom-in {
-  @include animation(slidePanelBottomIn, 0.5s, 0, ease);
+  @include animation(slidePanelBottomIn, 0.4s, 0, ease);
   bottom: 0;
 }
 
 .panel-bottom-out {
-  @include animation(slidePanelBottomOut, 0.4s, 0, ease);
+  @include animation(slidePanelBottomOut, 0.3s, 0, ease);
   bottom: -90%;
 }
 
@@ -332,12 +332,12 @@ i {
 }
 
 .panel-right-in {
-  @include animation(slidePanelRightIn, 0.5s, 0, ease);
+  @include animation(slidePanelRightIn, 0.4s, 0, ease);
   right: 0;
 }
 
 .panel-right-out {
-  @include animation(slidePanelRightOut, 0.4s, 0, ease);
+  @include animation(slidePanelRightOut, 0.3s, 0, ease);
   right: -100%;
 }
 
@@ -393,12 +393,12 @@ This is the main menu panel
 }
 
 .panel-left-in {
-  @include animation(slidePanelLeftIn, 0.5s, 0, ease);
+  @include animation(slidePanelLeftIn, 0.4s, 0, ease);
   left: 0;
 }
 
 .panel-left-out {
-  @include animation(slidePanelLeftOut, 0.4s, 0, ease);
+  @include animation(slidePanelLeftOut, 0.3s, 0, ease);
   left: -$horizontalPanelWidth;
 }
 

@@ -194,15 +194,15 @@ i {
 .page-wrapper-left-in {
   -webkit-animation-name: slidePageLeftIn;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePageLeftIn;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.5s;
+  -moz-animation-duration: 0.4s;
   -moz-animation-timing-function: ease;
   animation-name: slidePageLeftIn;
   animation-delay: 0;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   left: 280px;
   position: fixed;
@@ -213,15 +213,15 @@ i {
 .page-wrapper-left-out {
   -webkit-animation-name: slidePageLeftOut;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePageLeftOut;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.4s;
+  -moz-animation-duration: 0.3s;
   -moz-animation-timing-function: ease;
   animation-name: slidePageLeftOut;
   animation-delay: 0;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   left: 0;
   position: fixed;
@@ -303,15 +303,15 @@ i {
 .page-wrapper-right-in {
   -webkit-animation-name: slidePageRightIn;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePageRightIn;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.5s;
+  -moz-animation-duration: 0.4s;
   -moz-animation-timing-function: ease;
   animation-name: slidePageRightIn;
   animation-delay: 0;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   left: -280px;
   position: fixed;
@@ -322,15 +322,15 @@ i {
 .page-wrapper-right-out {
   -webkit-animation-name: slidePageRightOut;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePageRightOut;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.4s;
+  -moz-animation-duration: 0.3s;
   -moz-animation-timing-function: ease;
   animation-name: slidePageRightOut;
   animation-delay: 0;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   left: 0;
   position: fixed;
@@ -529,15 +529,15 @@ i {
 .panel-top-in {
   -webkit-animation-name: slidePanelTopIn;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelTopIn;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.5s;
+  -moz-animation-duration: 0.4s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelTopIn;
   animation-delay: 0;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   top: 0;
 }
@@ -546,15 +546,15 @@ i {
 .panel-top-out {
   -webkit-animation-name: slidePanelTopOut;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelTopOut;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.4s;
+  -moz-animation-duration: 0.3s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelTopOut;
   animation-delay: 0;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   top: 100%;
 }
@@ -642,15 +642,15 @@ i {
 .panel-bottom-in {
   -webkit-animation-name: slidePanelBottomIn;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelBottomIn;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.5s;
+  -moz-animation-duration: 0.4s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelBottomIn;
   animation-delay: 0;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   bottom: 0;
 }
@@ -659,15 +659,15 @@ i {
 .panel-bottom-out {
   -webkit-animation-name: slidePanelBottomOut;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelBottomOut;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.4s;
+  -moz-animation-duration: 0.3s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelBottomOut;
   animation-delay: 0;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   bottom: -90%;
 }
@@ -778,15 +778,15 @@ i {
 .panel-right-in {
   -webkit-animation-name: slidePanelRightIn;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelRightIn;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.5s;
+  -moz-animation-duration: 0.4s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelRightIn;
   animation-delay: 0;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   right: 0;
 }
@@ -795,15 +795,15 @@ i {
 .panel-right-out {
   -webkit-animation-name: slidePanelRightOut;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelRightOut;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.4s;
+  -moz-animation-duration: 0.3s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelRightOut;
   animation-delay: 0;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   right: -100%;
 }
@@ -921,15 +921,15 @@ This is the main menu panel
 .panel-left-in {
   -webkit-animation-name: slidePanelLeftIn;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.4s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelLeftIn;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.5s;
+  -moz-animation-duration: 0.4s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelLeftIn;
   animation-delay: 0;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   left: 0;
 }
@@ -938,15 +938,15 @@ This is the main menu panel
 .panel-left-out {
   -webkit-animation-name: slidePanelLeftOut;
   -webkit-animation-delay: 0;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 0.3s;
   -webkit-animation-timing-function: ease;
   -moz-animation-name: slidePanelLeftOut;
   -moz-animation-delay: 0;
-  -moz-animation-duration: 0.4s;
+  -moz-animation-duration: 0.3s;
   -moz-animation-timing-function: ease;
   animation-name: slidePanelLeftOut;
   animation-delay: 0;
-  animation-duration: 0.4s;
+  animation-duration: 0.3s;
   animation-timing-function: ease;
   left: -280px;
 }

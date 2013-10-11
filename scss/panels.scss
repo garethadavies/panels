@@ -66,7 +66,7 @@ Author(s):
 .panel {
   position: fixed;  
   height: 100%;
-  @include scroll-y();
+  // @include scroll-y();
   background-color: $white;
 }
 
@@ -113,24 +113,31 @@ Author(s):
   top: 0;
   left: 0;
   z-index: 2002;
-  padding-left: $defaultPadding;
-  @include menu-base();
+  padding: $defaultPadding;
+  width: 100%;
 
   /* Panel header title */
   
   .panel-title {
     font-size: 1.4rem;
-    color: $textColor;
-    line-height: 4.4rem;
+    font-weight: 800;
+    color: $white;
+    // line-height: 4.4rem;
   }
 
   /* Panel header links */
 
   a {
+    float: right;
     text-align: center;
     width: $touchMinimum;
     height: $touchMinimum;
-    line-height: 4.4rem;
+    // line-height: 4.4rem;
+  
+    // Icons
+    i {
+      color: $white;
+    }
   }
 }
 
@@ -142,13 +149,10 @@ Author(s):
 \*------------------------------------*/
 
 .panel-inner {
-  padding: $defaultPadding*2;
-  /* 
   height: 100%;
   margin-top: 44px;
-  padding: $defaultPadding $defaultPadding $defaultPadding*3 $defaultPadding;
-  .scroll-y();
-  */
+  padding: 0 $defaultPadding $defaultPadding*3 $defaultPadding;
+  @include scroll-y();
 }
 
 

@@ -80,6 +80,18 @@ Author(s):
 
 
 /*------------------------------------*\
+  $ Panel Inner
+\*------------------------------------*/
+
+.panel-inner { 
+  height: 100%;
+  @include scroll-y();
+}
+
+
+
+
+/*------------------------------------*\
   $ Horizontal Panel
 \*------------------------------------*/
 
@@ -89,6 +101,12 @@ Author(s):
   height: 100%;
   background-color: lighten($grayDarker, 6%);
   color: $white;
+
+  .panel-inner {
+    @extend .panel-inner;
+    margin-top: 44px;
+    padding: 0 $defaultPadding $defaultPadding*3 $defaultPadding;
+  }
 }
 
 
@@ -105,6 +123,12 @@ Author(s):
   z-index: 4;
   padding-bottom: $defaultPadding;
   @include box-shadow(0 0 6px $gray);
+
+  .panel-inner {
+    @extend .panel-inner;
+    height: 100%;
+    padding: $defaultPadding $defaultPadding*2;
+  }
 }
 
 
@@ -145,20 +169,6 @@ Author(s):
       color: $white;
     }
   }
-}
-
-
-
-
-/*------------------------------------*\
-  $ Panel Inner
-\*------------------------------------*/
-
-.panel-inner { 
-  height: 100%;
-  margin-top: 44px;
-  padding: 0 $defaultPadding $defaultPadding*3 $defaultPadding;
-  @include scroll-y();
 }
 
 

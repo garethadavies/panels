@@ -4,11 +4,21 @@ $(function() {
 
     /*
     Detect Touch Enabled
-    Load mobile scrolls to 0 and hides navigation bar
-    Enable touch events in jQuery UI
     */
 
     // Can this device handle touch events?
+    {
+      test: Modernizr.touch,
+      yep: [
+        '../assets/js/vendor/hammer/jquery.hammer-1.0.5.js'
+      ]
+    },
+
+    /*
+    Detect ios
+    */
+
+    // Is this an ios device?
     {
       test: Modernizr.appleios,
       yep: [

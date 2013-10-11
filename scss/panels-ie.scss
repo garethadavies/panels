@@ -29,18 +29,20 @@ Author(s):
   $ IE8 Fixes
 \*------------------------------------*/
 
-// Hide any links that open the left panel
 .lt-ie9 {
 
+  // Hide any links that open the left panel
   a[data-target="left"] {
     display: none;     
   }
 
+  // Float the page wrapper to the right and set correct width
   .page-wrapper {
     float: right;
     width: 70%;
   }
 
+  // Set a max width for the vertical panel inner
   .panel-vertical {
     .panel-inner {
       width: $mediumBreakPoint;
@@ -48,6 +50,8 @@ Author(s):
     }
   }
 
+  // Set the correct width and position
+  // float to the left
   .panel-left {
     left: 0;
     width: 30%;

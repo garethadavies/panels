@@ -9,6 +9,11 @@ Requires:
 Contents:
   * Imports
   * Media Queries
+    * <= 767px
+      * Page wrapper animation classes
+      * Page wrapper keyframes
+    * >= 768px
+    * >= 1440px
 Author(s):
   * Gareth Davies @garethadavies
 */
@@ -147,10 +152,10 @@ Requires:
 /*------------------------------------*\
   $ Media Queries
 \*------------------------------------*/
-/* This will target anything smaller than our medium breakpoint */
+/* <= 767px */
 @media only screen and (max-width: 767px) {
-  /* Page wrapper animation */
-  /* line 39, ../scss/panels-r.scss */
+  /* Page wrapper animation classes */
+  /* line 46, ../scss/panels-r.scss */
   .page-wrapper-left-in {
     -webkit-animation-name: slidePageLeftIn;
     -webkit-animation-delay: 0;
@@ -169,7 +174,7 @@ Requires:
     overflow: hidden;
   }
 
-  /* line 48, ../scss/panels-r.scss */
+  /* line 55, ../scss/panels-r.scss */
   .page-wrapper-left-out {
     -webkit-animation-name: slidePageLeftOut;
     -webkit-animation-delay: 0;
@@ -187,79 +192,7 @@ Requires:
     position: fixed;
   }
 
-  @-webkit-keyframes slidePageLeftIn {
-    /* line 55, ../scss/panels-r.scss */
-    from {
-      left: 0;
-    }
-
-    /* line 56, ../scss/panels-r.scss */
-    to {
-      left: 280px;
-    }
-}
-
-  @-moz-keyframes slidePageLeftIn {
-    /* line 55, ../scss/panels-r.scss */
-    from {
-      left: 0;
-    }
-
-    /* line 56, ../scss/panels-r.scss */
-    to {
-      left: 280px;
-    }
-}
-
-  @keyframes slidePageLeftIn {
-    /* line 55, ../scss/panels-r.scss */
-    from {
-      left: 0;
-    }
-
-    /* line 56, ../scss/panels-r.scss */
-    to {
-      left: 280px;
-    }
-}
-
-  @-webkit-keyframes slidePageLeftOut {
-    /* line 60, ../scss/panels-r.scss */
-    from {
-      left: 280px;
-    }
-
-    /* line 61, ../scss/panels-r.scss */
-    to {
-      left: 0;
-    }
-}
-
-  @-moz-keyframes slidePageLeftOut {
-    /* line 60, ../scss/panels-r.scss */
-    from {
-      left: 280px;
-    }
-
-    /* line 61, ../scss/panels-r.scss */
-    to {
-      left: 0;
-    }
-}
-
-  @keyframes slidePageLeftOut {
-    /* line 60, ../scss/panels-r.scss */
-    from {
-      left: 280px;
-    }
-
-    /* line 61, ../scss/panels-r.scss */
-    to {
-      left: 0;
-    }
-}
-
-  /* line 65, ../scss/panels-r.scss */
+  /* line 62, ../scss/panels-r.scss */
   .page-wrapper-right-in {
     -webkit-animation-name: slidePageRightIn;
     -webkit-animation-delay: 0;
@@ -278,7 +211,7 @@ Requires:
     overflow: hidden;
   }
 
-  /* line 74, ../scss/panels-r.scss */
+  /* line 72, ../scss/panels-r.scss */
   .page-wrapper-right-out {
     -webkit-animation-name: slidePageRightOut;
     -webkit-animation-delay: 0;
@@ -296,112 +229,186 @@ Requires:
     position: fixed;
   }
 
-  @-webkit-keyframes slidePageRightIn {
-    /* line 81, ../scss/panels-r.scss */
+  /* Page wrapper keyframes */
+  @-webkit-keyframes slidePageLeftIn {
+    /* line 82, ../scss/panels-r.scss */
     from {
       left: 0;
     }
 
+    /* line 83, ../scss/panels-r.scss */
+    to {
+      left: 280px;
+    }
+}
+
+  @-moz-keyframes slidePageLeftIn {
     /* line 82, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 83, ../scss/panels-r.scss */
+    to {
+      left: 280px;
+    }
+}
+
+  @keyframes slidePageLeftIn {
+    /* line 82, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 83, ../scss/panels-r.scss */
+    to {
+      left: 280px;
+    }
+}
+
+  @-webkit-keyframes slidePageLeftOut {
+    /* line 88, ../scss/panels-r.scss */
+    from {
+      left: 280px;
+    }
+
+    /* line 89, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  @-moz-keyframes slidePageLeftOut {
+    /* line 88, ../scss/panels-r.scss */
+    from {
+      left: 280px;
+    }
+
+    /* line 89, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  @keyframes slidePageLeftOut {
+    /* line 88, ../scss/panels-r.scss */
+    from {
+      left: 280px;
+    }
+
+    /* line 89, ../scss/panels-r.scss */
+    to {
+      left: 0;
+    }
+}
+
+  @-webkit-keyframes slidePageRightIn {
+    /* line 94, ../scss/panels-r.scss */
+    from {
+      left: 0;
+    }
+
+    /* line 95, ../scss/panels-r.scss */
     to {
       left: -280px;
     }
 }
 
   @-moz-keyframes slidePageRightIn {
-    /* line 81, ../scss/panels-r.scss */
+    /* line 94, ../scss/panels-r.scss */
     from {
       left: 0;
     }
 
-    /* line 82, ../scss/panels-r.scss */
+    /* line 95, ../scss/panels-r.scss */
     to {
       left: -280px;
     }
 }
 
   @keyframes slidePageRightIn {
-    /* line 81, ../scss/panels-r.scss */
+    /* line 94, ../scss/panels-r.scss */
     from {
       left: 0;
     }
 
-    /* line 82, ../scss/panels-r.scss */
+    /* line 95, ../scss/panels-r.scss */
     to {
       left: -280px;
     }
 }
 
   @-webkit-keyframes slidePageRightOut {
-    /* line 86, ../scss/panels-r.scss */
+    /* line 100, ../scss/panels-r.scss */
     from {
       left: -280px;
     }
 
-    /* line 87, ../scss/panels-r.scss */
+    /* line 101, ../scss/panels-r.scss */
     to {
       left: 0;
     }
 }
 
   @-moz-keyframes slidePageRightOut {
-    /* line 86, ../scss/panels-r.scss */
+    /* line 100, ../scss/panels-r.scss */
     from {
       left: -280px;
     }
 
-    /* line 87, ../scss/panels-r.scss */
+    /* line 101, ../scss/panels-r.scss */
     to {
       left: 0;
     }
 }
 
   @keyframes slidePageRightOut {
-    /* line 86, ../scss/panels-r.scss */
+    /* line 100, ../scss/panels-r.scss */
     from {
       left: -280px;
     }
 
-    /* line 87, ../scss/panels-r.scss */
+    /* line 101, ../scss/panels-r.scss */
     to {
       left: 0;
     }
 }
 }
-/* This will target anything bigger than our medium breakpoint */
+/* >= 768px */
 @media only screen and (min-width: 768px) {
-  /* line 96, ../scss/panels-r.scss */
+  /* line 112, ../scss/panels-r.scss */
   a[data-target="left"] {
     display: none;
   }
 
-  /* line 100, ../scss/panels-r.scss */
+  /* line 117, ../scss/panels-r.scss */
   .page-wrapper {
     float: right;
     width: 70%;
   }
 
-  /* line 106, ../scss/panels-r.scss */
+  /* line 124, ../scss/panels-r.scss */
   .panel-vertical .panel-inner {
     width: 768px;
     margin: 0 auto;
   }
 
-  /* line 112, ../scss/panels-r.scss */
+  /* line 132, ../scss/panels-r.scss */
   .panel-left {
     left: 0;
     width: 30%;
     max-width: 30%;
     float: left;
   }
-  /* line 119, ../scss/panels-r.scss */
+  /* line 139, ../scss/panels-r.scss */
   .panel-left .panel-close {
     display: none;
   }
 }
+/* >= 1440px */
 /* This will target anything bigger than our large breakpoint */
 @media only screen and (min-width: 1440px) {
-  /* line 129, ../scss/panels-r.scss */
+  /* line 153, ../scss/panels-r.scss */
   .page-wrapper {
     float: none;
     width: 60%;
@@ -409,25 +416,25 @@ Requires:
     left: 20%;
   }
 
-  /* line 136, ../scss/panels-r.scss */
+  /* line 161, ../scss/panels-r.scss */
   .panel-left {
     width: 20%;
     max-width: 20%;
   }
 
-  /* line 143, ../scss/panels-r.scss */
+  /* line 168, ../scss/panels-r.scss */
   .panel-right {
     right: 0;
     width: 20%;
     max-width: 20%;
     float: right;
   }
-  /* line 150, ../scss/panels-r.scss */
+  /* line 175, ../scss/panels-r.scss */
   .panel-right .panel-close {
     display: none;
   }
 
-  /* line 156, ../scss/panels-r.scss */
+  /* line 181, ../scss/panels-r.scss */
   a[data-target="right"] {
     display: none;
   }

@@ -10,6 +10,11 @@ Requires:
 Contents:
   * Imports
   * Media Queries
+    * <= 767px
+      * Page wrapper animation classes
+      * Page wrapper keyframes
+    * >= 768px
+    * >= 1440px
 Author(s):
   * Gareth Davies @garethadavies
 */
@@ -30,38 +35,30 @@ Author(s):
   $ Media Queries
 \*------------------------------------*/
 
-/* This will target anything smaller than our medium breakpoint */
+/* <= 767px */
+
+// This will target anything smaller than our medium breakpoint
 @media only screen and (max-width: 767px) {
 
-  /* Page wrapper animation */
+  /* Page wrapper animation classes */
 
-  // left
+  // In from the left
   .page-wrapper-left-in {
     @include animation(slidePageLeftIn, 0.4s, 0, ease);
     left: $smallPanelWidth;
     position: fixed;
     // Stop the content scrolling when open
     overflow: hidden;
-    // z-index: 3;
   }
 
+  // Out to the left
   .page-wrapper-left-out {
     @include animation(slidePageLeftOut, 0.3s, 0, ease);
     left: 0;
     position: fixed;
   }
 
-  @include keyframes(slidePageLeftIn) {
-    from { left: 0; }
-    to { left: $smallPanelWidth; }
-  }
-
-  @include keyframes(slidePageLeftOut) {
-    from { left: $smallPanelWidth; }
-    to { left: 0; }
-  }
-
-  // Right
+  // In from the right
   .page-wrapper-right-in {
     @include animation(slidePageRightIn, 0.4s, 0, ease);
     left: -$smallPanelWidth;
@@ -70,18 +67,35 @@ Author(s):
     overflow: hidden;
     // z-index: 3;
   }
-
+  
+  // Out to the right
   .page-wrapper-right-out {
     @include animation(slidePageRightOut, 0.3s, 0, ease);
     left: 0;
     position: fixed;
   }
 
+  /* Page wrapper keyframes */
+  
+  // In from the left
+  @include keyframes(slidePageLeftIn) {
+    from { left: 0; }
+    to { left: $smallPanelWidth; }
+  }
+
+  // Out to the left
+  @include keyframes(slidePageLeftOut) {
+    from { left: $smallPanelWidth; }
+    to { left: 0; }
+  }
+
+  // In from the right
   @include keyframes(slidePageRightIn) {
     from { left: 0; }
     to { left: -$smallPanelWidth; }
   }
 
+  // Out to the right
   @include keyframes(slidePageRightOut) {
     from { left: -$smallPanelWidth; }
     to { left: 0; }
@@ -89,7 +103,9 @@ Author(s):
 
 }
 
-/* This will target anything bigger than our medium breakpoint */
+/* >= 768px */
+
+// This will target anything bigger than our medium breakpoint
 @media only screen and (min-width: $mediumBreakPoint) {
 
   // Hide any links that open the left panel
@@ -97,11 +113,13 @@ Author(s):
     display: none;     
   }
 
+  // Float the page wrapper to the right and set correct width
   .page-wrapper {
     float: right;
     width: 70%;
   }
 
+  // Set a max width for the vertical panel inner
   .panel-vertical {
     .panel-inner {
       width: $mediumBreakPoint;
@@ -109,6 +127,8 @@ Author(s):
     }
   }
 
+  // Set the correct width and position
+  // float to the left
   .panel-left {
     left: 0;
     width: 30%;
@@ -123,9 +143,13 @@ Author(s):
 
 }
 
+/* >= 1440px */
+
 /* This will target anything bigger than our large breakpoint */
 @media only screen and (min-width: $largeBreakPoint) {
 
+  // Remove float
+  // Adjust width and position
   .page-wrapper {
     float: none;
     width: 60%;
@@ -133,13 +157,14 @@ Author(s):
     left: 20%;
   }
 
+  // Adjust width
   .panel-left {
-    // left: 0;
     width: 20%;
     max-width: 20%;
-    // float: left;
   }
 
+  // Float right
+  // Adjust width and position
   .panel-right {
     right: 0;
     width: 20%;
@@ -152,7 +177,7 @@ Author(s):
     }
   }
 
-  // Hide any links that open the left panel
+  // Hide any links that open the right panel
   a[data-target="right"] {
     display: none;     
   }

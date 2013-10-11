@@ -11,7 +11,25 @@ Requires:
 Contents:
   * Imports
   * Scaffolding
-  * Panels
+  * Panel Base
+  * Horizontal Panel
+  * Vertical Panel
+  * Panel Header
+    * Panel header title
+    * Panel header links
+  * Panel Inner
+  * Top Panel
+    * State classes
+    * Keyframes
+  * Bottom Panel
+    * State classes
+    * Keyframes
+  * Right Panel
+    * State classes
+    * Keyframes
+  * Left Panel
+    * State classes
+    * Keyframes
 Author(s):
   * Gareth Davies @garethadavies
 */
@@ -42,7 +60,7 @@ Author(s):
 
 
 /*------------------------------------*\
-  $ Panels
+  $ Panel Base
 \*------------------------------------*/
 
 .panel {
@@ -52,7 +70,12 @@ Author(s):
   background-color: $white;
 }
 
-/* Horizontal Panel */
+
+
+
+/*------------------------------------*\
+  $ Horizontal Panel
+\*------------------------------------*/
 
 .panel-horizontal {
   width: 80%;
@@ -62,7 +85,12 @@ Author(s):
   color: $white;
 }
 
-/* Vertical Panel */
+
+
+
+/*------------------------------------*\
+  $ Vertical Panel
+\*------------------------------------*/
 
 .panel-vertical {
   width: 100%;
@@ -73,7 +101,12 @@ Author(s):
   @include box-shadow(0 0 6px $gray);
 }
 
-/* Panel Header */
+
+
+
+/*------------------------------------*\
+  $ Panel Header
+\*------------------------------------*/
 
 .panel-header {
   position: absolute;
@@ -83,14 +116,16 @@ Author(s):
   padding-left: $defaultPadding;
   @include menu-base();
 
-  // The panel header title
+  /* Panel header title */
+  
   .panel-title {
     font-size: 1.4rem;
     color: $textColor;
     line-height: 4.4rem;
   }
 
-  //
+  /* Panel header links */
+
   a {
     text-align: center;
     width: $touchMinimum;
@@ -99,7 +134,12 @@ Author(s):
   }
 }
 
-/* Panel Inner */
+
+
+
+/*------------------------------------*\
+  $ Panel Inner
+\*------------------------------------*/
 
 .panel-inner {
   padding: $defaultPadding*2;
@@ -111,13 +151,20 @@ Author(s):
   */
 }
 
-/* Top Panel */
+
+
+
+/*------------------------------------*\
+  $ Top Panel
+\*------------------------------------*/
 
 .panel-top {
   left: 0;
   top: -110%;
   background-color: $white;
 }
+
+/* State classes */
 
 .panel-top-in {
   @include animation(slidePanelTopIn, 0.4s, 0, ease);
@@ -129,7 +176,7 @@ Author(s):
   top: 100%;
 }
 
-// Keyframes
+/* Keyframes */
 
 @include keyframes(slidePanelTopIn) {
   from { top: -100%; }
@@ -141,12 +188,19 @@ Author(s):
   to { top: -100%; }
 }
 
-/* Bottom Panel */
+
+
+
+/*------------------------------------*\
+  $ Bottom Panel
+\*------------------------------------*/
 
 .panel-bottom {
   left: 0;
   bottom: -100%;
 }
+
+/* State classes */
 
 .panel-bottom-in {
   @include animation(slidePanelBottomIn, 0.4s, 0, ease);
@@ -158,7 +212,7 @@ Author(s):
   bottom: -90%;
 }
 
-// Keyframes
+/* Keyframes */
 
 @include keyframes(slidePanelBottomIn) {
   from { bottom: -90%; }
@@ -170,13 +224,20 @@ Author(s):
   to { bottom: -90%; }
 }
 
-/* Right Panel */
+
+
+
+/*------------------------------------*\
+  $ Right Panel
+\*------------------------------------*/
 
 .panel-right {
   right: -$smallPanelWidth;
   top: 0;
   @include box-shadow(inset 4px 0 20px -4px $black);
 }
+
+/* State classes */
 
 .panel-right-in {
   @include animation(slidePanelRightIn, 0.4s, 0, ease);
@@ -188,7 +249,7 @@ Author(s):
   right: -100%;
 }
 
-// Keyframes
+/* Keyframes */
 
 @include keyframes(slidePanelRightIn) {
   from { right: -$smallPanelWidth; }
@@ -200,16 +261,20 @@ Author(s):
   to { right: -$smallPanelWidth; }
 }
 
-/*
-Left Panel 
-This is the main menu panel
-*/
+
+
+
+/*------------------------------------*\
+  $ Left Panel
+\*------------------------------------*/
 
 .panel-left {
   left: -$smallPanelWidth; 
   top: 0;
   @include box-shadow(inset -4px 0 20px -4px $black);
 }
+
+/* State classes */
 
 .panel-left-in {
   @include animation(slidePanelLeftIn, 0.4s, 0, ease);
@@ -221,7 +286,7 @@ This is the main menu panel
   left: -$smallPanelWidth;
 }
 
-// Keyframes
+/* Keyframes */
 
 @include keyframes(slidePanelLeftIn) {
   from { left: -$smallPanelWidth; }

@@ -163,6 +163,9 @@ $(function() {
             //
             pageWrapper.addClass('page-wrapper-left-in');
 
+            // TODO: Modernizr touch test
+            // if (Modernizr.touch) {}
+
             // Detect a user swiping the left panel shut
             $('.page-wrapper-left-in').hammer().on('drag', function(e) {
               
@@ -295,6 +298,9 @@ $(function() {
 
             //
             pageWrapper.addClass('page-wrapper-right-in');
+
+            // TODO: Modernizr touch test
+            // if (Modernizr.touch) {}
 
             // Detect a user swiping the right panel shut
             $('.page-wrapper-right-in').hammer().on('drag', function(e) {

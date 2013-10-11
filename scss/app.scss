@@ -36,12 +36,12 @@ Author(s):
   $ Variables
 \*------------------------------------*/
 
-$desktopBreakPoint: 76.7rem;
-$desktopBreakPointIE: 767px;
-$defaultMenuWidth: 32rem;
-$defaultMenuWidthIE: 320px;
+$smallBreakPoint: 480px;
+$mediumBreakPoint: 768px;
+$largeBreakPoint: 1440px;
+$defaultMenuWidth: 320px;
 
-$horizontalPanelWidth: 280px;
+$smallPanelWidth: 280px;
 
 
 
@@ -111,7 +111,7 @@ i {
 // Right
 .page-wrapper-right-in {
   @include animation(slidePageRightIn, 0.4s, 0, ease);
-  left: -$horizontalPanelWidth;
+  left: -$smallPanelWidth;
   position: fixed;
   // Stop the content scrolling when open
   overflow: hidden;
@@ -126,28 +126,12 @@ i {
 
 @include keyframes(slidePageRightIn) {
   from { left: 0; }
-  to { left: -$horizontalPanelWidth; }
+  to { left: -$smallPanelWidth; }
 }
 
 @include keyframes(slidePageRightOut) {
-  from { left: -$horizontalPanelWidth; }
+  from { left: -$smallPanelWidth; }
   to { left: 0; }
-}
-
-/* This will target anything bigger than an ipad portrait */
-@media only screen and (min-width: $desktopBreakPoint) {
-
-  .page-wrapper {
-    float: right;
-    width: 70%;
-  }
-
-}
-
-// IE8 Fix
-.lt-ie9 .page-wrapper {
-  float: right;
-  width: 70%;
 }
 
 
@@ -183,26 +167,6 @@ i {
   z-index: 4;
   padding-bottom: $defaultPadding;
   @include box-shadow(0 0 6px $gray);
-}
-
-/* This will target anything bigger than an ipad portrait */
-@media only screen and (min-width: $desktopBreakPoint) {
-
-  .panel-vertical {
-    .panel-inner {
-      width: $desktopBreakPoint;
-      margin: 0 auto;
-    }
-  }
-
-}
-
-// IE8 Fix
-.lt-ie9 .panel-vertical {
-  .panel-inner {
-    width: $desktopBreakPointIE;
-    margin: 0 auto;
-  }
 }
 
 /* Panel Header */
@@ -305,31 +269,9 @@ i {
 /* Right Panel */
 
 .panel-right {
-  right: -$horizontalPanelWidth;
+  right: -$smallPanelWidth;
   top: 0;
   @include box-shadow(inset 4px 0 20px -4px $black);
-}
-
-/* This will target anything bigger than an ipad portrait */
-@media only screen and (min-width: $desktopBreakPoint) {
-
-  .panel-right {
-    width: auto;
-
-    .panel-inner {
-      width: $defaultMenuWidth;
-    }
-  }
-
-}
-
-// IE8 Fix
-.lt-ie9 .panel-right {
-  width: auto;
-
-  .panel-inner {
-    width: $defaultMenuWidthIE;
-  }
 }
 
 .panel-right-in {
@@ -345,13 +287,13 @@ i {
 // Keyframes
 
 @include keyframes(slidePanelRightIn) {
-  from { right: -$horizontalPanelWidth; }
+  from { right: -$smallPanelWidth; }
   to { right: 0; }
 }
 
 @include keyframes(slidePanelRightOut) {
   from { right: 0; }
-  to { right: -$horizontalPanelWidth; }
+  to { right: -$smallPanelWidth; }
 }
 
 /*
@@ -360,37 +302,9 @@ This is the main menu panel
 */
 
 .panel-left {
-  left: -$horizontalPanelWidth; 
+  left: -$smallPanelWidth; 
   top: 0;
   @include box-shadow(inset -4px 0 20px -4px $black);
-}
-
-/* This will target anything bigger than an ipad portrait */
-@media only screen and (min-width: $desktopBreakPoint) {
-
-  .panel-left {
-    left: 0;
-    width: 30%;
-    float: left;
-
-    // Hide the panel close link
-    .panel-close {
-      display: none;
-    }
-  }
-
-}
-
-// IE8 Fix
-.lt-ie9 .panel-left {
-  left: 0;
-  width: 30%;
-  float: left;
-
-  // Hide the panel close link
-  .panel-close {
-    display: none;
-  }
 }
 
 .panel-left-in {
@@ -400,19 +314,19 @@ This is the main menu panel
 
 .panel-left-out {
   @include animation(slidePanelLeftOut, 0.3s, 0, ease);
-  left: -$horizontalPanelWidth;
+  left: -$smallPanelWidth;
 }
 
 // Keyframes
 
 @include keyframes(slidePanelLeftIn) {
-  from { left: -$horizontalPanelWidth; }
+  from { left: -$smallPanelWidth; }
   to { left: 0; }
 }
 
 @include keyframes(slidePanelLeftOut) {
   from { left: 0; }
-  to { left: -$horizontalPanelWidth; }
+  to { left: -$smallPanelWidth; }
 }
 
 
@@ -423,10 +337,98 @@ This is the main menu panel
 \*------------------------------------*/
 
 /* This will target anything bigger than an ipad portrait */
-@media only screen and (min-width: $desktopBreakPoint) {
+@media only screen and (min-width: $mediumBreakPoint) {
 
   // Hide any links that open the left panel
   a[data-target="left"] {
+    display: none;     
+  }
+
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $mediumBreakPoint) {
+
+  .page-wrapper {
+    float: right;
+    width: 70%;
+  }
+
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $mediumBreakPoint) {
+
+  .panel-vertical {
+    .panel-inner {
+      width: $mediumBreakPoint;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $mediumBreakPoint) {
+
+  .panel-right {
+    width: auto;
+
+    // .panel-inner {
+    //   width: $defaultMenuWidth;
+    // }
+  }
+
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $mediumBreakPoint) {
+
+  .panel-left {
+    left: 0;
+    width: 30%;
+    max-width: 30%;
+    float: left;
+
+    // Hide the panel close link
+    .panel-close {
+      display: none;
+    }
+  }
+
+}
+
+/* This will target anything bigger than an ipad portrait */
+@media only screen and (min-width: $largeBreakPoint) {
+
+  .page-wrapper {
+    float: none;
+    width: 60%;
+    position: relative;
+    left: 20%;
+  }
+
+  .panel-left {
+    // left: 0;
+    width: 20%;
+    max-width: 20%;
+    // float: left;
+  }
+
+  .panel-right {
+    right: 0;
+    width: 20%;
+    max-width: 20%;
+    float: right;
+
+    // Hide the panel close link
+    .panel-close {
+      display: none;
+    }
+  }
+
+  // Hide any links that open the left panel
+  a[data-target="right"] {
     display: none;     
   }
 
@@ -442,4 +444,39 @@ This is the main menu panel
 // Hide any links that open the left panel
 .lt-ie9 a[data-target="left"] {
   display: none;     
+}
+
+// IE8 Fix
+.lt-ie9 .page-wrapper {
+  float: right;
+  width: 70%;
+}
+
+// IE8 Fix
+.lt-ie9 .panel-vertical {
+  .panel-inner {
+    width: $mediumBreakPoint;
+    margin: 0 auto;
+  }
+}
+
+// IE8 Fix
+.lt-ie9 .panel-right {
+  width: auto;
+
+  .panel-inner {
+    width: $defaultMenuWidth;
+  }
+}
+
+// IE8 Fix
+.lt-ie9 .panel-left {
+  left: 0;
+  width: 30%;
+  float: left;
+
+  // Hide the panel close link
+  .panel-close {
+    display: none;
+  }
 }

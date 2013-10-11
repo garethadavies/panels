@@ -186,6 +186,8 @@ $(function() {
                 }
 
               }
+
+              e.gesture.preventDefault();
             
             });
 
@@ -280,6 +282,8 @@ $(function() {
                 });
 
               }
+
+              e.gesture.preventDefault();
             
             });
 
@@ -315,6 +319,8 @@ $(function() {
                 }
 
               }
+
+              e.gesture.preventDefault();
             
             });
 
@@ -415,6 +421,8 @@ $(function() {
                 });
 
               }
+
+              e.gesture.preventDefault();
             
             });
 

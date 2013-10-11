@@ -10,7 +10,7 @@ $(function() {
     {
       test: Modernizr.touch,
       yep: [
-        '../assets/js/vendor/hammer/jquery.hammer-1.0.5.js'
+        '../assets/js/vendor/hammer/jquery.hammer-1.0.6.js'
       ]
     },
 
@@ -19,13 +19,13 @@ $(function() {
     */
 
     // Is this an ios device?
-    {
-      test: Modernizr.appleios,
-      yep: [
-        'js/preventOverScroll.js',
-        'js/ios.js'
-      ]
-    }
+    // {
+    //   test: Modernizr.appleios,
+    //   yep: [
+    //     'js/preventOverScroll.js',
+    //     'js/ios.js'
+    //   ]
+    // }
 
   ]);
 

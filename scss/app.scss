@@ -167,7 +167,8 @@ i {
 /* Horizontal Panel */
 
 .panel-horizontal {
-  width: 280px;
+  width: 80%;
+  max-width: 280px;
   height: 100%;
   background-color: lighten($grayDarker, 6%);
   color: $white;

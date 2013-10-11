@@ -1,6 +1,6 @@
 $(function() {
 
-	alert('ios sup');
+	// alert('ios sup');
 
 	document.addEventListener('touchmove', function(e) {
 

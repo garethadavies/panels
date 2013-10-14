@@ -47,8 +47,11 @@ Author(s):
     @include animation(slidePageLeftIn, 0.4s, 0, ease);
     left: $smallPanelWidth;
     position: fixed;
-    // Stop the content scrolling when open
-    overflow: hidden;
+
+    .page-inner {
+      // Stop the content scrolling when open
+      overflow: hidden;
+    }
   }
 
   // Out to the left
@@ -63,9 +66,11 @@ Author(s):
     @include animation(slidePageRightIn, 0.4s, 0, ease);
     left: -$smallPanelWidth;
     position: fixed;
-    // Stop the content scrolling when open
-    overflow: hidden;
-    // z-index: 3;
+
+    .page-inner {
+      // Stop the content scrolling when open
+      overflow: hidden;
+    }
   }
   
   // Out to the right

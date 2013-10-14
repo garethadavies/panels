@@ -32,6 +32,9 @@ $(function() {
             // Add the panel out class
             options.targetPanel.addClass('panel-' + options.panelReference + '-out');
 
+            //
+            options.targetPanel.removeClass('panel-vertical-tall');
+
             // Set a timeout to match the animation duration
             setTimeout(function() {
 
@@ -431,6 +434,23 @@ $(function() {
               e.gesture.preventDefault();
             
             });
+
+          }
+          else if (panelReference === 'top' || panelReference === 'bottom') {
+
+            var
+            windowHeight = $(window).height(),
+            targetPanelHeight = Math.floor(targetPanel.height()),
+            // 80% of the window height (Must match css)
+            heightBreakpoint = Math.floor(windowHeight / 100 * 80);
+
+            // Is the target panel bigger than allowed?
+            if (targetPanelHeight >= heightBreakpoint) {
+
+              // We need additional classes
+              targetPanel.addClass('panel-vertical-tall');
+
+            }
 
           }
           

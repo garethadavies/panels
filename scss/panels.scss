@@ -101,7 +101,7 @@ Author(s):
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2002;
+  z-index: 2;
   padding: 0 0 0 $defaultPadding;
   width: 100%;
 
@@ -214,6 +214,7 @@ Author(s):
   left: 0;
   top: -110%;
   background-color: $white;
+  z-index: 5;
 }
 
 /* State classes */

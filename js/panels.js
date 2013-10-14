@@ -14,7 +14,7 @@ $(function() {
     // The function that closes panels
     closePanel = function(options) {
 
-      console.log('closing: ' + options.panelReference);
+      // console.log('closing: ' + options.panelReference);
 
       // Check options have been supplied
       if (options) {
@@ -100,7 +100,7 @@ $(function() {
     },
     openPanel = function(options) {
 
-      console.log('opening: ' + options.panelReference);
+      // console.log('opening: ' + options.panelReference);
 
       /*
       Open the requested panel
@@ -341,7 +341,7 @@ $(function() {
           // Detect any other panels that are currently open
           var currentPanel = panelWrapper.find('.panel-horizontal[data-open="true"]');
 
-          console.log(currentPanel);
+          // console.log(currentPanel);
 
           // Are there any other panels currently open?
           if (currentPanel.length) {
@@ -353,7 +353,7 @@ $(function() {
             // Going between horizontal panels?
             if (requestedPanelType === 'horizontal' && currentPanelType === 'horizontal') {
 
-              console.log('horizontal switch');
+              // console.log('horizontal switch');
 
               // Close the currently open panel
               closePanel({

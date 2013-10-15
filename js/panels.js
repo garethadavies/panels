@@ -5,8 +5,6 @@ $(function() {
   // Listen for any clicks requesting panel open or close
   $('.panel-open, .panel-close').on('click', function(e, ref) {
 
-    e.preventDefault();
-
     var
     pageWrapperWidth = pageWrapper.outerWidth();
     panelWrapper = $('.panel-wrapper') || $('body'),
@@ -137,7 +135,7 @@ $(function() {
         $('.page-wrapper-left-in').hammer().on('drag', function(e) {
           
           var
-          targetPanel = $('#panel-left'),
+          currentPanel = $('#panel-left'),
           that = $(this),
           originalPos = that.css('left');
 
@@ -148,7 +146,7 @@ $(function() {
             if (e.gesture.direction === 'left') {
 
               // Make the panel follow the cursor/finger
-              targetPanel.css('left', -e.gesture.distance);
+              currentPanel.css('left', -e.gesture.distance);
 
               //
               that.css('left', 280 - e.gesture.distance);
@@ -165,9 +163,9 @@ $(function() {
         $('.page-wrapper-left-in').hammer().on('dragend', function(e) {
 
           var
-          targetPanel = $('#panel-left'),
+          currentPanel = $('#panel-left'),
           that = $(this),
-          currentPos = parseInt(targetPanel.css('left'), 10);
+          currentPos = parseInt(currentPanel.css('left'), 10);
 
           // Has the panel been moved enough to close?
           if (currentPos < -40) {
@@ -180,7 +178,7 @@ $(function() {
             pageWrapper.unbind('dragend');
 
             // Close the panel
-            targetPanel.animate({
+            currentPanel.animate({
 
               left: '-=' + Math.abs(distanceLeft)
 
@@ -191,13 +189,13 @@ $(function() {
               complete: function() {
 
                 // Remove the left value from the style attribute
-                targetPanel.removeAttr('style');
+                currentPanel.removeAttr('style');
 
                 // Set the panel to closed
-                targetPanel.attr('data-open', 'false');
+                currentPanel.attr('data-open', 'false');
 
                 // Remove the panel in class
-                targetPanel.removeClass('panel-left-in');
+                currentPanel.removeClass('panel-left-in');
 
               }
 
@@ -228,14 +226,14 @@ $(function() {
           else {
 
             // Open the panel
-            targetPanel.animate({
+            currentPanel.animate({
 
               left: '+=' + Math.abs(currentPos)
 
             }, { duration: 200, queue: false }, function() {
 
               // Remove the left value from the style attribute
-              targetPanel.css('left', '');
+              currentPanel.css('left', '');
 
             });
 
@@ -273,9 +271,9 @@ $(function() {
         $('.page-wrapper-right-in').hammer().on('drag', function(e) {
           
           var
-          targetPanel = $('#panel-right'),
+          currentPanel = $('#panel-right'),
           that = $(this),
-          originalPos = targetPanel.css('right');
+          originalPos = currentPanel.css('right');
 
           // Has there been a valid gesture?
           if (e.gesture) {
@@ -284,7 +282,7 @@ $(function() {
             if (e.gesture.direction === 'right') {
 
               // Make the panel follow the cursor/finger
-              targetPanel.css('right', -e.gesture.distance);
+              currentPanel.css('right', -e.gesture.distance);
 
               //
               that.css('left', -280 + e.gesture.distance);
@@ -301,9 +299,9 @@ $(function() {
         $('.page-wrapper-right-in').hammer().on('dragend', function(e) {
 
           var
-          targetPanel = $('#panel-right'),
+          currentPanel = $('#panel-right'),
           that = $(this),
-          currentPos = parseInt(targetPanel.css('right'), 10);
+          currentPos = parseInt(currentPanel.css('right'), 10);
 
           // Has the panel been moved enough to close?
           if (currentPos < -40) {
@@ -316,7 +314,7 @@ $(function() {
             pageWrapper.unbind('dragend');
 
             // Close the panel
-            targetPanel.animate({
+            currentPanel.animate({
 
               right: '-=' + Math.abs(distanceLeft)
 
@@ -327,13 +325,13 @@ $(function() {
               complete: function() {
 
                 // Remove the right value from the style attribute
-                targetPanel.css('right', '');
+                currentPanel.css('right', '');
 
                 // Set the panel to closed
-                targetPanel.attr('data-open', 'false');
+                currentPanel.attr('data-open', 'false');
 
                 // Remove the panel in class
-                targetPanel.removeClass('panel-right-in');
+                currentPanel.removeClass('panel-right-in');
 
               }
 
@@ -364,7 +362,7 @@ $(function() {
           else {
 
             // Open the panel
-            targetPanel.animate({
+            currentPanel.animate({
 
               right: '+=' + Math.abs(currentPos)
 
@@ -375,7 +373,7 @@ $(function() {
               complete: function() {
 
                 // Remove the left value from the style attribute
-                targetPanel.css('right', '');
+                currentPanel.css('right', '');
 
               }
 
@@ -404,15 +402,20 @@ $(function() {
 
         var
         windowHeight = $(window).height(),
-        targetPanelHeight = Math.floor(targetPanel.height()),
+        currentPanelHeight = Math.floor(options.requestedPanel.height()),
         // 80% of the window height (Must match css)
         heightBreakpoint = Math.floor(windowHeight / 100 * 80);
 
+        console.log(currentPanelHeight);
+        console.log(heightBreakpoint);
+
         // Is the target panel bigger than allowed?
-        if (targetPanelHeight >= heightBreakpoint) {
+        if (currentPanelHeight >= heightBreakpoint) {
+
+          console.log('add tall');
 
           // We need additional classes
-          targetPanel.addClass('panel-vertical-tall');
+          options.requestedPanel.addClass('panel-vertical-tall');
 
         }
 
@@ -554,6 +557,8 @@ $(function() {
       throw 'No panel reference was supplied';
 
     }
+
+    e.preventDefault();
 
   });
 

@@ -167,12 +167,13 @@ Author(s):
 \*------------------------------------*/
 
 .panel-vertical {
-  width: 100%;
+  width: 94%;
+  left: 3%;
   height: auto;
   max-height: 80%;
   z-index: 4;
   // padding-bottom: $defaultPadding;
-  @include box-shadow(0 0 6px $gray);
+  @include box-shadow(0 0 6px $grayDark);
 
   /* Panel Inner */
 
@@ -211,7 +212,6 @@ Author(s):
 \*------------------------------------*/
 
 .panel-top {
-  left: 0;
   top: -110%;
   background-color: $white;
   z-index: 5;
@@ -248,8 +248,7 @@ Author(s):
   $ Bottom Panel
 \*------------------------------------*/
 
-.panel-bottom {
-  left: 0;
+.panel-bottom {  
   bottom: -100%;
 }
 

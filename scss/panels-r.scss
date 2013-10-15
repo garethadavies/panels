@@ -35,6 +35,13 @@ Author(s):
   $ Media Queries
 \*------------------------------------*/
 
+/* <= 480px */
+
+// This will target anything smaller than our small breakpoint
+@media only screen and (max-width: $smallBreakPoint) {
+
+}
+
 /* <= 767px */
 
 // This will target anything smaller than our medium breakpoint
@@ -128,8 +135,8 @@ Author(s):
   // Set a max width for the vertical panel inner
   .panel-vertical {
     .panel-inner {
-      width: $mediumBreakPoint;
-      margin: 0 auto;
+      // width: $mediumBreakPoint;
+      // margin: 0 auto;
     }
   }
 
@@ -145,6 +152,13 @@ Author(s):
     .panel-close {
       display: none;
     }
+  }
+  
+  //
+  .panel-bottom,
+  .panel-top {
+    width: 80%;
+    left: 10%;
   }
 
 }
@@ -181,6 +195,13 @@ Author(s):
     .panel-close {
       display: none;
     }
+  }
+
+  //
+  .panel-bottom,
+  .panel-top {
+    width: 50%;
+    left: 25%;
   }
 
   // Hide any links that open the right panel

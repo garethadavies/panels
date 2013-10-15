@@ -555,6 +555,30 @@ $(function() {
 
     }
 
+    /* Listen for window resize */
+
+    $(window).on('resize', function() {
+
+      resetWrapper();
+
+      pageWrapper.removeAttr('style');
+
+      var
+      targetPanelsByDataAttr = panelWrapper.find('*.panel-horizontal[data-open]');
+      targetPanelsByClass = panelWrapper.find('[class$=in]');
+
+      targetPanelsByDataAttr.removeAttr('data-open');
+
+      targetPanelsByClass.removeClass('panel-left-in');
+
+      targetPanelsByClass.removeClass('panel-right-in');
+
+      // console.log(targetPanelsByClass);
+
+      // console.log(panelWrapper.find('[data-open="true"]'));
+
+    });
+
     e.preventDefault();
 
   });

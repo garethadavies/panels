@@ -133,12 +133,10 @@ Author(s):
     width: 70%;
   }
 
-  // Set a max width for the vertical panel inner
+  // Set vertical panel width
   .panel-vertical {
-    .panel-inner {
-      // width: $mediumBreakPoint;
-      // margin: 0 auto;
-    }
+    width: 80%;
+    left: 10%;
   }
 
   // Set the correct width and position
@@ -154,13 +152,6 @@ Author(s):
       display: none;
     }
   }
-  
-  //
-  .panel-bottom,
-  .panel-top {
-    width: 80%;
-    left: 10%;
-  }
 
 }
 
@@ -169,9 +160,8 @@ Author(s):
 /* This will target anything bigger than our large breakpoint */
 @media only screen and (min-width: $largeBreakPoint) {
 
-  //
-  .panel-bottom,
-  .panel-top {
+  // Set vertical panel width
+  .panel-vertical {
     width: 60%;
     left: 20%;
   }
@@ -192,8 +182,15 @@ Author(s):
     left: 20%;
   }
 
+  // Set vertical panel width
+  .panel-vertical {
+    width: 50%;
+    left: 25%;
+  }
+
   // Adjust width
-  .panel-left {
+  .panel-left,
+  .panel-right {
     width: 20%;
     max-width: 20%;
   }
@@ -202,21 +199,12 @@ Author(s):
   // Adjust width and position
   .panel-right {
     right: 0;
-    width: 20%;
-    max-width: 20%;
     float: right;
 
     // Hide the panel close link
     .panel-close {
       display: none;
     }
-  }
-
-  //
-  .panel-bottom,
-  .panel-top {
-    width: 50%;
-    left: 25%;
   }
 
   // Hide any links that open the right panel

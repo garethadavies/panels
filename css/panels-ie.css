@@ -92,19 +92,32 @@ Author(s):
   float: right;
   width: 70%;
 }
-/* line 47, ../scss/panels-ie.scss */
-.lt-ie9 .panel-vertical .panel-inner {
-  width: 768px;
-  margin: 0 auto;
+/* line 54, ../scss/panels-ie.scss */
+.lt-ie9 .panel-vertical {
+  width: 60%;
+  left: 20%;
 }
-/* line 55, ../scss/panels-ie.scss */
+/* line 61, ../scss/panels-ie.scss */
+.lt-ie9 .panel-top,
+.lt-ie9 .panel-bottom {
+  border: 1px solid #cccccc;
+}
+/* line 65, ../scss/panels-ie.scss */
+.lt-ie9 .panel-top {
+  border-top: none;
+}
+/* line 69, ../scss/panels-ie.scss */
+.lt-ie9 .panel-bottom {
+  border-bottom: none;
+}
+/* line 75, ../scss/panels-ie.scss */
 .lt-ie9 .panel-left {
   left: 0;
   width: 30%;
   max-width: 30%;
   float: left;
 }
-/* line 62, ../scss/panels-ie.scss */
+/* line 82, ../scss/panels-ie.scss */
 .lt-ie9 .panel-left .panel-close {
   display: none;
 }

@@ -43,11 +43,31 @@ Author(s):
   }
 
   // Set a max width for the vertical panel inner
+  // .panel-vertical {
+  //   .panel-inner {
+  //     width: $mediumBreakPoint;
+  //     margin: 0 auto;
+  //   }
+  // }
+
+  // Set vertical panel width
   .panel-vertical {
-    .panel-inner {
-      width: $mediumBreakPoint;
-      margin: 0 auto;
-    }
+    width: 60%;
+    left: 20%;
+  }
+
+  // IE8 Needs borders
+  .panel-top,
+  .panel-bottom {
+    border: $defaultBorderWidth $defaultBorderStyle $defaultBorderColor;
+  }
+
+  .panel-top {
+    border-top: none;
+  }
+
+  .panel-bottom {
+    border-bottom: none;
   }
 
   // Set the correct width and position

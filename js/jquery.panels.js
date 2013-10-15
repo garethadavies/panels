@@ -97,7 +97,9 @@ $('#panel-wrapper').panels({
 		bottomPanel: true,
 		leftPanel: true,
 		touchEnabled: false,
-		touchActiveState: false
+		touchActiveState: false,
+		horizontalPanelWidth: 280,
+		dragLimit: 40
 
 	};
 
@@ -409,7 +411,7 @@ $('#panel-wrapper').panels({
 		              currentPanel.css('left', -e.gesture.distance);
 
 		              // Make sure the page rapper follows suit
-		              $this.css('left', 280 - e.gesture.distance);
+		              $this.css('left', _this.settings.horizontalPanelWidth - e.gesture.distance);
 		        
 		            }
 
@@ -431,7 +433,7 @@ $('#panel-wrapper').panels({
 		          if (currentPos < -40) {
 
 		            // Get the distance left for the panel to be shut
-		            var distanceLeft = -280 - currentPos;
+		            var distanceLeft = -_this.settings.horizontalPanelWidth - currentPos;
 		            
 		            // Close the panel
 		            currentPanel.animate({
@@ -506,7 +508,7 @@ $('#panel-wrapper').panels({
 		            // Open the panel
 		            $this.animate({
 
-		              left: 280
+		              left: this.settings.horizontalPanelWidth
 
 		            }, {
 
@@ -564,7 +566,7 @@ $('#panel-wrapper').panels({
 		              currentPanel.css('right', -e.gesture.distance);
 
 		              // Make sure the page rapper follows suit
-		              $this.css('left', -280 + e.gesture.distance);
+		              $this.css('left', -this.settings.horizontalPanelWidth + e.gesture.distance);
 		        
 		            }
 
@@ -586,7 +588,7 @@ $('#panel-wrapper').panels({
 		          if (currentPos < -40) {
 
 		            // Get the distance right for the panel to be shut
-		            var distanceLeft = -280 - currentPos;
+		            var distanceLeft = -this.settings.horizontalPanelWidth - currentPos;
 
 		            // Close the panel
 		            currentPanel.animate({
@@ -660,7 +662,7 @@ $('#panel-wrapper').panels({
 		            // Open the panel
 		            $this.animate({
 
-		              left: -280
+		              left: -this.settings.horizontalPanelWidth
 
 		            }, {
 

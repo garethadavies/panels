@@ -182,15 +182,15 @@ Requires:
   .page-wrapper-left-out {
     -webkit-animation-name: slidePageLeftOut;
     -webkit-animation-delay: 0;
-    -webkit-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-timing-function: ease;
     -moz-animation-name: slidePageLeftOut;
     -moz-animation-delay: 0;
-    -moz-animation-duration: 0.3s;
+    -moz-animation-duration: 0.4s;
     -moz-animation-timing-function: ease;
     animation-name: slidePageLeftOut;
     animation-delay: 0;
-    animation-duration: 0.3s;
+    animation-duration: 0.4s;
     animation-timing-function: ease;
     left: 0;
     position: fixed;
@@ -222,15 +222,15 @@ Requires:
   .page-wrapper-right-out {
     -webkit-animation-name: slidePageRightOut;
     -webkit-animation-delay: 0;
-    -webkit-animation-duration: 0.3s;
+    -webkit-animation-duration: 0.4s;
     -webkit-animation-timing-function: ease;
     -moz-animation-name: slidePageRightOut;
     -moz-animation-delay: 0;
-    -moz-animation-duration: 0.3s;
+    -moz-animation-duration: 0.4s;
     -moz-animation-timing-function: ease;
     animation-name: slidePageRightOut;
     animation-delay: 0;
-    animation-duration: 0.3s;
+    animation-duration: 0.4s;
     animation-timing-function: ease;
     left: 0;
     position: fixed;
@@ -414,10 +414,20 @@ Requires:
     left: 10%;
   }
 }
-/* >= 1440px */
+/* >= 1024px */
 /* This will target anything bigger than our large breakpoint */
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   /* line 173, ../scss/panels-r.scss */
+  .panel-bottom,
+  .panel-top {
+    width: 60%;
+    left: 20%;
+  }
+}
+/* >= 1440px */
+/* This will target anything bigger than our vast breakpoint */
+@media only screen and (min-width: 1440px) {
+  /* line 187, ../scss/panels-r.scss */
   .page-wrapper {
     float: none;
     width: 60%;
@@ -425,32 +435,32 @@ Requires:
     left: 20%;
   }
 
-  /* line 181, ../scss/panels-r.scss */
+  /* line 195, ../scss/panels-r.scss */
   .panel-left {
     width: 20%;
     max-width: 20%;
   }
 
-  /* line 188, ../scss/panels-r.scss */
+  /* line 202, ../scss/panels-r.scss */
   .panel-right {
     right: 0;
     width: 20%;
     max-width: 20%;
     float: right;
   }
-  /* line 195, ../scss/panels-r.scss */
+  /* line 209, ../scss/panels-r.scss */
   .panel-right .panel-close {
     display: none;
   }
 
-  /* line 202, ../scss/panels-r.scss */
+  /* line 216, ../scss/panels-r.scss */
   .panel-bottom,
   .panel-top {
     width: 50%;
     left: 25%;
   }
 
-  /* line 209, ../scss/panels-r.scss */
+  /* line 223, ../scss/panels-r.scss */
   a[data-target="right"],
   button[data-target="right"] {
     display: none;

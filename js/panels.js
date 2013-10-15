@@ -406,9 +406,6 @@ $(function() {
         // 80% of the window height (Must match css)
         heightBreakpoint = Math.floor(windowHeight / 100 * 80);
 
-        console.log(currentPanelHeight);
-        console.log(heightBreakpoint);
-
         // Is the target panel bigger than allowed?
         if (currentPanelHeight >= heightBreakpoint) {
 

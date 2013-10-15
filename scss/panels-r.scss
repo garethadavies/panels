@@ -63,7 +63,7 @@ Author(s):
 
   // Out to the left
   .page-wrapper-left-out {
-    @include animation(slidePageLeftOut, 0.3s, 0, ease);
+    @include animation(slidePageLeftOut, 0.4s, 0, ease);
     left: 0;
     position: fixed;
   }
@@ -82,7 +82,7 @@ Author(s):
   
   // Out to the right
   .page-wrapper-right-out {
-    @include animation(slidePageRightOut, 0.3s, 0, ease);
+    @include animation(slidePageRightOut, 0.4s, 0, ease);
     left: 0;
     position: fixed;
   }
@@ -163,10 +163,24 @@ Author(s):
 
 }
 
-/* >= 1440px */
+/* >= 1024px */
 
 /* This will target anything bigger than our large breakpoint */
 @media only screen and (min-width: $largeBreakPoint) {
+
+  //
+  .panel-bottom,
+  .panel-top {
+    width: 60%;
+    left: 20%;
+  }
+
+}
+
+/* >= 1440px */
+
+/* This will target anything bigger than our vast breakpoint */
+@media only screen and (min-width: $vastBreakPoint) {
 
   // Remove float
   // Adjust width and position

@@ -557,7 +557,7 @@ $(function() {
 
     /* Listen for window resize */
 
-    $(window).on('resize', function() {
+    $(window).on('resize', function(e) {
 
       resetWrapper();
 

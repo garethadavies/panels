@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="panel-wrapper">
+    <div id="panel-wrapper" class="panel-wrapper">
 
       <section id="panel-left" class="panel panel-horizontal panel-left" data-target="left">
 
@@ -145,7 +145,16 @@
     <script src="../assets/js/vendor/jquery/jquery-1.9.1.js"></script>
     <script src="../assets/js/vendor/hammer/jquery.hammer-1.0.6.js"></script>
     <script src="js/detect.js"></script>
-    <script src="js/panels.js"></script>
+    <script src="js/jquery.panels.js"></script>
+    <script>
+
+      $(function() {
+
+        $('#panel-wrapper').panels();
+
+      });
+
+    </script>
 
 	</body>
 

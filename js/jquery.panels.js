@@ -99,7 +99,8 @@ $('#panel-wrapper').panels({
 		touchEnabled: false,
 		touchActiveState: false,
 		horizontalPanelWidth: 280,
-		dragLimit: 40
+		dragLimit: 40,
+		animationDuration: 400
 
 	};
 
@@ -276,7 +277,7 @@ $('#panel-wrapper').panels({
 
 	              });
 
-	            }, 400);
+	            }, this.settings.animationDuration);
 	            
 	          }
 	          else {
@@ -430,7 +431,7 @@ $('#panel-wrapper').panels({
 		          currentPos = parseInt(currentPanel.css('left'), 10);
 
 		          // Has the panel been moved enough to close?
-		          if (currentPos < -40) {
+		          if (currentPos < -_this.settings.dragLimit) {
 
 		            // Get the distance left for the panel to be shut
 		            var distanceLeft = -_this.settings.horizontalPanelWidth - currentPos;
@@ -508,7 +509,7 @@ $('#panel-wrapper').panels({
 		            // Open the panel
 		            $this.animate({
 
-		              left: this.settings.horizontalPanelWidth
+		              left: _this.settings.horizontalPanelWidth
 
 		            }, {
 
@@ -566,7 +567,7 @@ $('#panel-wrapper').panels({
 		              currentPanel.css('right', -e.gesture.distance);
 
 		              // Make sure the page rapper follows suit
-		              $this.css('left', -this.settings.horizontalPanelWidth + e.gesture.distance);
+		              $this.css('left', -_this.settings.horizontalPanelWidth + e.gesture.distance);
 		        
 		            }
 
@@ -585,10 +586,10 @@ $('#panel-wrapper').panels({
 		          currentPos = parseInt(currentPanel.css('right'), 10);
 
 		          // Has the panel been moved enough to close?
-		          if (currentPos < -40) {
+		          if (currentPos < -_this.settings.dragLimit) {
 
 		            // Get the distance right for the panel to be shut
-		            var distanceLeft = -this.settings.horizontalPanelWidth - currentPos;
+		            var distanceLeft = -_this.settings.horizontalPanelWidth - currentPos;
 
 		            // Close the panel
 		            currentPanel.animate({
@@ -662,7 +663,7 @@ $('#panel-wrapper').panels({
 		            // Open the panel
 		            $this.animate({
 
-		              left: -this.settings.horizontalPanelWidth
+		              left: -_this.settings.horizontalPanelWidth
 
 		            }, {
 
@@ -760,7 +761,7 @@ $('#panel-wrapper').panels({
 
               }
 
-            }, 400);
+            }, this.settings.animationDuration);
 
             // Make sure that the page wrapper opens as well
 			      this.controlPageWrapper({

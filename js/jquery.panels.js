@@ -151,6 +151,9 @@ $('#panel-wrapper').panels();
 
 			}
 
+			// Make sure the touch active state is enabled
+			document.addEventListener('touchstart', function(){}, true);
+
 		},
 
 		/**

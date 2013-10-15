@@ -21,6 +21,8 @@ Contents:
   	* openPanel
   	* closePanel
   	* resetPageWrapper
+  	* controlPageWrapper
+  	* unbindPageWrapper
   * Plugin wrapper
 Author(s):
   * Gareth Davies @garethadavies
@@ -75,7 +77,9 @@ $('#panel-wrapper').panels({
 	topPanel: true,
 	rightPanel: true,
 	bottomPanel: true,
-	leftPanel: true
+	leftPanel: true,
+	touchEnabled: false,
+	touchActiveState: false
 
 });
 
@@ -204,7 +208,10 @@ $('#panel-wrapper').panels({
 	        // Is the requested panel already open?
 	        if (isOpen) {
 
-	          // Close the currently opened panel
+	          /* 
+	          Close the currently opened panel
+	          */
+
 	          this.closePanel({
 
 	            requestedPanel: requestedPanel,
@@ -237,7 +244,10 @@ $('#panel-wrapper').panels({
 	            // Going between horizontal panels?
 	            if (requestedPanelType === 'horizontal' && currentPanelType === 'horizontal') {
 
-	              // Close the currently open panel
+	              /*
+	              Close the currently open panel
+	              */
+
 	              this.closePanel({
 
 	                requestedPanel: currentPanel,
@@ -302,9 +312,9 @@ $('#panel-wrapper').panels({
 		},
 
 		/**
-    @method openPanel
+    @method initWindowResizeHandler
     */
-		initWindowResizeHandler: function(options) {
+		initWindowResizeHandler: function() {
 
 			var _this = this;
 
@@ -316,7 +326,11 @@ $('#panel-wrapper').panels({
 	      targetPanelsByClass = _this.$element.find('[class$=in]');
 
 				// Reset the page wrapper
-	      _this.resetPageWrapper();
+	      _this.resetPageWrapper({
+
+	      	panelReference: ['left', 'right']
+
+	      });
 
 	      // Remove any data-open attributes
 	      targetPanelsByDataAttr.removeAttr('data-open');
@@ -356,18 +370,20 @@ $('#panel-wrapper').panels({
       // Make sure the page wrapper's width is correct
       this.settings.pageWrapper.css('width', pageWrapperWidth);
 
+      // Make sure that the page wrapper opens as well
+      this.controlPageWrapper({
+
+      	direction: 'in',
+      	panelReference: options.panelReference
+
+      });
+
       /*
       Specific Panels
       */
 
       // Left-hand panel
       if (options.panelReference === 'left') {
-
-        // Remove the page wrapper 'out' class
-        this.settings.pageWrapper.removeClass('page-wrapper-left-out');
-
-        // Add the page wrapper 'in' class
-        this.settings.pageWrapper.addClass('page-wrapper-left-in');
 
         // Modernizr touch test
         if (this.settings.touchEnabled && Modernizr.touch) {
@@ -523,12 +539,6 @@ $('#panel-wrapper').panels({
       }
       // Right-hand panel
       else if (options.panelReference === 'right') {
-
-        // Remove the page wrapper 'out' class
-        this.settings.pageWrapper.removeClass('page-wrapper-right-out');
-
-        // Add the page wrapper 'in' class
-        this.settings.pageWrapper.addClass('page-wrapper-right-in');
 
         // Modernizr touch test
         if (this.settings.touchEnabled && Modernizr.touch) {
@@ -740,32 +750,23 @@ $('#panel-wrapper').panels({
               if (options.reset && options.panelType === 'horizontal') {
                 
                 // Reset the page wrapper
-                _this.resetPageWrapper();
+                _this.resetPageWrapper({
+
+					      	panelReference: ['left', 'right']
+
+					      });
 
               }
 
             }, 400);
 
-            // Are we closing the left panel?
-            if (options.panelReference === 'left') {
+            // Make sure that the page wrapper opens as well
+			      this.controlPageWrapper({
 
-              // Remove the page wrapper in class
-              this.settings.pageWrapper.removeClass('page-wrapper-left-in');
-              
-              // Remove the page wrapper out class
-              this.settings.pageWrapper.addClass('page-wrapper-left-out');
+			      	direction: 'out',
+			      	panelReference: options.panelReference
 
-            }
-            // Are we closing the right panel?
-            else if (options.panelReference === 'right') {
-
-              // Remove the page wrapper in class
-              this.settings.pageWrapper.removeClass('page-wrapper-right-in');
-              
-              // Remove the page wrapper out class
-              this.settings.pageWrapper.addClass('page-wrapper-right-out');
-
-            }
+			      });
 
             // Unbind the poage wrapper drag events
             this.unbindPageWrapper();
@@ -795,22 +796,50 @@ $('#panel-wrapper').panels({
 		/**
     @method resetPageWrapper
     */
-		resetPageWrapper: function() {
+		resetPageWrapper: function(options) {
+
+			var _this = this;
 
 			// Remove the style attribute
       this.settings.pageWrapper.removeAttr('style');
 
-      // Remove the page wrapper in class
-      this.settings.pageWrapper.removeClass('page-wrapper-left-in');
-      
-      // Remove the page wrapper out class
-      this.settings.pageWrapper.removeClass('page-wrapper-left-out');
+      // Is the panel ref an array?
+      if ($.isArray(options.panelReference)) {
+
+      	// Loop through each array item
+      	$.each(options.panelReference, function(index, value) {
+
+      		// Remove the page wrapper in class
+		      _this.settings.pageWrapper.removeClass('page-wrapper-' + value + '-in');
+		      
+		      // Remove the page wrapper out class
+		      _this.settings.pageWrapper.removeClass('page-wrapper-' + value + '-out');
+
+      	});
+
+      }
+      else {
+
+	      // Remove the page wrapper in class
+	      this.settings.pageWrapper.removeClass('page-wrapper-' + options.panelReference + '-in');
+	      
+	      // Remove the page wrapper out class
+	      this.settings.pageWrapper.removeClass('page-wrapper-' + options.panelReference + '-out');
+
+      }
+
+		},
+
+		/**
+    @method controlPageWrapper
+    */
+		controlPageWrapper: function(options) {
 
       // Remove the page wrapper in class
-      this.settings.pageWrapper.removeClass('page-wrapper-right-in');
+      this.settings.pageWrapper.removeClass('page-wrapper-' + options.panelReference + '-' + options.direction + '');
       
       // Remove the page wrapper out class
-      this.settings.pageWrapper.removeClass('page-wrapper-right-out');
+      this.settings.pageWrapper.addClass('page-wrapper-' + options.panelReference + '-' + options.direction + '');
 
 		},
 

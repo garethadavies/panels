@@ -9,7 +9,7 @@ Requires:
   * jquery.panels.css
 Optional:
   * jquery.panels-r.css (Responsive)
-  * jquery.panels-ie.css (IE8 Fixes)
+  * jquery.panels-ie.css (IE8 Specific)
   * Hammer.js
   * Modernizr
 Contents:
@@ -19,6 +19,8 @@ Contents:
   	* clickEventHandler
   	* initWindowResizeHandler
   	* openPanel
+  	* leftPanelDragInit
+  	* rightPanelDragInit
   	* closePanel
   	* resetPageWrapper
   	* controlPageWrapper

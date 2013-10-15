@@ -8,16 +8,19 @@ Requires:
   * jQuery
   * jquery.panels.css
 Optional:
-  * jquery.panels-r.css
-  * jquery.panels-ie.css
+  * jquery.panels-r.css (Responsive)
+  * jquery.panels-ie.css (IE8 Fixes)
   * Hammer.js
+  * Modernizr
 Contents:
   * Plugin constructor
   * Plugin prototype
   	* init
-  	* addControls
-  	* toggleEvent
-  	* resizeEvent
+  	* clickEventHandler
+  	* initWindowResizeHandler
+  	* openPanel
+  	* closePanel
+  	* resetPageWrapper
   * Plugin wrapper
 Author(s):
   * Gareth Davies @garethadavies
@@ -27,23 +30,47 @@ Author(s):
 Usage:
 
 HTML
-<div class="space-saver">
-	<p>Some content here</p>
+<div id="panel-wrapper" class="panel-wrapper">
+	<section id="panel-top" class="panel panel-horizontal panel-top" data-target="top">
+		<header class="panel-header">
+			<a class="panel-close" data-target="left">Close</a>
+			<span class="panel-title">Title</span>
+    </header>
+		<div class="panel-inner">
+			<p>Content here</p>
+		</div>
+	</section>
+	<section id="panel-right" class="panel panel-horizontal panel-right" data-target="right">
+		<header class="panel-header">
+			<a class="panel-close" data-target="left">Close</a>
+			<span class="panel-title">Title</span>
+    </header>
+		<div class="panel-inner">
+			<p>Content here</p>
+		</div>
+	</section>
+	<section id="panel-bottom" class="panel panel-horizontal panel-bottom" data-target="bottom">
+		<header class="panel-header">
+			<a class="panel-close" data-target="left">Close</a>
+			<span class="panel-title">Title</span>
+    </header>
+		<div class="panel-inner">
+			<p>Content here</p>
+		</div>
+	</section>
+	<section id="panel-left" class="panel panel-horizontal panel-left" data-target="left">
+		<header class="panel-header">
+			<a class="panel-close" data-target="left">Close</a>
+			<span class="panel-title">Title</span>
+    </header>
+		<div class="panel-inner">
+			<p>Content here</p>
+		</div>
+	</section>
 </div>
 
 JS
-$('#container').panels({
-	// This height will be where the contents of the target div is cut-off and replaced by the 'show more'. You can adjust this to suit your content
-	heightLimit: 100,
-	// The background colour (Hex) of the 'show more/show less'
-  backgroundColor: '#fff',
-  // You can supply the html for including an 'open' icon
-  iconOpen: '<i class="icon-up-open"></i>',
-  // You can supply the html for including an 'closed' icon
-  iconClosed: '<i class="icon-down-open"></i>',
-  // You can set whether you want the plugin to refresh if the window is resized. This requires jquery.debouncedresize.js to be available
-  resizable: false
-});
+$('#panel-wrapper').panels();
 
 */
 
@@ -107,10 +134,9 @@ $('#container').panels({
 			  $('.panel-open, .panel-close').on('click', function(e, ref) {
 
 			  	// Call the method to handle the event
-			  	_this.handleEvent({
+			  	_this.clickEventHandler({
 
-			  		_this: this,
-			  		ref: ref
+			  		panelReference: $(this).attr('data-target') || ref
 
 			  	});
 
@@ -128,9 +154,9 @@ $('#container').panels({
 		},
 
 		/**
-    @method openPanel
+    @method clickEventHandler
     */
-		handleEvent: function(options, callback) {
+		clickEventHandler: function(options, callback) {
 
 			var
 			_this = this,
@@ -138,16 +164,16 @@ $('#container').panels({
 
 	    /* Initialise the window resize listener */
 
-	    this.windowResize();
+	    this.initWindowResizeHandler();
 
 	    /* The meat & potatoes */
 
 	    // We require a panel reference
-	    if (panelReference) {
+	    if (options.panelReference) {
 
 	      var
-	      requestedPanel = this.$element.find('.panel-' + panelReference),
-	      requestedPanelType = (panelReference === 'left' || panelReference === 'right') ? 'horizontal' : 'vertical';
+	      requestedPanel = this.$element.find('.panel-' + options.panelReference),
+	      requestedPanelType = (options.panelReference === 'left' || options.panelReference === 'right') ? 'horizontal' : 'vertical';
 
 	      // We need a target panel in the DOM
 	      if (requestedPanel.length) {              
@@ -166,7 +192,7 @@ $('#container').panels({
 	          this.closePanel({
 
 	            requestedPanel: requestedPanel,
-	            panelReference: panelReference,
+	            panelReference: options.panelReference,
 	            panelType: requestedPanelType,
 	            reset: true
 
@@ -220,7 +246,7 @@ $('#container').panels({
 	              _this.openPanel({
 
 	                requestedPanel: requestedPanel,
-	                panelReference: panelReference,
+	                panelReference: options.panelReference,
 	                panelType: requestedPanelType
 
 	              });
@@ -234,7 +260,7 @@ $('#container').panels({
 	            this.openPanel({
 	              
 	              requestedPanel: requestedPanel,
-	              panelReference: panelReference,
+	              panelReference: options.panelReference,
 	              panelType: requestedPanelType
 
 	            });
@@ -262,14 +288,14 @@ $('#container').panels({
 		/**
     @method openPanel
     */
-		windowResize: function(options, callback) {
+		initWindowResizeHandler: function(options, callback) {
 
 			var _this = this;
 
 			//
 			$(window).on('resize', function(e) {
 
-	      _this.resetWrapper();
+	      _this.resetPageWrapper();
 
 	      _this.settings.pageWrapper.removeAttr('style');
 
@@ -657,7 +683,7 @@ $('#container').panels({
 
               if (options.reset && options.panelType === 'horizontal') {
                 //
-                _this.resetWrapper();
+                _this.resetPageWrapper();
 
               }
 
@@ -711,9 +737,9 @@ $('#container').panels({
 		},
 
 		/**
-    @method resetWrapper
+    @method resetPageWrapper
     */
-		resetWrapper: function(options, callback) {
+		resetPageWrapper: function(options, callback) {
 
 			// console.log('reset wrapper');
 

@@ -56,12 +56,14 @@ Author(s):
   height: 100%;
   // @include scroll-y();
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .page-inner {
   height: 100%;
   padding: 0 $defaultPadding $defaultPadding*4 $defaultPadding;
-  @include scroll-y(); 
+  @include scroll-y();
+  -webkit-backface-visibility: hidden;
 }
 
 

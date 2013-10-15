@@ -573,10 +573,6 @@ $(function() {
 
       targetPanelsByClass.removeClass('panel-right-in');
 
-      // console.log(targetPanelsByClass);
-
-      // console.log(panelWrapper.find('[data-open="true"]'));
-
     });
 
     e.preventDefault();

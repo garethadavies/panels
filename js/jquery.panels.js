@@ -70,7 +70,14 @@ HTML
 </div>
 
 JS
-$('#panel-wrapper').panels();
+$('#panel-wrapper').panels({
+	
+	topPanel: true,
+	rightPanel: true,
+	bottomPanel: true,
+	leftPanel: true
+
+});
 
 */
 
@@ -81,11 +88,12 @@ $('#panel-wrapper').panels();
 	pluginName = 'panels',
 	defaults = {
 
-		heightLimit: 100,
-		backgroundColor: '#fff',
-		iconClosed: '',
-		iconOpen: '',
-		resizable: false
+		topPanel: true,
+		rightPanel: true,
+		bottomPanel: true,
+		leftPanel: true,
+		touchEnabled: false,
+		touchActiveState: false
 
 	};
 
@@ -124,8 +132,11 @@ $('#panel-wrapper').panels();
 
 			var _this = this;
 
-			//
+			// Reference the page wrapper element
 			this.settings.pageWrapper = $('#page-wrapper');
+
+			// Is hammer available?
+			this.settings.hammer = ($.fn.hammer !== undefined) ? true : false;
 
 			// We require a page wrapper
 			if (this.settings.pageWrapper) {
@@ -151,25 +162,27 @@ $('#panel-wrapper').panels();
 
 			}
 
-			// Make sure the touch active state is enabled
-			document.addEventListener('touchstart', function(){}, true);
+			/* Touch active state */
+
+			// Has touch active state been requested?
+			if (this.settings.touchActiveState) {
+
+				// Make sure the touch active state is enabled
+				document.addEventListener('touchstart', function() {}, true);
+				
+			}
 
 		},
 
 		/**
     @method clickEventHandler
     */
-		clickEventHandler: function(options, callback) {
+		clickEventHandler: function(options) {
 
-			var
-			_this = this,
-			panelReference = $(options._this).attr('data-target') || options.ref;
+			var _this = this;
 
-	    /* Initialise the window resize listener */
-
+	    // Initialise the window resize listener
 	    this.initWindowResizeHandler();
-
-	    /* The meat & potatoes */
 
 	    // We require a panel reference
 	    if (options.panelReference) {
@@ -214,8 +227,6 @@ $('#panel-wrapper').panels();
 	          // Detect any other panels that are currently open
 	          var currentPanel = this.$element.find('.panel-horizontal[data-open="true"]');
 
-	          // console.log(currentPanel);
-
 	          // Are there any other panels currently open?
 	          if (currentPanel.length) {
 
@@ -225,8 +236,6 @@ $('#panel-wrapper').panels();
 
 	            // Going between horizontal panels?
 	            if (requestedPanelType === 'horizontal' && currentPanelType === 'horizontal') {
-
-	              // console.log('horizontal switch');
 
 	              // Close the currently open panel
 	              this.closePanel({
@@ -240,6 +249,7 @@ $('#panel-wrapper').panels();
 
 	            }
 
+	            // Delay the requested panel opening to match CSS animation
 	            setTimeout(function() {
 
 	              /*
@@ -259,7 +269,10 @@ $('#panel-wrapper').panels();
 	          }
 	          else {
 
-	            //
+	            /*
+              Open the requested panel
+              */
+
 	            this.openPanel({
 	              
 	              requestedPanel: requestedPanel,
@@ -291,25 +304,25 @@ $('#panel-wrapper').panels();
 		/**
     @method openPanel
     */
-		initWindowResizeHandler: function(options, callback) {
+		initWindowResizeHandler: function(options) {
 
 			var _this = this;
 
-			//
+			// Listen for any window resizes
 			$(window).on('resize', function(e) {
-
-	      _this.resetPageWrapper();
-
-	      _this.settings.pageWrapper.removeAttr('style');
 
 	      var
 	      targetPanelsByDataAttr = _this.$element.find('*.panel-horizontal[data-open]');
 	      targetPanelsByClass = _this.$element.find('[class$=in]');
 
+				// Reset the page wrapper
+	      _this.resetPageWrapper();
+
+	      // Remove any data-open attributes
 	      targetPanelsByDataAttr.removeAttr('data-open');
 
+	      // Remove any *-in classes
 	      targetPanelsByClass.removeClass('panel-left-in');
-
 	      targetPanelsByClass.removeClass('panel-right-in');
 
 	      e.preventDefault();
@@ -321,13 +334,11 @@ $('#panel-wrapper').panels();
 		/**
     @method openPanel
     */
-		openPanel: function(options, callback) {
+		openPanel: function(options) {
 
 			var
 			_this = this,
 			pageWrapperWidth = this.settings.pageWrapper.outerWidth();
-
-			// console.log('opening: ' + options.panelReference);
 
       /*
       Open the requested panel
@@ -346,288 +357,332 @@ $('#panel-wrapper').panels();
       this.settings.pageWrapper.css('width', pageWrapperWidth);
 
       /*
-      Left panel shiz
+      Specific Panels
       */
 
+      // Left-hand panel
       if (options.panelReference === 'left') {
 
-        //
+        // Remove the page wrapper 'out' class
         this.settings.pageWrapper.removeClass('page-wrapper-left-out');
 
-        //
+        // Add the page wrapper 'in' class
         this.settings.pageWrapper.addClass('page-wrapper-left-in');
 
-        // TODO: Modernizr touch test
-        // if (Modernizr.touch) {}
+        // Modernizr touch test
+        if (this.settings.touchEnabled && Modernizr.touch) {
 
-        // Detect a user swiping the left panel shut
-        $('.page-wrapper-left-in').hammer().on('drag', function(e) {
-          
-          var
-          currentPanel = $('#panel-left'),
-          $this = $(this),
-          originalPos = $this.css('left');
+        	// Is hammer available?
+        	if (this.settings.hammer) {
 
-          // Has there been a valid gesture?
-          if (e.gesture) {
+		        // Detect a user swiping the left panel shut
+		        $('.page-wrapper-left-in').hammer().on('drag', function(e) {
+		          
+		          var
+		          currentPanel = $('#panel-left'),
+		          $this = $(this),
+		          originalPos = $this.css('left');
 
-            // We require a drag left or right
-            if (e.gesture.direction === 'left') {
+		          // Has there been a valid gesture?
+		          if (e.gesture) {
 
-              // Make the panel follow the cursor/finger
-              currentPanel.css('left', -e.gesture.distance);
+		            // We require a drag left
+		            if (e.gesture.direction === 'left') {
 
-              //
-              $this.css('left', 280 - e.gesture.distance);
-        
-            }
+		              // Make the panel follow the cursor/finger
+		              currentPanel.css('left', -e.gesture.distance);
 
-          }
+		              // Make sure the page rapper follows suit
+		              $this.css('left', 280 - e.gesture.distance);
+		        
+		            }
 
-          e.gesture.preventDefault();
-        
-        });
+		          }
 
-        // Detect a user swiping the left panel shut
-        $('.page-wrapper-left-in').hammer().on('dragend', function(e) {
+		          e.gesture.preventDefault();
+		        
+		        });
 
-          var
-          currentPanel = $('#panel-left'),
-          $this = $(this),
-          currentPos = parseInt(currentPanel.css('left'), 10);
+		        // Detect a user swiping the left panel shut
+		        $('.page-wrapper-left-in').hammer().on('dragend', function(e) {
 
-          // Has the panel been moved enough to close?
-          if (currentPos < -40) {
+		          var
+		          currentPanel = $('#panel-left'),
+		          $this = $(this),
+		          currentPos = parseInt(currentPanel.css('left'), 10);
 
-            // Get the distance left for the panel to be shut
-            var distanceLeft = -280 - currentPos;
+		          // Has the panel been moved enough to close?
+		          if (currentPos < -40) {
 
-            _this.settings.pageWrapper.unbind('drag');
+		            // Get the distance left for the panel to be shut
+		            var distanceLeft = -280 - currentPos;
+		            
+		            // Close the panel
+		            currentPanel.animate({
 
-            _this.settings.pageWrapper.unbind('dragend');
+		              left: '-=' + Math.abs(distanceLeft)
 
-            // Close the panel
-            currentPanel.animate({
+		            }, { 
 
-              left: '-=' + Math.abs(distanceLeft)
+		              duration: 200,
+		              queue: false,
+		              complete: function() {
 
-            }, { 
+		                // Remove the left value from the style attribute
+		                currentPanel.removeAttr('style');
 
-              duration: 200,
-              queue: false,
-              complete: function() {
+		                // Set the panel to closed
+		                currentPanel.attr('data-open', 'false');
 
-                // Remove the left value from the style attribute
-                currentPanel.removeAttr('style');
+		                // Remove the panel in class
+		                currentPanel.removeClass('panel-left-in');
 
-                // Set the panel to closed
-                currentPanel.attr('data-open', 'false');
+		              }
 
-                // Remove the panel in class
-                currentPanel.removeClass('panel-left-in');
+		            });
 
-              }
+		            // Make sure the page wrapper follows suit
+		            $this.animate({
 
-            });
+		              left: 0
 
-            //
-            $this.animate({
+		            }, {
 
-              left: 0
+		              duration: 200,
+		              queue: false,
+		              complete: function() {
 
-            }, {
+		                // Remove the left value from the style attribute
+		                $this.removeAttr('style');
 
-              duration: 200,
-              queue: false,
-              complete: function() {
+		                // Remove the panel in class
+		                $this.removeClass('page-wrapper-left-in');
 
-                // Remove the left value from the style attribute
-                $this.removeAttr('style');
+		              }
 
-                // Remove the panel in class
-                $this.removeClass('page-wrapper-left-in');
+		            });
 
-              }
+		            // Unbind the drag events
+		            _this.unbindPageWrapper();
 
-            });
+		          }
+		          // Return the panel to the open position
+		          else {
 
-          }
-          else {
+		            // Open the panel
+		            currentPanel.animate({
 
-            // Open the panel
-            currentPanel.animate({
+		              left: '+=' + Math.abs(currentPos)
 
-              left: '+=' + Math.abs(currentPos)
+		            }, {
 
-            }, { duration: 200, queue: false }, function() {
+		            	duration: 200,
+		            	queue: false,
+		            	complete: function() {
 
-              // Remove the left value from the style attribute
-              currentPanel.css('left', '');
+			              // Remove the left value from the style attribute
+			              currentPanel.css('left', '');
 
-            });
+			            }
 
-            // Open the panel
-            $this.animate({
+		            });
 
-              left: 280
+		            // Open the panel
+		            $this.animate({
 
-            }, { duration: 200, queue: false }, function() {
+		              left: 280
 
-              // Remove the left value from the style attribute
-              $this.css('left', '');
+		            }, {
 
-            });
+		            	duration: 200,
+		            	queue: false,
+		            	complete: function() {
 
-          }
+			              // Remove the left value from the style attribute
+			              $this.css('left', '');
 
-          e.gesture.preventDefault();
-        
-        });
+			            }
+
+		            });
+
+		          }
+
+		          e.gesture.preventDefault();
+		        
+		        });
+
+					}
+					else {
+
+						throw 'Hammer is required to add panel touch gestures';
+
+					}
+
+				}
 
       }
+      // Right-hand panel
       else if (options.panelReference === 'right') {
 
-        //
+        // Remove the page wrapper 'out' class
         this.settings.pageWrapper.removeClass('page-wrapper-right-out');
 
-        //
+        // Add the page wrapper 'in' class
         this.settings.pageWrapper.addClass('page-wrapper-right-in');
 
-        // TODO: Modernizr touch test
-        // if (Modernizr.touch) {}
+        // Modernizr touch test
+        if (this.settings.touchEnabled && Modernizr.touch) {
 
-        // Detect a user swiping the right panel shut
-        $('.page-wrapper-right-in').hammer().on('drag', function(e) {
-          
-          var
-          currentPanel = $('#panel-right'),
-          $this = $(this),
-          originalPos = currentPanel.css('right');
+        	// Is hammer available?
+        	if (this.settings.hammer) {
 
-          // Has there been a valid gesture?
-          if (e.gesture) {
+		        // Detect a user swiping the right panel shut
+		        $('.page-wrapper-right-in').hammer().on('drag', function(e) {
+		          
+		          var
+		          currentPanel = $('#panel-right'),
+		          $this = $(this),
+		          originalPos = currentPanel.css('right');
 
-            // We require a drag left or right
-            if (e.gesture.direction === 'right') {
+		          // Has there been a valid gesture?
+		          if (e.gesture) {
 
-              // Make the panel follow the cursor/finger
-              currentPanel.css('right', -e.gesture.distance);
+		            // We require a drag right
+		            if (e.gesture.direction === 'right') {
 
-              //
-              $this.css('left', -280 + e.gesture.distance);
-        
-            }
+		              // Make the panel follow the cursor/finger
+		              currentPanel.css('right', -e.gesture.distance);
 
-          }
+		              // Make sure the page rapper follows suit
+		              $this.css('left', -280 + e.gesture.distance);
+		        
+		            }
 
-          e.gesture.preventDefault();
-        
-        });
+		          }
 
-        // Detect a user swiping the right panel shut
-        $('.page-wrapper-right-in').hammer().on('dragend', function(e) {
+		          e.gesture.preventDefault();
+		        
+		        });
 
-          var
-          currentPanel = $('#panel-right'),
-          $this = $(this),
-          currentPos = parseInt(currentPanel.css('right'), 10);
+		        // Detect a user swiping the right panel shut
+		        $('.page-wrapper-right-in').hammer().on('dragend', function(e) {
 
-          // Has the panel been moved enough to close?
-          if (currentPos < -40) {
+		          var
+		          currentPanel = $('#panel-right'),
+		          $this = $(this),
+		          currentPos = parseInt(currentPanel.css('right'), 10);
 
-            // Get the distance right for the panel to be shut
-            var distanceLeft = -280 - currentPos;
+		          // Has the panel been moved enough to close?
+		          if (currentPos < -40) {
 
-            _this.settings.pageWrapper.unbind('drag');
+		            // Get the distance right for the panel to be shut
+		            var distanceLeft = -280 - currentPos;
 
-            _this.settings.pageWrapper.unbind('dragend');
+		            // Close the panel
+		            currentPanel.animate({
 
-            // Close the panel
-            currentPanel.animate({
+		              right: '-=' + Math.abs(distanceLeft)
 
-              right: '-=' + Math.abs(distanceLeft)
+		            }, { 
 
-            }, { 
+		              duration: 200,
+		              queue: false,
+		              complete: function() {
 
-              duration: 200,
-              queue: false,
-              complete: function() {
+		                // Remove the right value from the style attribute
+		                currentPanel.css('right', '');
 
-                // Remove the right value from the style attribute
-                currentPanel.css('right', '');
+		                // Set the panel to closed
+		                currentPanel.attr('data-open', 'false');
 
-                // Set the panel to closed
-                currentPanel.attr('data-open', 'false');
+		                // Remove the panel in class
+		                currentPanel.removeClass('panel-right-in');
 
-                // Remove the panel in class
-                currentPanel.removeClass('panel-right-in');
+		              }
 
-              }
+		            });
 
-            });
+		            // Make sure the page wrapper follows suit
+		            $this.animate({
 
-            //
-            $this.animate({
+		              left: 0
 
-              left: 0
+		            }, {
 
-            }, {
+		              duration: 200,
+		              queue: false,
+		              complete: function() {
 
-              duration: 200,
-              queue: false,
-              complete: function() {
+		                // Remove the left value from the style attribute
+		                $this.removeAttr('style');
 
-                // Remove the left value from the style attribute
-                $this.removeAttr('style');
+		                // Remove the panel in class
+		                $this.removeClass('page-wrapper-right-in');
 
-                // Remove the panel in class
-                $this.removeClass('page-wrapper-right-in');
+		              }
 
-              }
+		            });
 
-            });
+		            // Unbind the drag events
+		            _this.unbindPageWrapper();
 
-          }
-          else {
+		          }
+		          else {
 
-            // Open the panel
-            currentPanel.animate({
+		            // Open the panel
+		            currentPanel.animate({
 
-              right: '+=' + Math.abs(currentPos)
+		              right: '+=' + Math.abs(currentPos)
 
-            }, { 
+		            }, { 
 
-              duration: 200,
-              queue: false,
-              complete: function() {
+		              duration: 200,
+		              queue: false,
+		              complete: function() {
 
-                // Remove the left value from the style attribute
-                currentPanel.css('right', '');
+		                // Remove the left value from the style attribute
+		                currentPanel.css('right', '');
 
-              }
+		              }
 
-            });
+		            });
 
-            // Open the panel
-            $this.animate({
+		            // Open the panel
+		            $this.animate({
 
-              left: -280
+		              left: -280
 
-            }, { duration: 200, queue: false }, function() {
+		            }, {
 
-              // Remove the left value from the style attribute
-              $this.css('right', '');
+		            	duration: 200,
+		            	queue: false,
+		            	complete: function() {
 
-            });
+			              // Remove the left value from the style attribute
+			              $this.css('right', '');
 
-          }
+			            }
 
-          e.gesture.preventDefault();
-        
-        });
+		            });
+
+		          }
+
+		          e.gesture.preventDefault();
+		        
+		        });
+
+					}
+					else {
+
+						throw 'Hammer is required to add panel touch gestures';
+
+					}
+
+				}
 
       }
-      else if (options.panelReference === 'top' || options.panelReference === 'bottom') {
+      // Vertical panels
+      else {
 
         var
         windowHeight = $(window).height(),
@@ -650,9 +705,7 @@ $('#panel-wrapper').panels();
 		/**
     @method closePanel
     */
-		closePanel: function(options, callback) {
-
-			// console.log('closing: ' + options.panelReference);
+		closePanel: function(options) {
 
 			var _this = this;
 
@@ -674,48 +727,48 @@ $('#panel-wrapper').panels();
             // Add the panel out class
             options.requestedPanel.addClass('panel-' + options.panelReference + '-out');
 
-            //
+            // Remove the tall panel helper class is present 
             options.requestedPanel.removeClass('panel-vertical-tall');
 
             // Set a timeout to match the animation duration
             setTimeout(function() {
 
+            	// Remove the style attribute
               options.requestedPanel.removeAttr('style');
-                // console.log(options.reset);
-                // console.log(options.panelType);
 
+              // Has a reset been requested for a horizontal panel?
               if (options.reset && options.panelType === 'horizontal') {
-                //
+                
+                // Reset the page wrapper
                 _this.resetPageWrapper();
 
               }
 
             }, 400);
 
-            this.settings.pageWrapper.unbind('drag');
-
-            this.settings.pageWrapper.unbind('dragend');
-
+            // Are we closing the left panel?
             if (options.panelReference === 'left') {
 
-              // console.log('left');
-
-              //
+              // Remove the page wrapper in class
               this.settings.pageWrapper.removeClass('page-wrapper-left-in');
               
-              //
+              // Remove the page wrapper out class
               this.settings.pageWrapper.addClass('page-wrapper-left-out');
 
             }
+            // Are we closing the right panel?
             else if (options.panelReference === 'right') {
 
-              //
+              // Remove the page wrapper in class
               this.settings.pageWrapper.removeClass('page-wrapper-right-in');
               
-              //
+              // Remove the page wrapper out class
               this.settings.pageWrapper.addClass('page-wrapper-right-out');
 
             }
+
+            // Unbind the poage wrapper drag events
+            this.unbindPageWrapper();
 
           }
           else {
@@ -742,21 +795,33 @@ $('#panel-wrapper').panels();
 		/**
     @method resetPageWrapper
     */
-		resetPageWrapper: function(options, callback) {
+		resetPageWrapper: function() {
 
-			// console.log('reset wrapper');
+			// Remove the style attribute
+      this.settings.pageWrapper.removeAttr('style');
 
-      //
+      // Remove the page wrapper in class
       this.settings.pageWrapper.removeClass('page-wrapper-left-in');
       
-      //
+      // Remove the page wrapper out class
       this.settings.pageWrapper.removeClass('page-wrapper-left-out');
 
-      //
+      // Remove the page wrapper in class
       this.settings.pageWrapper.removeClass('page-wrapper-right-in');
       
-      //
+      // Remove the page wrapper out class
       this.settings.pageWrapper.removeClass('page-wrapper-right-out');
+
+		},
+
+		/**
+    @method unbindPageWrapper
+    */
+		unbindPageWrapper: function() {
+
+			// Unbind the drag and drag end events
+			this.settings.pageWrapper.unbind('drag');
+			this.settings.pageWrapper.unbind('dragend');
 
 		}
 

@@ -170,7 +170,7 @@ Author(s):
   width: 94%;
   left: 3%;
   height: auto;
-  max-height: 80%;
+  max-height: 90%;
   z-index: 4;
   // padding-bottom: $defaultPadding;
   @include box-shadow(0 0 6px $grayDark);
@@ -249,7 +249,7 @@ Author(s):
 \*------------------------------------*/
 
 .panel-bottom {  
-  bottom: -100%;
+  bottom: -110%;
 }
 
 /* State classes */
@@ -261,19 +261,19 @@ Author(s):
 
 .panel-bottom-out {
   @include animation(slidePanelBottomOut, 0.3s, 0, ease);
-  bottom: -90%;
+  bottom: -100%;
 }
 
 /* Keyframes */
 
 @include keyframes(slidePanelBottomIn) {
-  from { bottom: -90%; }
+  from { bottom: -100%; }
   to { bottom: 0; }
 }
 
 @include keyframes(slidePanelBottomOut) {
   from { bottom: 0; }
-  to { bottom: -90%; }
+  to { bottom: -100%; }
 }
 
 

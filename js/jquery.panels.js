@@ -101,6 +101,7 @@ $('#panel-wrapper').panels({
 		touchEnabled: false,
 		touchActiveState: false,
 		horizontalPanelWidth: 280,
+    verticalPanelMaxHeight: 90,
 		dragLimit: 40,
 		animationDuration: 400
 
@@ -437,8 +438,8 @@ $('#panel-wrapper').panels({
         var
         windowHeight = $(window).height(),
         currentPanelHeight = Math.floor(options.requestedPanel.height()),
-        // 80% of the window height (Must match css)
-        heightBreakpoint = Math.floor(windowHeight / 100 * 80);
+        // % of the window height (Must match css)
+        heightBreakpoint = Math.floor(windowHeight / 100 * verticalPanelMaxHeight);
 
         // Is the target panel bigger than allowed?
         if (currentPanelHeight >= heightBreakpoint) {
@@ -484,6 +485,7 @@ $('#panel-wrapper').panels({
         }
 
         e.gesture.preventDefault();
+        e.preventDefault();
       
       });
 
@@ -592,6 +594,7 @@ $('#panel-wrapper').panels({
         }
 
         e.gesture.preventDefault();
+        e.preventDefault();
       
       });
 
@@ -629,6 +632,7 @@ $('#panel-wrapper').panels({
         }
 
         e.gesture.preventDefault();
+        e.preventDefault();
       
       });
 
@@ -736,6 +740,7 @@ $('#panel-wrapper').panels({
         }
 
         e.gesture.preventDefault();
+        e.preventDefault();
       
       });
 
